@@ -1,7 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://code-addict.example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Code Addict Blog'
 theme = "hugo-blog-awesome"
+
+# Enable emojis globally
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"]
 
 # To enable Disqus comments, provide Disqus Shortname below.
 # To disable Disqus comments, simply leave the field empty or remove the next two lines
@@ -18,3 +22,48 @@ theme = "hugo-blog-awesome"
     startLevel = 2 # ToC starts from H2
     endLevel = 4 # ToC ends at H4
     ordered = false # generates <ul> instead of <ol>
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'Posts'
+    pageRef = 'posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    name = 'About'
+    pageRef = 'about'
+    url = '/about/'
+    weight = 30
+
+# Site parameters
+[params]
+  sitename = "Code Addict Blog"
+  defaultColor = "auto" # set color mode: dark, light, auto
+  description = "A .NET developer's journey into AI engineering. Learn how to build AI-powered applications using .NET technologies, Azure AI services, and modern development practices."
+  mainSections = ['posts']
+  toc = true # enable table of contents globally
+  tocOpen = false # table of contents closed by default
+  goToTop = true # enable 'go to top' button
+  dateFormat = "2 January 2006"
+  rssFeedDescription = "summary"
+
+# Author information
+[params.author]
+  intro = "Code Addict Blog"
+  name = "Code Addict"
+  description = "A .NET developer exploring AI engineering. Sharing how to build AI-powered applications with .NET, Azure AI services, and practical code examples."
+
+# Webmanifest options
+[params.webmanifest]
+  name = "Code Addict Blog"
+  short_name = "Code Addict"
+  start_url = "/"
+  theme_color = "#434648"
+  background_color = "#fff"
+  display = "standalone"
