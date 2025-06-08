@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Code Addict Blog</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on Code Addict Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Jun 2025 18:16:49 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Code Addict Blog!</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Sun, 08 Jun 2025 18:16:49 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      
+      <description>&lt;p&gt;Welcome to &lt;strong&gt;Code Addict Blog&lt;/strong&gt;! 🎉&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m excited to launch this programming blog where we&amp;rsquo;ll explore the fascinating world of software development together. Whether you&amp;rsquo;re a beginner taking your first steps into coding or an experienced developer looking to expand your skills, this blog is designed with you in mind.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
