@@ -172,11 +172,25 @@ This is where parameters like **Temperature** and **Top-P** come into play - the
 - **> 1.0** – Increases randomness, selects less probable words for varied but potentially error-prone outputs
 - **2.0** – Maximum creativity with very unpredictable responses
 
+```csharp
+var settings = new OpenAIPromptExecutionSettings()
+{
+    Temperature = 0.2
+};
+```
+
 ### Top-P (0.0 - 1.0)
 **Top-P** (nucleus sampling) is similar to temperature in controlling output diversity, but works differently by only considering the most probable tokens whose cumulative probability adds up to the Top-P value:
 - **0.1**: Very focused - only considers the top 10% most probable tokens
 - **0.5**: Moderately focused - considers tokens up to 50% cumulative probability
 - **1.0**: No filtering - all tokens are considered
+
+```csharp
+var settings = new OpenAIPromptExecutionSettings()
+{
+    TopP = 0.9
+};
+```
 
 **Key Difference: Temperature vs Top-P**
 - **Temperature**: Controls entropy (creativity/unpredictability) - 0 means same response every time, higher values increase randomness
@@ -187,15 +201,36 @@ Both work together to shape output diversity, with temperature affecting how ran
 ### Max Tokens
 **Max Tokens** sets the maximum length of the generated response. This includes both the input prompt and the output completion. One token is roughly equivalent to 4 characters in English text.
 
+```csharp
+var settings = new OpenAIPromptExecutionSettings()
+{
+    MaxTokens = 500
+};
+```
+
 ### Frequency Penalty (0.0 to 2.0)
 **Frequency Penalty** reduces the likelihood of repeating tokens based on how frequently they've already appeared:
 - **0.0**: No penalty (default)
 - **Positive values**: Discourage repetition - higher values make the model less likely to repeat words
 
+```csharp
+var settings = new OpenAIPromptExecutionSettings()
+{
+    FrequencyPenalty = 0.5
+};
+```
+
 ### Presence Penalty (0.0 to 2.0)
 **Presence Penalty** reduces the likelihood of repeating topics based on whether they've been mentioned before:
 - **0.0**: No penalty (default)
 - **Positive values**: Encourage exploring new topics - higher values push the model to discuss different subjects
+
+```csharp
+var settings = new OpenAIPromptExecutionSettings()
+{
+    PresencePenalty = 0.6
+};
+```
 
 **Key Difference: Frequency vs Presence Penalty**
 - **Frequency Penalty**: Discourages repeating the *same words/phrases* too frequently - focuses on token repetition frequency
