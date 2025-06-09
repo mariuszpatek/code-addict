@@ -1,2 +1,4 @@
-<!--Google Analytics-->
+<!--Google Analytics - Only load in production-->
+{{ if eq hugo.Environment "production" }}
 {{ template "_internal/google_analytics.html" . }}
+{{ end }}
