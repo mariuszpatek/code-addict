@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://code-addict.example.org/tags/.net/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/tags/ai/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/categories/announcements/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/categories/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/tags/introduction/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/tags/machine-learning/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/posts/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/tags/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/tags/welcome/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/posts/my-first-post/</loc><lastmod>2025-06-08T18:16:49+02:00</lastmod></url><url><loc>https://code-addict.example.org/about/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/tags/.net/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/announcements/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/introduction/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/machine-learning/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/welcome/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/my-first-post/</loc>
+    <lastmod>2025-06-08T18:16:49+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url>
+</urlset>

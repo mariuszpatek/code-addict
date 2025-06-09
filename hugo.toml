@@ -47,7 +47,7 @@ ignoreErrors = ["additional-script-loading-error"]
 # Site parameters
 [params]
   sitename = "Code Addict Blog"
-  defaultColor = "auto" # set color mode: dark, light, auto
+  defaultColor = "dark" # set color mode: dark, light, auto
   description = "A .NET developer's journey into AI engineering. Learn how to build AI-powered applications using .NET technologies, Azure AI services, and modern development practices."
   mainSections = ['posts']
   toc = true # enable table of contents globally
@@ -61,6 +61,7 @@ ignoreErrors = ["additional-script-loading-error"]
   intro = "Code Addict Blog"
   name = "Code Addict"
   description = "A .NET developer exploring AI engineering. Sharing how to build AI-powered applications with .NET, Azure AI services, and practical code examples."
+  avatar = "1738927613143.png"
 
 # Webmanifest options
 [params.webmanifest]
