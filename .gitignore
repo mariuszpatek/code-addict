@@ -1,0 +1,23 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# Hugo cache
+hugo_stats.json
+
+# Temporary files
+temp_page_source*.html
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if using npm packages)
+node_modules/
+
+# Hugo module cache
+_vendor/modules.txt.timestamp

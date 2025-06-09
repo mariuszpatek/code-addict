@@ -1,6 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){const e=document.createElement("div");e.className="lightbox-overlay",e.innerHTML=`
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-content">
-            <img class="lightbox-image" src="" alt="">
-        </div>
-    `,document.body.appendChild(e);const n=e.querySelector(".lightbox-image"),s=e.querySelector(".lightbox-close");function o(t,s){n.src=t,n.alt=s,e.style.display="flex",document.body.style.overflow="hidden"}function t(){e.style.display="none",document.body.style.overflow="auto"}const i=[".page-content img","article img","main img","img"];let a=!1;for(let t of i){const e=document.querySelectorAll(t);if(e.length>0){a=!0,e.forEach(function(e){e.hasAttribute("data-lightbox-enabled")||(e.setAttribute("data-lightbox-enabled","true"),e.style.cursor="pointer",e.addEventListener("click",function(e){e.preventDefault(),o(this.src,this.alt)}))});break}}e.addEventListener("click",function(n){n.target===e&&t()}),s.addEventListener("click",t),document.addEventListener("keydown",function(n){n.key==="Escape"&&e.style.display==="flex"&&t()})})
