@@ -79,7 +79,22 @@ Here's how you can add plugins to your kernel:
 kernelBuilder.Plugins.AddFromType<TimePlugin>();
 ```
 
-We can also create our own custom plugins, but for now we'll use built-in ones for simplicity.
+We can also create our own custom plugins. Here's a simple example of a custom plugin:
+
+```csharp
+public class CustomTimePlugin 
+{ 
+    [KernelFunction] 
+    [Description("Retrieves the current time in UTC.")] 
+    public DateTime GetCurrentUtcTime() => DateTime.UtcNow; 
+}
+```
+
+To use this custom plugin, you would add it to your kernel just like the built-in plugins:
+
+```csharp
+kernelBuilder.Plugins.AddFromType<CustomTimePlugin>();
+```
 
 Plugins can help with:
 - Retrieving data from external databases
