@@ -206,7 +206,7 @@ Both parameters work together to improve text quality and diversity, with freque
 
 You can experiment with all these parameters interactively in the [OpenAI Playground](https://platform.openai.com/playground/) to see how they affect model behavior in real-time.
 
-![OpenAI Playground Parameters](openAi_playground.png)
+![OpenAI Playground Parameters](/code-addict/openAi_playground.png)
 
 ## What's Next?
 
