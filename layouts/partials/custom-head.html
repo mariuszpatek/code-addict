@@ -1,0 +1,10 @@
+{{/* Custom CSS for image lightbox */}}
+{{ $customCSS := resources.Get "custom.css" }}
+{{ if $customCSS }}
+    {{ if hugo.IsProduction }}
+        {{ $customCSS = $customCSS | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}" integrity="{{ $customCSS.Data.Integrity }}">
+    {{ else }}
+        <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+    {{ end }}
+{{ end }}

@@ -53,7 +53,7 @@
         },
         "datePublished": "2025-06-09",
         "description": "An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows",
-        "wordCount":  801 ,
+        "wordCount":  1237 ,
         "mainEntityOfPage": "True",
         "dateModified": "2025-06-09",
         "image": {
@@ -121,6 +121,15 @@
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
 
     
+    
+      
+
+
+    
+        <link rel="stylesheet" href="/custom.css">
+    
+
+
     
 </head>
 <body data-theme = "dark" class="notransition">
@@ -214,6 +223,16 @@ stroke-linejoin="round" class="feather feather-home">
         <li><a href="#services">Services</a></li>
         <li><a href="#plugins">Plugins</a></li>
         <li><a href="#complete-example">Complete Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-execution-settings">Understanding Execution Settings</a>
+      <ul>
+        <li><a href="#temperature-00---20">Temperature (0.0 - 2.0)</a></li>
+        <li><a href="#maxtokens">MaxTokens</a></li>
+        <li><a href="#topp-00---10">TopP (0.0 - 1.0)</a></li>
+        <li><a href="#frequency-penalty-00-to-20">Frequency Penalty (0.0 to 2.0)</a></li>
+        <li><a href="#presence-penalty-00-to-20">Presence Penalty (0.0 to 2.0)</a></li>
+        <li><a href="#stop-sequences">Stop Sequences</a></li>
       </ul>
     </li>
     <li><a href="#whats-next">What&rsquo;s Next?</a></li>
@@ -317,8 +336,7 @@ Microsoft.SemanticKernel.Plugins.Core
 </span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">kernel</span> <span class="p">=</span> <span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">chatCompletionService</span> <span class="p">=</span> <span class="n">kernel</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="p">&lt;</span><span class="n">IChatCompletionService</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Enable automatic function calling</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// This allows the AI model to automatically choose and invoke available functions from plugins</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Configure AI model behavior and enable automatic function calling</span>
 </span></span><span class="line"><span class="cl"><span class="n">OpenAIPromptExecutionSettings</span> <span class="n">openAIPromptExecutionSettings</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">FunctionChoiceBehavior</span> <span class="p">=</span> <span class="n">FunctionChoiceBehavior</span><span class="p">.</span><span class="n">Auto</span><span class="p">()</span>
@@ -339,6 +357,57 @@ Microsoft.SemanticKernel.Plugins.Core
 </span></span><span class="line"><span class="cl"><span class="c1">// Response: The current time is 14:22 on Monday, 09 June 2025.</span>
 </span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Content</span><span class="p">;</span>
 </span></span></code></pre></div><p>This example demonstrates the power of Semantic Kernel&rsquo;s function calling capabilities - the AI automatically uses the TimePlugin to get the current time when asked. In future posts, I&rsquo;ll dive deeper into each of these concepts and show you how to build more complex applications.</p>
+<h2 id="understanding-execution-settings">Understanding Execution Settings</h2>
+<p>The <code>OpenAIPromptExecutionSettings</code> allows you to change how the AI model behaves when generating responses. You can set various parameters, including (among others not mentioned here):</p>
+<h3 id="temperature-00---20">Temperature (0.0 - 2.0)</h3>
+<p><strong>Temperature</strong> controls randomness and creativity by affecting token selection from the probability distribution:</p>
+<ul>
+<li><strong>&lt;1.0</strong> – More conservative, selects high-probability words for predictable outputs</li>
+<li><strong>1.0</strong> – Default setting, balanced between deterministic and creative responses</li>
+<li><strong>&gt;1.0</strong> – Increases randomness, selects less probable words for varied but potentially error-prone outputs</li>
+<li><strong>2.0</strong> – Maximum creativity with very unpredictable responses</li>
+</ul>
+<h3 id="maxtokens">MaxTokens</h3>
+<p><strong>MaxTokens</strong> sets the maximum length of the generated response. This includes both the input prompt and the output completion. One token is roughly equivalent to 4 characters in English text.</p>
+<h3 id="topp-00---10">TopP (0.0 - 1.0)</h3>
+<p><strong>TopP</strong> (nucleus sampling) is similar to temperature in controlling output diversity, but works differently by only considering the most probable tokens whose cumulative probability adds up to the TopP value:</p>
+<ul>
+<li><strong>0.1</strong>: Very focused - only considers the top 10% most probable tokens</li>
+<li><strong>0.5</strong>: Moderately focused - considers tokens up to 50% cumulative probability</li>
+<li><strong>1.0</strong>: No filtering - all tokens are considered</li>
+</ul>
+<p><strong>Key Difference: Temperature vs TopP</strong></p>
+<ul>
+<li><strong>Temperature</strong>: Controls entropy (creativity/unpredictability) - 0 means same response every time, higher values increase randomness</li>
+<li><strong>TopP</strong>: Controls distribution of probable tokens - 1.0 means &ldquo;use all vocabulary tokens&rdquo; while 0.1 means &ldquo;use only 10% most common tokens&rdquo;</li>
+</ul>
+<p>Both work together to shape output diversity, with temperature affecting how randomly tokens are selected and TopP limiting which tokens are even considered.</p>
+<h3 id="frequency-penalty-00-to-20">Frequency Penalty (0.0 to 2.0)</h3>
+<p><strong>FrequencyPenalty</strong> reduces the likelihood of repeating tokens based on how frequently they&rsquo;ve already appeared:</p>
+<ul>
+<li><strong>0.0</strong>: No penalty (default)</li>
+<li><strong>Positive values</strong>: Discourage repetition - higher values make the model less likely to repeat words</li>
+</ul>
+<h3 id="presence-penalty-00-to-20">Presence Penalty (0.0 to 2.0)</h3>
+<p><strong>PresencePenalty</strong> reduces the likelihood of repeating topics based on whether they&rsquo;ve been mentioned before:</p>
+<ul>
+<li><strong>0.0</strong>: No penalty (default)</li>
+<li><strong>Positive values</strong>: Encourage exploring new topics - higher values push the model to discuss different subjects</li>
+</ul>
+<p><strong>Key Difference: Frequency vs Presence Penalty</strong></p>
+<ul>
+<li><strong>Frequency Penalty</strong>: Discourages repeating the <em>same words/phrases</em> too frequently - focuses on token repetition frequency</li>
+<li><strong>Presence Penalty</strong>: Encourages using <em>diverse vocabulary</em> that hasn&rsquo;t appeared yet - focuses on token presence/absence</li>
+</ul>
+<p>Both parameters work together to improve text quality and diversity, with frequency penalty preventing excessive repetition and presence penalty promoting vocabulary variety.</p>
+<h3 id="stop-sequences">Stop Sequences</h3>
+<p><strong>StopSequences</strong> defines specific strings that will cause the model to stop generating text when encountered:</p>
+<ul>
+<li><strong>Use cases</strong>: Control output format, prevent unwanted content, or stop at specific markers</li>
+<li><strong>Examples</strong>: <code>[&quot;\n&quot;, &quot;###&quot;, &quot;END&quot;]</code> - stops at newlines, headers, or END marker</li>
+</ul>
+<p>You can experiment with all these parameters interactively in the <a href="https://platform.openai.com/playground/">OpenAI Playground</a> to see how they affect model behavior in real-time.</p>
+<p><img src="/openAi_playground.png" alt="OpenAI Playground Parameters"></p>
 <h2 id="whats-next">What&rsquo;s Next?</h2>
 <p>I will dive deeper into Semantic Kernel and explain the mentioned concepts in more detail.</p>
 <h2 id="sources">Sources</h2>
@@ -398,9 +467,18 @@ Microsoft.SemanticKernel.Plugins.Core
 
 
 
+
+
+    
+
+
+
     
     <script async src="http://localhost:1313/js/main.js" ></script>
 
+    
+        
+        <script async src="http://localhost:1313/js/custom.js" ></script>
     
 
 </body>
