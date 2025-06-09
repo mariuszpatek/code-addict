@@ -155,6 +155,16 @@ This example demonstrates the power of Semantic Kernel's function calling capabi
 
 The `OpenAIPromptExecutionSettings` class allows you to control how the AI model behaves when generating responses. You can configure various parameters to fine-tune the output:
 
+### Token Sampling Strategies 🎯
+
+Before diving into specific parameters, it's important to understand how language models generate text. When predicting the next token (word or part of a word), the model calculates probability distributions over all possible tokens.
+
+**Greedy Sampling** is the simplest approach - always pick the token with the highest probability. While this works well for classification tasks (like spam detection), it creates boring and repetitive text in language models. Imagine asking different questions and always getting responses built from the most common words!
+
+**Probabilistic Sampling** is more interesting - instead of always picking the most likely token, the model samples according to the probability distribution. For example, given the context "The best programming language for enterprise applications is...", if "C#" has a 45% probability and "Java" has a 35% probability, then "C#" will be chosen 45% of the time and "Java" 35% of the time across multiple generations.
+
+This is where parameters like **Temperature** and **Top-P** come into play - they modify this probability distribution to control the balance between predictability and creativity.
+
 ### Temperature (0.0 - 2.0)
 **Temperature** controls randomness and creativity by affecting token selection from the probability distribution:
 - **< 1.0** – More conservative, selects high-probability words for predictable outputs
@@ -194,9 +204,19 @@ Both work together to shape output diversity, with temperature affecting how ran
 Both parameters work together to improve text quality and diversity, with frequency penalty preventing excessive repetition and presence penalty promoting vocabulary variety.
 
 ### Stop Sequences
-**Stop Sequences** define specific strings that will cause the model to stop generating text when encountered:
-- **Use cases**: Control output format, prevent unwanted content, or stop at specific markers
-- **Examples**: `["\n", "###", "END"]` - stops at newlines, headers, or END marker
+**Stop Sequences** define specific strings that cause the model to stop generating text. They help control latency and costs by preventing unnecessary token generation.
+
+```csharp
+OpenAIPromptExecutionSettings settings = new()
+{
+    StopSequences = ["\n", "###", "END", "}\n:"]
+};
+```
+
+**Key Points:**
+- **Fixed token limits** are simple but may cut text mid-sentence
+- **Stop sequences** allow more natural stopping points
+- ⚠️ **Risk**: Early stopping can break formatted output (e.g., incomplete JSON missing `}`)
 
 You can experiment with all these parameters interactively in the [OpenAI Playground](https://platform.openai.com/playground/) to see how they affect model behavior in real-time.
 
@@ -212,6 +232,7 @@ In future posts, I will dive deeper into Semantic Kernel and explain the mention
 - [Microsoft Learn - Semantic Kernel Concepts](https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel?pivots=programming-language-csharp)
 - [Pluralsight - Semantic Kernel with C#: Building AI Applications](https://www.pluralsight.com/courses/semantic-kernel-c-sharp-building-ai-applications)
 - [GitHub - Microsoft Semantic Kernel](https://github.com/microsoft/semantic-kernel)
+- [O'Reilly - AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)
 
 ---
 
