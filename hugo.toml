@@ -3,12 +3,25 @@ languageCode = 'en-us'
 title = 'Code Addict Blog'
 googleAnalytics = "GTM-MPWHG23C"
 
+# Environment settings
+environment = "production"
+
 # Disable live reload in production
 disableLiveReload = true
+
+# Output formats configuration
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
 
 # Build configuration
 [build]
   writeStats = true
+
+# Disable live reload for all environments
+[server]
+  disableLiveReload = true
 
 [module]
   [[module.imports]]

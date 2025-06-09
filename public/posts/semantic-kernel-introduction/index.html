@@ -1,407 +1,61 @@
-<!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title itemprop="name">Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET | Code Addict Blog</title>
-<meta property="og:title" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET | Code Addict Blog" />
-<meta name="twitter:title" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET | Code Addict Blog" />
-<meta itemprop="name" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET | Code Addict Blog" />
-<meta name="application-name" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET | Code Addict Blog" />
-<meta property="og:site_name" content="Code Addict Blog" />
-
-<meta name="description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows">
-<meta itemprop="description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows" />
-<meta property="og:description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows" />
-<meta name="twitter:description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows" />
-
-<meta property="og:locale" content="en-us" />
-<meta name="language" content="en-us" />
-
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/semantic-kernel-introduction/" title="" />
-
-
-
-
-
-    
-    
-    
-
-    <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2025-06-09T10:00:00&#43;0200 />
-    <meta property="article:published_time" content=2025-06-09T10:00:00&#43;0200 />
-    <meta property="og:url" content="http://localhost:1313/posts/semantic-kernel-introduction/" />
-
-    
-    <meta property="og:article:author" content="Code Addict" />
-    <meta property="article:author" content="Code Addict" />
-    <meta name="author" content="Code Addict" />
-    
-    
-
-    
-
-    <script defer type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET",
-        "author": {
-        "@type": "Person",
-        "name": ""
-        },
-        "datePublished": "2025-06-09",
-        "description": "An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows",
-        "wordCount":  801 ,
-        "mainEntityOfPage": "True",
-        "dateModified": "2025-06-09",
-        "image": {
-        "@type": "imageObject",
-        "url": ""
-        },
-        "publisher": {
-        "@type": "Organization",
-        "name": "Code Addict Blog"
-        }
-    }
-    </script>
-
-
-<meta name="generator" content="Hugo 0.147.8">
-
-    
-    <meta property="og:url" content="http://localhost:1313/posts/semantic-kernel-introduction/">
-  <meta property="og:site_name" content="Code Addict Blog">
-  <meta property="og:title" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET">
-  <meta property="og:description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-06-09T10:00:00+02:00">
-    <meta property="article:modified_time" content="2025-06-09T10:00:00+02:00">
-    <meta property="article:tag" content="Semantic-Kernel">
-    <meta property="article:tag" content=".Net">
-    <meta property="article:tag" content="Ai">
-    <meta property="article:tag" content="Microsoft">
-    <meta property="article:tag" content="Chatbot">
-    <meta property="article:tag" content="Openai">
-
-
-    
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET">
-  <meta name="twitter:description" content="An introduction to Semantic Kernel, Microsoft&#39;s open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows">
-
-
-    
-
-    <link rel="canonical" href="http://localhost:1313/posts/semantic-kernel-introduction/">
-    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
-    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
-
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">
-
-    
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-
-    
-    
-</head>
-<body data-theme = "dark" class="notransition">
-
-<script src="/js/theme.js"></script>
-
-<div class="navbar" role="navigation">
-    <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title></title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-        </a>
-        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-        <label for="menu-trigger">
-            <span class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-            </span>
-        </label>
-
-        <div class="trigger">
-            <ul class="trigger-container">
-                
-                
-                <li>
-                    <a class="menu-link " href="/">
-                        Home
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/about/">
-                        About
-                    </a>
-                    
-                </li>
-                
-                <li class="menu-separator">
-                    <span>|</span>
-                </li>
-                
-                
-            </ul>
-            <a id="mode" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-            </a>
-        </div>
-    </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET</h1>
-                
-                
-                
-                <div class="post-meta">
-                    <time datetime="2025-06-09T10:00:00&#43;02:00" itemprop="datePublished"> 9 June 2025 </time>
-                </div>
-                
-            </header>
-            
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b></b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#what-is-semantic-kernel">What is Semantic Kernel?</a></li>
-    <li><a href="#key-capabilities">Key Capabilities</a></li>
-    <li><a href="#supported-ai-models">Supported AI Models</a></li>
-    <li><a href="#core-components">Core Components</a>
-      <ul>
-        <li><a href="#kernel">Kernel</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#plugins">Plugins</a></li>
-        <li><a href="#complete-example">Complete Example</a></li>
-      </ul>
-    </li>
-    <li><a href="#whats-next">What&rsquo;s Next?</a></li>
-    <li><a href="#sources">Sources</a></li>
-  </ul>
-</nav>
-    </details>
-            <div class="page-content">
-                <p>If you&rsquo;re a .NET developer looking to integrate AI into your applications, <strong>Semantic Kernel</strong> might be exactly what you need. This open-source library from Microsoft provides a simple yet powerful way to work with different AI models in the .NET ecosystem.</p>
-<h2 id="what-is-semantic-kernel">What is Semantic Kernel?</h2>
-<p>Semantic Kernel is an open-source library created by Microsoft that enables .NET developers to integrate their applications with various AI models in a simple, unified way. It provides an abstraction layer that lets you work with different model providers without getting locked into a specific vendor.</p>
-<p>Whether you want to create a simple chatbot application or build complex multi-agent workflows, Semantic Kernel has you covered. Best of all, it&rsquo;s production-ready and actively maintained by Microsoft.</p>
-<h2 id="key-capabilities">Key Capabilities</h2>
-<p>Semantic Kernel supports a wide variety of AI operations:</p>
-<ul>
-<li><strong>Chat Completion</strong> - Build conversational AI applications</li>
-<li><strong>Text Generation</strong> - Generate human-like text content</li>
-<li><strong>Embedding Generation</strong> - Create vector representations of text</li>
-<li><strong>Text to Image</strong> - Generate images from text descriptions</li>
-<li><strong>Image to Text</strong> - Extract text and descriptions from images</li>
-<li><strong>Text to Audio</strong> - Convert text to speech</li>
-<li><strong>Audio to Text</strong> - Transcribe speech to text</li>
-</ul>
-<h2 id="supported-ai-models">Supported AI Models</h2>
-<p>One of the biggest advantages of Semantic Kernel is its support for multiple AI providers:</p>
-<ul>
-<li><strong>OpenAI</strong></li>
-<li><strong>Azure OpenAI</strong></li>
-<li><strong>Hugging Face</strong></li>
-<li><strong>NVIDIA</strong></li>
-<li>And many more providers</li>
-</ul>
-<p>This flexibility means you can switch between providers or use multiple providers in the same application without major code changes.</p>
-<h2 id="core-components">Core Components</h2>
-<p>Semantic Kernel is built around three main components:</p>
-<h3 id="kernel">Kernel</h3>
-<p>The <strong>kernel</strong> is the central orchestration component that manages all services and plugins. Think of it as the brain of your AI application - it coordinates between different AI services and handles the execution flow.</p>
-<p>Getting started with Semantic Kernel is straightforward - you can create a kernel using the builder pattern:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Simple kernel creation</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">kernel</span> <span class="p">=</span> <span class="n">Kernel</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">().</span><span class="n">Build</span><span class="p">();</span>
-</span></span></code></pre></div><h3 id="services">Services</h3>
-<p><strong>Services</strong> consist of both AI services and other supporting services necessary to run your application. This follows the Service Provider pattern in .NET, enabling dependency injection across all languages.</p>
-<p>Here&rsquo;s how you can add different types of services:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Add AI services</span>
-</span></span><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddOpenAIChatCompletion</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">apiKey</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Add supporting services</span>
-</span></span><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddLogging</span><span class="p">();</span>
-</span></span></code></pre></div><p><strong>AI Services:</strong></p>
-<ul>
-<li>Chat completion models for conversations</li>
-<li>Image generation services</li>
-<li>Text embedding services</li>
-<li>Audio processing services</li>
-</ul>
-<p><strong>Supporting Services:</strong></p>
-<ul>
-<li>Logging services for monitoring and debugging</li>
-<li>HTTP clients for external API communication</li>
-<li>Other utilities for application support</li>
-</ul>
-<h3 id="plugins">Plugins</h3>
-<p><strong>Plugins</strong> are additional components that allow the kernel to perform specific tasks beyond just calling AI models. These components are used by AI services and prompt templates to perform work. They give AI models the ability to work with real-time data and current information, not just the data they were trained on.</p>
-<p>Here&rsquo;s how you can add plugins to your kernel:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Plugins</span><span class="p">.</span><span class="n">AddFromType</span><span class="p">&lt;</span><span class="n">TimePlugin</span><span class="p">&gt;();</span>
-</span></span></code></pre></div><p>We can also create our own custom plugins, but for now we&rsquo;ll use built-in ones for simplicity.</p>
-<p>Plugins can help with:</p>
-<ul>
-<li>Retrieving data from external databases</li>
-<li>Calling external APIs to perform actions</li>
-<li>Interacting with your application&rsquo;s business logic</li>
-<li>Connecting to various services and systems</li>
-</ul>
-<h3 id="complete-example">Complete Example</h3>
-<p>Here&rsquo;s a full example that combines services and plugins:</p>
-<p><strong>Required NuGet Packages:</strong></p>
-<pre tabindex="0"><code>Microsoft.SemanticKernel
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET | Code Addict Blog</title><meta property="og:title" content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET | Code Addict Blog"><meta name=twitter:title content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET | Code Addict Blog"><meta itemprop=name content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET | Code Addict Blog"><meta name=application-name content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET | Code Addict Blog"><meta property="og:site_name" content="Code Addict Blog"><meta name=description content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><meta itemprop=description content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><meta property="og:description" content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><meta name=twitter:description content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en href=https://mariuszpatek.github.io/posts/semantic-kernel-introduction/ title><meta property="og:type" content="article"><meta property="og:article:published_time" content=2025-06-09T10:00:00+0200><meta property="article:published_time" content=2025-06-09T10:00:00+0200><meta property="og:url" content="https://mariuszpatek.github.io/posts/semantic-kernel-introduction/"><meta property="og:article:author" content="Code Addict"><meta property="article:author" content="Code Addict"><meta name=author content="Code Addict"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET","author":{"@type":"Person","name":""},"datePublished":"2025-06-09","description":"An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows","wordCount":801,"mainEntityOfPage":"True","dateModified":"2025-06-09","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Code Addict Blog"}}</script><meta name=generator content="Hugo 0.147.8"><meta property="og:url" content="https://mariuszpatek.github.io/posts/semantic-kernel-introduction/"><meta property="og:site_name" content="Code Addict Blog"><meta property="og:title" content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET"><meta property="og:description" content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-06-09T10:00:00+02:00"><meta property="article:modified_time" content="2025-06-09T10:00:00+02:00"><meta property="article:tag" content="Semantic-Kernel"><meta property="article:tag" content=".Net"><meta property="article:tag" content="Ai"><meta property="article:tag" content="Microsoft"><meta property="article:tag" content="Chatbot"><meta property="article:tag" content="Openai"><meta name=twitter:card content="summary"><meta name=twitter:title content="Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET"><meta name=twitter:description content="An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"><link rel=canonical href=https://mariuszpatek.github.io/posts/semantic-kernel-introduction/><link href=/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://mariuszpatek.github.io/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><script async src="https://www.googletagmanager.com/gtag/js?id=GTM-MPWHG23C"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","GTM-MPWHG23C")}</script></head><body data-theme=dark class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://mariuszpatek.github.io/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title/><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class="menu-link active" href=/posts/>Posts</a></li><li><a class=menu-link href=/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET</h1><div class=post-meta><time datetime=2025-06-09T10:00:00+02:00 itemprop=datePublished>9 June 2025</time></div></header><details class=toc zgotmplz><summary><b></b></summary><nav id=TableOfContents><ul><li><a href=#what-is-semantic-kernel>What is Semantic Kernel?</a></li><li><a href=#key-capabilities>Key Capabilities</a></li><li><a href=#supported-ai-models>Supported AI Models</a></li><li><a href=#core-components>Core Components</a><ul><li><a href=#kernel>Kernel</a></li><li><a href=#services>Services</a></li><li><a href=#plugins>Plugins</a></li><li><a href=#complete-example>Complete Example</a></li></ul></li><li><a href=#whats-next>What&rsquo;s Next?</a></li><li><a href=#sources>Sources</a></li></ul></nav></details><div class=page-content><p>If you&rsquo;re a .NET developer looking to integrate AI into your applications, <strong>Semantic Kernel</strong> might be exactly what you need. This open-source library from Microsoft provides a simple yet powerful way to work with different AI models in the .NET ecosystem.</p><h2 id=what-is-semantic-kernel>What is Semantic Kernel?</h2><p>Semantic Kernel is an open-source library created by Microsoft that enables .NET developers to integrate their applications with various AI models in a simple, unified way. It provides an abstraction layer that lets you work with different model providers without getting locked into a specific vendor.</p><p>Whether you want to create a simple chatbot application or build complex multi-agent workflows, Semantic Kernel has you covered. Best of all, it&rsquo;s production-ready and actively maintained by Microsoft.</p><h2 id=key-capabilities>Key Capabilities</h2><p>Semantic Kernel supports a wide variety of AI operations:</p><ul><li><strong>Chat Completion</strong> - Build conversational AI applications</li><li><strong>Text Generation</strong> - Generate human-like text content</li><li><strong>Embedding Generation</strong> - Create vector representations of text</li><li><strong>Text to Image</strong> - Generate images from text descriptions</li><li><strong>Image to Text</strong> - Extract text and descriptions from images</li><li><strong>Text to Audio</strong> - Convert text to speech</li><li><strong>Audio to Text</strong> - Transcribe speech to text</li></ul><h2 id=supported-ai-models>Supported AI Models</h2><p>One of the biggest advantages of Semantic Kernel is its support for multiple AI providers:</p><ul><li><strong>OpenAI</strong></li><li><strong>Azure OpenAI</strong></li><li><strong>Hugging Face</strong></li><li><strong>NVIDIA</strong></li><li>And many more providers</li></ul><p>This flexibility means you can switch between providers or use multiple providers in the same application without major code changes.</p><h2 id=core-components>Core Components</h2><p>Semantic Kernel is built around three main components:</p><h3 id=kernel>Kernel</h3><p>The <strong>kernel</strong> is the central orchestration component that manages all services and plugins. Think of it as the brain of your AI application - it coordinates between different AI services and handles the execution flow.</p><p>Getting started with Semantic Kernel is straightforward - you can create a kernel using the builder pattern:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=c1>// Simple kernel creation</span>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>kernel</span> <span class=p>=</span> <span class=n>Kernel</span><span class=p>.</span><span class=n>CreateBuilder</span><span class=p>().</span><span class=n>Build</span><span class=p>();</span>
+</span></span></code></pre></div><h3 id=services>Services</h3><p><strong>Services</strong> consist of both AI services and other supporting services necessary to run your application. This follows the Service Provider pattern in .NET, enabling dependency injection across all languages.</p><p>Here&rsquo;s how you can add different types of services:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=c1>// Add AI services</span>
+</span></span><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Services</span><span class=p>.</span><span class=n>AddOpenAIChatCompletion</span><span class=p>(</span><span class=n>model</span><span class=p>,</span> <span class=n>apiKey</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Add supporting services</span>
+</span></span><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Services</span><span class=p>.</span><span class=n>AddLogging</span><span class=p>();</span>
+</span></span></code></pre></div><p><strong>AI Services:</strong></p><ul><li>Chat completion models for conversations</li><li>Image generation services</li><li>Text embedding services</li><li>Audio processing services</li></ul><p><strong>Supporting Services:</strong></p><ul><li>Logging services for monitoring and debugging</li><li>HTTP clients for external API communication</li><li>Other utilities for application support</li></ul><h3 id=plugins>Plugins</h3><p><strong>Plugins</strong> are additional components that allow the kernel to perform specific tasks beyond just calling AI models. These components are used by AI services and prompt templates to perform work. They give AI models the ability to work with real-time data and current information, not just the data they were trained on.</p><p>Here&rsquo;s how you can add plugins to your kernel:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Plugins</span><span class=p>.</span><span class=n>AddFromType</span><span class=p>&lt;</span><span class=n>TimePlugin</span><span class=p>&gt;();</span>
+</span></span></code></pre></div><p>We can also create our own custom plugins, but for now we&rsquo;ll use built-in ones for simplicity.</p><p>Plugins can help with:</p><ul><li>Retrieving data from external databases</li><li>Calling external APIs to perform actions</li><li>Interacting with your application&rsquo;s business logic</li><li>Connecting to various services and systems</li></ul><h3 id=complete-example>Complete Example</h3><p>Here&rsquo;s a full example that combines services and plugins:</p><p><strong>Required NuGet Packages:</strong></p><pre tabindex=0><code>Microsoft.SemanticKernel
 Microsoft.Extensions.Logging
 Microsoft.Extensions.Logging.Console
 Microsoft.SemanticKernel.Plugins.Core
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Extensions.DependencyInjection</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.SemanticKernel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.SemanticKernel.ChatCompletion</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.SemanticKernel.Connectors.OpenAI</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.SemanticKernel.Plugins.Core</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">kernelBuilder</span> <span class="p">=</span> <span class="n">Kernel</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Add AI services</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Model e.g. &#34;gpt-4.1-mini&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// ApiKey you can get here: https://platform.openai.com/api-keys</span>
-</span></span><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddOpenAIChatCompletion</span><span class="p">(</span><span class="n">Model</span><span class="p">,</span> <span class="n">ApiKey</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Add logging services</span>
-</span></span><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddLogging</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Add built-in plugins</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Normally when you ask a model to tell you the time, it will say it doesn&#39;t know or hallucinate an answer. Now it will use the plugin to get the current time.</span>
-</span></span><span class="line"><span class="cl"><span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Plugins</span><span class="p">.</span><span class="n">AddFromType</span><span class="p">&lt;</span><span class="n">TimePlugin</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">kernel</span> <span class="p">=</span> <span class="n">kernelBuilder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">chatCompletionService</span> <span class="p">=</span> <span class="n">kernel</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="p">&lt;</span><span class="n">IChatCompletionService</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Enable automatic function calling</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// This allows the AI model to automatically choose and invoke available functions from plugins</span>
-</span></span><span class="line"><span class="cl"><span class="n">OpenAIPromptExecutionSettings</span> <span class="n">openAIPromptExecutionSettings</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span> 
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">FunctionChoiceBehavior</span> <span class="p">=</span> <span class="n">FunctionChoiceBehavior</span><span class="p">.</span><span class="n">Auto</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">history</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChatHistory</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Define the AI assistant&#39;s role and capabilities</span>
-</span></span><span class="line"><span class="cl"><span class="n">history</span><span class="p">.</span><span class="n">AddSystemMessage</span><span class="p">(</span><span class="s">&#34;You are a helpful assistant that can answer questions about the time.&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Ask a question that will trigger the TimePlugin</span>
-</span></span><span class="line"><span class="cl"><span class="n">history</span><span class="p">.</span><span class="n">AddUserMessage</span><span class="p">(</span><span class="s">&#34;What time is it now?&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">chatCompletionService</span><span class="p">.</span><span class="n">GetChatMessageContentAsync</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">history</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">executionSettings</span><span class="p">:</span> <span class="n">openAIPromptExecutionSettings</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">kernel</span><span class="p">:</span> <span class="n">kernel</span>
-</span></span><span class="line"><span class="cl"><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Response: The current time is 14:22 on Monday, 09 June 2025.</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Content</span><span class="p">;</span>
-</span></span></code></pre></div><p>This example demonstrates the power of Semantic Kernel&rsquo;s function calling capabilities - the AI automatically uses the TimePlugin to get the current time when asked. In future posts, I&rsquo;ll dive deeper into each of these concepts and show you how to build more complex applications.</p>
-<h2 id="whats-next">What&rsquo;s Next?</h2>
-<p>I will dive deeper into Semantic Kernel and explain the mentioned concepts in more detail.</p>
-<h2 id="sources">Sources</h2>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/">Microsoft Learn - Semantic Kernel Overview</a></li>
-<li><a href="https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel?pivots=programming-language-csharp">Microsoft Learn - Semantic Kernel Concepts</a></li>
-<li><a href="https://www.pluralsight.com/courses/semantic-kernel-c-sharp-building-ai-applications">Pluralsight - Semantic Kernel with C#: Building AI Applications</a></li>
-<li><a href="https://github.com/microsoft/semantic-kernel">GitHub - Microsoft Semantic Kernel</a></li>
-</ul>
-<hr>
-<p><em>Have you tried Semantic Kernel in your projects? I&rsquo;d love to hear about your experiences in the comments!</em></p>
-            </div>
-        </article><hr style="margin-top: 40px; margin-bottom: 40px;" />
-<div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "code-addict-1" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></main>
-</div>
-<footer class="footer">
-    <span class="footer_item"> </span>
-    &nbsp;
-
-    <div class="footer_social-icons">
-</div>
-    <small class="footer_copyright">
-        © 2025 Code Addict.
-        
-    </small>
-</footer><a href="#" title="" id="totop">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
-    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
-</svg>
-
-</a>
-
-
-    
-
-
-
-
-
-
-    
-    <script async src="http://localhost:1313/js/main.js" ></script>
-
-    
-
-</body>
-</html>
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=k>using</span> <span class=nn>Microsoft.Extensions.DependencyInjection</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>using</span> <span class=nn>Microsoft.SemanticKernel</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>using</span> <span class=nn>Microsoft.SemanticKernel.ChatCompletion</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>using</span> <span class=nn>Microsoft.SemanticKernel.Connectors.OpenAI</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>using</span> <span class=nn>Microsoft.SemanticKernel.Plugins.Core</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>kernelBuilder</span> <span class=p>=</span> <span class=n>Kernel</span><span class=p>.</span><span class=n>CreateBuilder</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Add AI services</span>
+</span></span><span class=line><span class=cl><span class=c1>// Model e.g. &#34;gpt-4.1-mini&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1>// ApiKey you can get here: https://platform.openai.com/api-keys</span>
+</span></span><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Services</span><span class=p>.</span><span class=n>AddOpenAIChatCompletion</span><span class=p>(</span><span class=n>Model</span><span class=p>,</span> <span class=n>ApiKey</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Add logging services</span>
+</span></span><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Services</span><span class=p>.</span><span class=n>AddLogging</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Add built-in plugins</span>
+</span></span><span class=line><span class=cl><span class=c1>// Normally when you ask a model to tell you the time, it will say it doesn&#39;t know or hallucinate an answer. Now it will use the plugin to get the current time.</span>
+</span></span><span class=line><span class=cl><span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Plugins</span><span class=p>.</span><span class=n>AddFromType</span><span class=p>&lt;</span><span class=n>TimePlugin</span><span class=p>&gt;();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>kernel</span> <span class=p>=</span> <span class=n>kernelBuilder</span><span class=p>.</span><span class=n>Build</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>chatCompletionService</span> <span class=p>=</span> <span class=n>kernel</span><span class=p>.</span><span class=n>GetRequiredService</span><span class=p>&lt;</span><span class=n>IChatCompletionService</span><span class=p>&gt;();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Enable automatic function calling</span>
+</span></span><span class=line><span class=cl><span class=c1>// This allows the AI model to automatically choose and invoke available functions from plugins</span>
+</span></span><span class=line><span class=cl><span class=n>OpenAIPromptExecutionSettings</span> <span class=n>openAIPromptExecutionSettings</span> <span class=p>=</span> <span class=k>new</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>FunctionChoiceBehavior</span> <span class=p>=</span> <span class=n>FunctionChoiceBehavior</span><span class=p>.</span><span class=n>Auto</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>history</span> <span class=p>=</span> <span class=k>new</span> <span class=n>ChatHistory</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=c1>// Define the AI assistant&#39;s role and capabilities</span>
+</span></span><span class=line><span class=cl><span class=n>history</span><span class=p>.</span><span class=n>AddSystemMessage</span><span class=p>(</span><span class=s>&#34;You are a helpful assistant that can answer questions about the time.&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// Ask a question that will trigger the TimePlugin</span>
+</span></span><span class=line><span class=cl><span class=n>history</span><span class=p>.</span><span class=n>AddUserMessage</span><span class=p>(</span><span class=s>&#34;What time is it now?&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>result</span> <span class=p>=</span> <span class=k>await</span> <span class=n>chatCompletionService</span><span class=p>.</span><span class=n>GetChatMessageContentAsync</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>history</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>executionSettings</span><span class=p>:</span> <span class=n>openAIPromptExecutionSettings</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>kernel</span><span class=p>:</span> <span class=n>kernel</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Response: The current time is 14:22 on Monday, 09 June 2025.</span>
+</span></span><span class=line><span class=cl><span class=kt>var</span> <span class=n>response</span> <span class=p>=</span> <span class=n>result</span><span class=p>.</span><span class=n>Content</span><span class=p>;</span>
+</span></span></code></pre></div><p>This example demonstrates the power of Semantic Kernel&rsquo;s function calling capabilities - the AI automatically uses the TimePlugin to get the current time when asked. In future posts, I&rsquo;ll dive deeper into each of these concepts and show you how to build more complex applications.</p><h2 id=whats-next>What&rsquo;s Next?</h2><p>I will dive deeper into Semantic Kernel and explain the mentioned concepts in more detail.</p><h2 id=sources>Sources</h2><ul><li><a href=https://learn.microsoft.com/en-us/semantic-kernel/overview/>Microsoft Learn - Semantic Kernel Overview</a></li><li><a href="https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel?pivots=programming-language-csharp">Microsoft Learn - Semantic Kernel Concepts</a></li><li><a href=https://www.pluralsight.com/courses/semantic-kernel-c-sharp-building-ai-applications>Pluralsight - Semantic Kernel with C#: Building AI Applications</a></li><li><a href=https://github.com/microsoft/semantic-kernel>GitHub - Microsoft Semantic Kernel</a></li></ul><hr><p><em>Have you tried Semantic Kernel in your projects? I&rsquo;d love to hear about your experiences in the comments!</em></p></div></article><hr style=margin-top:40px;margin-bottom:40px><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//code-addict-1.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons></div><small class=footer_copyright>© 2025 Code Addict.</small></footer><a href=# title id=totop><svg width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960"><path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197z"/></svg>
+</a><script src=https://mariuszpatek.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30+lSNuSkl4QXuNyy8="></script></body></html>
