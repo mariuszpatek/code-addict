@@ -32,13 +32,7 @@ Semantic Kernel supports a wide variety of AI operations:
 
 ## Supported AI Models 🌟
 
-One of the biggest advantages of Semantic Kernel is its support for multiple AI providers:
-
-- **OpenAI**
-- **Azure OpenAI**
-- **Hugging Face**
-- **NVIDIA**
-- And many more providers
+One of the biggest advantages of Semantic Kernel is its support for multiple AI providers: **OpenAI**, **Azure OpenAI**, **Hugging Face**, **NVIDIA**, and many more providers.
 
 This flexibility means you can switch between providers or use multiple providers in the same application without major code changes.
 
