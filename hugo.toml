@@ -1,7 +1,14 @@
-baseURL = 'https://code-addict.example.org/'
+baseURL = 'https://mariuszpatek.github.io/'
 languageCode = 'en-us'
 title = 'Code Addict Blog'
 googleAnalytics = "GTM-MPWHG23C"
+
+# Disable live reload in production
+disableLiveReload = true
+
+# Build configuration
+[build]
+  writeStats = true
 
 [module]
   [[module.imports]]
