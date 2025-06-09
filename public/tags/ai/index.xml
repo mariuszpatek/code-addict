@@ -6,7 +6,18 @@
     <description>Recent content in Ai on Code Addict Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Jun 2025 18:16:49 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jun 2025 10:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with Semantic Kernel: Microsoft&#39;s Open Source AI Library for .NET</title>
+      <link>http://localhost:1313/posts/semantic-kernel-introduction/</link>
+      <pubDate>Mon, 09 Jun 2025 10:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/semantic-kernel-introduction/</guid>
+      
+      <description>&lt;p&gt;If you&amp;rsquo;re a .NET developer looking to integrate AI into your applications, &lt;strong&gt;Semantic Kernel&lt;/strong&gt; might be exactly what you need. This open-source library from Microsoft provides a simple yet powerful way to work with different AI models in the .NET ecosystem.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Welcome to Code Addict Blog - A .NET Developer&#39;s AI Journey</title>
       <link>http://localhost:1313/posts/my-first-post/</link>

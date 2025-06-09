@@ -1,6 +1,7 @@
 baseURL = 'https://code-addict.example.org/'
 languageCode = 'en-us'
 title = 'Code Addict Blog'
+googleAnalytics = "GTM-MPWHG23C"
 
 [module]
   [[module.imports]]
