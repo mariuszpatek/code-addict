@@ -159,3 +159,16 @@ html.dark .logo:hover svg text {
         margin: 0.2rem 0 0 1rem !important; /* Reduced top margin from 0.5rem to 0.2rem */
     }
 }
+
+/* Make page content wider */
+.wrapper {
+    max-width: calc(890px - (30px * 2)) !important; /* Use wide-size (890px) instead of narrow-size (720px) */
+    max-width: -webkit-calc(890px - (30px * 2)) !important;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        max-width: calc(890px - 30px) !important;
+        max-width: -webkit-calc(890px - 30px) !important;
+    }
+}
