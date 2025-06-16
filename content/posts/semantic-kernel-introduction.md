@@ -4,7 +4,7 @@ draft = false
 title = "Getting Started with Semantic Kernel: Microsoft's Open Source AI Library for .NET"
 description = "An introduction to Semantic Kernel, Microsoft's open-source library that simplifies AI integration in .NET applications with support for multiple AI models and complex workflows"
 author = 'Code Addict'
-tags = ['semantic-kernel', '.net', 'ai', 'microsoft', 'chatbot', 'openai', 'azure']
+tags = ['semantic-kernel', '.net', 'ai', 'microsoft', 'openai', 'azure']
 categories = ['tutorials']
 +++
 
@@ -161,6 +161,20 @@ var response = result.Content;
 ```
 
 This example demonstrates the power of Semantic Kernel's function calling capabilities - the AI automatically uses the TimePlugin to get the current time when asked. In future posts, I'll dive deeper into each of these concepts and show you how to build more complex applications.
+
+## Performance & Cost Considerations 💰
+
+When working with Semantic Kernel in production, keep these important factors in mind:
+
+### Token Management:
+- Tokens are charged per request (input + output tokens)
+- Use MaxTokens to control costs and response length
+- Consider caching responses for repeated queries
+
+### Rate Limits:
+- Most AI providers have rate limits (requests per minute/day)
+- Implement retry logic with exponential backoff
+- Consider using multiple API keys for high-volume applications
 
 ## Understanding Execution Settings
 
