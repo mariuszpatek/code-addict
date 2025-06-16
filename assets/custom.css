@@ -79,3 +79,83 @@ img[data-lightbox-enabled]:hover {
         font-size: 30px;
     }
 }
+
+/* Custom navbar styling for bigger positioning */
+.navbar {
+    padding: 0.5rem 0.3rem 0 0.3rem !important; /* Reduced top padding from 1rem to 0.5rem */
+    min-height: 60px !important; /* Set minimum height */
+    margin-bottom: 0 !important; /* Remove bottom margin */
+}
+
+.logo {
+    margin: 0.4rem 0 0 1rem !important; /* Reduced top margin from 0.8rem to 0.4rem */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.logo svg {
+    opacity: 1 !important; /* Override the default 0.7 opacity to make logo more visible */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Logo hover effects - matching the website's link colors */
+.logo:hover svg path {
+    stroke: #003fff !important; /* Light theme blue - matches $text-link-blue */
+}
+
+.logo:hover svg text {
+    fill: #003fff !important; /* Light theme blue - matches $text-link-blue */
+    stroke: #003fff !important; /* Light theme blue - matches $text-link-blue */
+}
+
+/* Dark theme logo hover effects */
+html.dark .logo:hover svg path {
+    stroke: #77a8fd !important; /* Dark theme blue - matches $dark-text-link-blue */
+}
+
+html.dark .logo:hover svg text {
+    fill: #77a8fd !important; /* Dark theme blue - matches $dark-text-link-blue */
+    stroke: #77a8fd !important; /* Dark theme blue - matches $dark-text-link-blue */
+}
+
+/* Remove borders and focus outlines when clicking */
+.logo, .logo:focus, .logo:active, .logo:visited {
+    outline: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.menu-link, .menu-link:focus, .menu-link:active, .menu-link:visited {
+    outline: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.menu-icon, .menu-icon:focus, .menu-icon:active {
+    outline: none !important;
+    border: none !important;
+}
+
+#mode, #mode:focus, #mode:active {
+    outline: none !important;
+    border: none !important;
+}
+
+/* Remove focus outline from all navbar elements */
+.navbar *, .navbar *:focus, .navbar *:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Mobile navbar adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px !important;
+        padding: 0.4rem 0.3rem 0 0.3rem !important; /* Reduced top padding from 0.8rem to 0.4rem */
+        margin-bottom: 0 !important; /* Remove bottom margin */
+    }
+    
+    .logo {
+        padding-top: 0.2rem !important; /* Reduced from 0.5rem to 0.2rem */
+        margin: 0.2rem 0 0 1rem !important; /* Reduced top margin from 0.5rem to 0.2rem */
+    }
+}
