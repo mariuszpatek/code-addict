@@ -11,9 +11,30 @@ disableLiveReload = true
 
 # Output formats configuration
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON", "ROBOTS"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
+
+# Enable robots.txt generation
+[mediaTypes]
+  [mediaTypes."text/robots"]
+    suffixes = ["txt"]
+
+[outputFormats]
+  [outputFormats.ROBOTS]
+    mediaType = "text/robots"
+    baseName = "robots"
+    isPlainText = true
+    notAlternative = true
+
+# SEO and XML configuration
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# Enable robots.txt generation
+enableRobotsTXT = true
 
 # Build configuration
 [build]
@@ -70,12 +91,16 @@ ignoreErrors = ["additional-script-loading-error"]
   sitename = "Code Addict Blog"
   defaultColor = "dark" # set color mode: dark, light, auto
   description = "A .NET developer's journey into AI engineering. Learn how to build AI-powered applications using .NET technologies, Azure AI services, and modern development practices."
+  keywords = ["dotnet", "ai", "artificial intelligence", "semantic kernel", "azure", "programming", "development", "machine learning", "openai", "tutorials"]
   mainSections = ['posts']
   toc = true # enable table of contents globally
   tocOpen = true # table of contents open by default
   goToTop = true # enable 'go to top' button
   dateFormat = "2 January 2006"
   rssFeedDescription = "summary"
+  # SEO settings
+  canonifyURLs = true
+  images = ["1738927613143.png"] # Default social sharing image
 
 # Author information
 [params.author]
