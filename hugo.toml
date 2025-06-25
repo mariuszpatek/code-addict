@@ -40,6 +40,10 @@ enableRobotsTXT = true
 [build]
   writeStats = true
 
+# Minify configuration - exclude XML files to keep sitemap readable
+[minify]
+  disableXML = true
+
 # Disable live reload for all environments
 [server]
   disableLiveReload = true
