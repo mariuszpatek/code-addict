@@ -1,5 +1,5 @@
-{{- range .Site.AllPages }}
-{{- if and (not .Params.sitemap_exclude) (not (and (eq .Kind "taxonomy") (eq .Type "tags"))) (not (and (eq .Kind "term") (eq .Type "tags"))) (not (and (eq .Kind "taxonomy") (eq .Type "categories"))) (not (and (eq .Kind "term") (eq .Type "categories"))) }}
-{{ .Permalink }}{{ if not .Lastmod.IsZero }} {{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}{{ end }}
-{{- end }}
-{{- end }}
+{{ range .Site.AllPages -}}
+{{ if and (not .Params.sitemap_exclude) (not (and (eq .Kind "taxonomy") (eq .Type "tags"))) (not (and (eq .Kind "term") (eq .Type "tags"))) (not (and (eq .Kind "taxonomy") (eq .Type "categories"))) (not (and (eq .Kind "term") (eq .Type "categories"))) -}}
+{{ .Permalink }}
+{{ end -}}
+{{ end -}}

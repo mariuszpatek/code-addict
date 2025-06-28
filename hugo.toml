@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Code Addict Blog'
 googleAnalytics = "G-BYS374P8QV"
 
-# Environment settings - set to development for local testing
+# Environment settings - always use production for correct baseURL
 environment = "production"
 
 # Disable live reload in production
@@ -33,6 +33,7 @@ disableLiveReload = true
     baseName = "sitemap"
     isPlainText = true
     notAlternative = true
+    noUgly = true
 
 # SEO and XML configuration
 [sitemap]
