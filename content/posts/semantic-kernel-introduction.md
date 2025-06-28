@@ -293,7 +293,3 @@ In future posts, I will dive deeper into Semantic Kernel and explain the mention
 - [Pluralsight - Semantic Kernel with C#: Building AI Applications](https://www.pluralsight.com/courses/semantic-kernel-c-sharp-building-ai-applications)
 - [GitHub - Microsoft Semantic Kernel](https://github.com/microsoft/semantic-kernel)
 - [O'Reilly - AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)
-
----
-
-*Have you tried Semantic Kernel in your projects? I'd love to hear about your experiences in the comments!* 💬

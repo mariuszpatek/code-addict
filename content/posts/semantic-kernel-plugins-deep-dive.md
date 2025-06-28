@@ -467,7 +467,3 @@ Beyond the possibility to create plugins yourself, there are also built-in plugi
 You can find the complete list in the [Microsoft.SemanticKernel.Plugins.Core documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.semantickernel.plugins.core?view=semantic-kernel-dotnet).
 
 Some of them are: TimePlugins, MathPlugin or HttpPlugin. I will create a separate post on how to use them. 
-
----
-
-*What kind of plugins would you like to see examples of? Drop your suggestions in the comments!* 💬

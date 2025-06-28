@@ -11,7 +11,7 @@ disableLiveReload = true
 
 # Output formats configuration
 [outputs]
-  home = ["HTML", "RSS", "JSON", "ROBOTS"]
+  home = ["HTML", "RSS", "JSON", "ROBOTS", "TXT"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
 
@@ -19,11 +19,18 @@ disableLiveReload = true
 [mediaTypes]
   [mediaTypes."text/robots"]
     suffixes = ["txt"]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
 
 [outputFormats]
   [outputFormats.ROBOTS]
     mediaType = "text/robots"
     baseName = "robots"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.TXT]
+    mediaType = "text/plain"
+    baseName = "sitemap"
     isPlainText = true
     notAlternative = true
 

@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
+Sitemap: {{ .Site.BaseURL }}sitemap.txt
 Sitemap: {{ .Site.BaseURL }}index.xml
 
 # Disallow admin/private areas if any
