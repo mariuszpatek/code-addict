@@ -286,7 +286,7 @@ You can experiment with all these parameters interactively in the [OpenAI Playgr
 
 In future posts, I will dive deeper into Semantic Kernel and explain the mentioned concepts in more detail.
 
-## Sources
+## Resources
 
 - [Microsoft Learn - Semantic Kernel Overview](https://learn.microsoft.com/en-us/semantic-kernel/overview/)
 - [Microsoft Learn - Semantic Kernel Concepts](https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel?pivots=programming-language-csharp)
