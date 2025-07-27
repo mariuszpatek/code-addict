@@ -1,5 +1,0 @@
-{{ range .Site.AllPages -}}
-{{ if and (not .Params.sitemap_exclude) (not (and (eq .Kind "taxonomy") (eq .Type "tags"))) (not (and (eq .Kind "term") (eq .Type "tags"))) (not (and (eq .Kind "taxonomy") (eq .Type "categories"))) (not (and (eq .Kind "term") (eq .Type "categories"))) -}}
-{{ .Permalink }}
-{{ end -}}
-{{ end -}}
