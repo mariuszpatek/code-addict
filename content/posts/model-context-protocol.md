@@ -42,7 +42,8 @@ builder.Logging.AddConsole(consoleLogOptions =>
 builder.Services
     .AddMcpServer()
     .WithStdioServerTransport()
-    .WithToolsFromAssembly();
+    .WithToolsFromAssembly()
+    .WithPromptsFromAssembly();
 
 await builder.Build().RunAsync();
 ```
@@ -52,6 +53,8 @@ await builder.Build().RunAsync();
 `WithStdioServerTransport()` configures the server to communicate through standard input and output (stdin/stdout). This is useful when the MCP server is launched locally by a client process. The server operates as a single-session service and terminates when the stdin stream is closed.
 
 `WithToolsFromAssembly()` scans our code for classes with the `McpServerToolType` attribute and registers methods marked with the `McpServerTool` attribute.
+
+`WithPromptsFromAssembly()` scans our code for classes with the `McpServerPromptType` attribute and registers methods marked with the `McpServerPrompt` attribute. This allows us to define reusable prompt templates that can be easily invoked by AI assistants.
 
 ### MCP Tools Examples
 
@@ -87,6 +90,38 @@ public sealed class ShoppingCartTool
 This example demonstrates a simple tool that manages a shopping cart. The class is marked with `McpServerToolType` attribute, which registers it with the MCP server. Each method is decorated with the `McpServerTool` attribute, making it available for LLMs to use.
 
 The `Description` attributes provide documentation that helps the LLM understand the purpose of each method and parameter. When the LLM needs to interact with a shopping cart, it can leverage these methods to add items or check the cart's contents, providing a natural and intuitive way for users to manage their shopping through language.
+
+## MCP Prompts Examples
+
+In addition to tools, MCP servers can also provide reusable prompt templates that make it easy to standardize common AI interactions. Prompts are pre-defined templates that can be quickly invoked and customized for specific use cases.
+
+Let's look at an example of MCP prompts for our shopping scenario:
+
+```csharp
+[McpServerPromptType]
+public sealed class ShoppingPrompts
+{
+    [McpServerPrompt, Description("Generate shopping recommendations based on current cart or dietary preferences")]
+    public string ShoppingRecommendation(
+        [Description("Dietary preference (vegetarian, keto, mediterranean, etc.)")] string dietaryPreference = "balanced",
+        [Description("Budget range (low, medium, high)")] string budget = "medium")
+    {
+        var prompt = $"You are a helpful shopping assistant. Based on the dietary preference '{dietaryPreference}' " +
+                     $"and budget range '{budget}', suggest a complete shopping list with 8-10 items. " +
+                     $"Include fresh produce, proteins, and pantry staples. " +
+                     $"Provide brief explanations for your choices and estimated total cost.";
+        
+        return prompt;
+    }
+}
+```
+
+This example demonstrates how to create reusable prompt templates. The class is marked with `McpServerPromptType` attribute, and each method is decorated with the `McpServerPrompt` attribute. These prompts can be easily invoked by AI assistants, providing consistent and well-structured interactions.
+
+The prompt templates allow you to:
+- **Standardize interactions**: Create consistent prompts for common tasks
+- **Parameterize content**: Use method parameters to customize prompts dynamically
+- **Improve efficiency**: Quickly access pre-built prompts instead of writing them from scratch each time
 
 ## Visual Studio Code Configuration
 
