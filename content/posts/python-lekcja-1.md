@@ -172,19 +172,88 @@ print("Nazywam się [TWOJE IMIĘ] i jestem programistą!")
 - Tekst w cudzysłowach to **string** (czytaj: string) - to sposób na zapisanie słów, żeby komputer je zrozumiał
 - Każda linia to **instrukcja** - jeden krok, który komputer ma wykonać po kolei
 
-### Python jako superkalkulator!
+### 🤖 Twój pomocnik AI w nauce programowania!
 
-Wiesz co? Python potrafi liczyć lepiej niż każdy kalkulator! Spróbuj w Shell wpisać:
+Czy wiesz, że podczas nauki programowania możesz mieć swojego osobistego asystenta AI? To jak mądry robot, który pomaga Ci zrozumieć kod i odpowiada na wszystkie pytania!
 
+**🌟 Co może dla Ciebie zrobić czat AI:**
+- 💡 **Wyjaśnić trudne pojęcia** - "Co to jest funkcja print()?"
+- 🐛 **Pomóc znaleźć błędy** - "Dlaczego mój program nie działa?"
+- ✨ **Dać pomysły na projekty** - "Jaki prosty program mogę napisać?"
+- 📚 **Wytłumaczyć kod** - "Co robi ta linia kodu?"
+
+**🎯 Jak korzystać z czatu AI:**
+
+1. **Wejdź na stronę** 🌐: [chatgpt.com](https://chatgpt.com/)
+2. **Zadawaj konkretne pytania**, na przykład:
+   - "Jak napisać program, który pyta o imię i wiek?"
+   - "Dlaczego Python pokazuje błąd 'SyntaxError'?"
+   - "Czy możesz wytłumaczyć, co robi funkcja print()?"
+
+**🚀 Przykłady rozmowy z AI:**
+
+**Przykład 1 - Podstawy:**
+**Ty:** "Jak dodać dwie liczby w Python?"
+
+**AI:** To bardzo proste! Możesz użyć znaku + do dodawania:
 ```python
-2 + 3        # Dodawanie
-10 - 4       # Odejmowanie  
-5 * 6        # Mnożenie (gwiazdka to razy!)
-10 / 2        # Dzielenie
+wynik = 5 + 3
+print(wynik)  # Wypisze: 8
 ```
 
-**Fajna sprawa:** Wszystko po znaku `#` to **komentarz** - notatki dla Ciebie!
+**Przykład 2 - ASCII Art (Super fajne!):**
+**Ty:** "Możesz wygenerować kod Python, który narysuje kota używając ASCII art?"
 
+**AI:** Oczywiście! Oto kod, który narysuje uroczego kota:
+```python
+print("  /\\_/\\  ")
+print(" ( o.o ) ")
+print("  > ^ <  ")
+print(" (_) (_) ")
+```
+
+**Przykład 3 - Więcej ASCII Art:**
+**Ty:** "Wygeneruj kod Python do narysowania węża Python używając tylko znaków"
+
+**AI:** Oto kod na węża Python (jak nazwa języka!):
+```python
+print("           /^\\/^\\")
+print("         _|__|  O|")
+print("\\/     /~     \\_/ \\")
+print(" \\____|__________/  \\")
+print("        \\_______      \\")
+print("                `\\     \\                 \\")
+print("                  |     |                  \\")
+print("                 /      /                    \\")
+print("                /     /                       \\")
+print("              /      /                         \\ \\")
+print("             /     /                            \\  \\")
+print("           /     /             _----_            \\   \\")
+print("          /     /           _-~      ~-_         |   |")
+print("         (      (        _-~    _--_    ~-_     _/   |")
+print("          \\      ~-____-~    _-~    ~-_    ~-_-~    /")
+print("            ~-_           _-~          ~-_       _-~")
+print("               ~--______-~                ~-___-~")
+```
+
+**Fajna sprawa:** Każdy `print()` to jedna linia rysunku! Gdy uruchomisz cały kod naraz, Python narysuje cały obrazek! 🎉
+
+**🎨 Super pomysły na pytania o ASCII Art:**
+- "Narysuj dinozaura używając Python i ASCII"
+- "Jak zrobić ASCII art z moim imieniem?"
+- "Pokaż kod na narysowanie tortu urodzinowego"
+- "Wygeneruj kod na ASCII art z kwiatkiem"
+- "Jak narysować gitarę używając tylko znaków?"
+
+**💡 Pro tipy dla młodych programistów:**
+- Zawsze pytaj "dlaczego?" - AI uwielbia wyjaśniać!
+- Nie bój się zadawać "głupich" pytań - nie ma takich!
+- Poproś AI o sprawdzenie Twojego kodu, jeśli coś nie działa
+- Używaj AI jak nauczyciela, który jest dostępny 24/7! 
+
+**⚠️ Pamiętaj:** AI to świetny pomocnik, ale najlepszą naukę daje praktyka - pisz kod sam, a AI niech Ci tylko pomaga! 😊
+
+**💡 Spróbuj sam:** Poproś czat, aby wygenerował coś spcjalnie dla Ciebie
 ## Twoje pierwsze zadanie!
 
 ### Zadanie: Stwórz swoją wizytówkę 📄
