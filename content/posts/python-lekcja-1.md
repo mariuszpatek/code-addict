@@ -18,13 +18,13 @@ Witaj młody programisto! 👋 Dzisiaj zaczynamy niesamowitą przygodę z progra
 
 <!--more-->
 
-## 🎯 Co dzisiaj się nauczymy?
+## 🎯 Czego się dzisiaj nauczymy?
 
 W tej pierwszej lekcji poznamy:
 - Co to jest programowanie (w prostych słowach!)
 - Dlaczego Python jest super dla początkujących
 - Jak przygotować nasz komputer do programowania
-- Napisać nasz pierwszy program - wizytówkę!
+- **Napisać nasz pierwszy program - wizytówkę!**
 
 ## 🤔 Co to jest programowanie?
 
@@ -200,7 +200,7 @@ print("Nazywam się [TWOJE IMIĘ] i jestem programistą!")
 ### Co się dzieje w tym kodzie?
 
 - `print()` to **funkcja** - myśl o niej jak o megafonie komputera, który wszystkim głośno ogłasza to, co napiszesz
-- Tekst w cudzysłowach to **string** (czytaj: string) - to sposób na zapisanie słów, żeby komputer je zrozumiał
+- Tekst w cudzysłowach to **string** (czytaj: "string") - to sposób na zapisanie słów, żeby komputer je zrozumiał
 - Każda linia to **instrukcja** - jeden krok, który komputer ma wykonać po kolei
 
 ### 🤖 Twój pomocnik AI w nauce programowania!
@@ -284,7 +284,7 @@ print("               ~--______-~                ~-___-~")
 
 **⚠️ Pamiętaj:** AI to świetny pomocnik, ale najlepszą naukę daje praktyka - pisz kod sam, a AI niech Ci tylko pomaga! 😊
 
-**💡 Spróbuj sam:** Poproś czat, aby wygenerował coś spcjalnie dla Ciebie
+**💡 Spróbuj sam:** Poproś czat, aby wygenerował coś specjalnie dla Ciebie!
 ## Twoje pierwsze zadanie!
 
 ### Zadanie: Stwórz swoją wizytówkę 📄
@@ -354,11 +354,11 @@ print("Miło Cię poznać, " + imie + "! 😊")      # Miło Cię poznać, Ania!
 
 **Wyzwanie:** Czy potrafisz sprawić, żeby Python napisał Twoje imię 100 razy? 🤔
 
-##  Fajne ciekawostki na koniec! 🤓
+## 🎉 Fajne ciekawostki na koniec! 🤓
 
 - Python został stworzony w 1991 roku przez Guido van Rossum z Holandii (miał wtedy 35 lat!)
 - Nazwa "Python" nie ma nic wspólnego z wężami - pochodzi od Monty Python (śmiesznej grupy komików)!
-- Python używają giganci jak Google, Instagram, Spotify i nawet NASA do badania kosmosu! 🚀
+- Python używają tacy giganci jak Google, Instagram, Spotify i nawet NASA do badania kosmosu! 🚀
 - Pierwszy program, który napisał twórca Pythona, też wypisywał "Hello World!"
 
 ## 🚀 Co nas czeka w następnej lekcji?
