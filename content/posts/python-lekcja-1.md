@@ -145,6 +145,37 @@ Teraz sprawdźmy, czy Python i Thonny działają razem jak prawdziwy zespół pr
 - Sprawdź, czy zaznaczyłeś "Add to PATH" podczas instalacji Python
 - Poproś o pomoc starszego brata/siostrę lub rodzica 😊
 
+### 🐛 Najczęstsze błędy początkujących (i jak je naprawić!)
+
+**Błąd 1: Brakujące cudzysłowy** ❌
+```python
+print(Witaj świecie)  # BŁĄD!
+```
+✅ **Poprawka:** 
+```python
+print("Witaj świecie")  # Tekst musi być w cudzysłowach!
+```
+
+**Błąd 2: Brakujące nawiasy** ❌
+```python
+print "Cześć!"  # BŁĄD!
+```
+✅ **Poprawka:**
+```python
+print("Cześć!")  # Funkcja print() potrzebuje nawiasów!
+```
+
+**Błąd 3: Złe wcięcia** ❌
+```python
+    print("Cześć!")  # BŁĄD! Niepotrzebne spacje na początku
+```
+✅ **Poprawka:**
+```python
+print("Cześć!")  # Kod zaczyna się od lewej krawędzi!
+```
+
+**Pamiętaj:** Każdy programista robi błędy - nawet ci z 20-letnim doświadczeniem! 😄
+
 **Pro tip dla młodych programistów:** 💡
 Shell to miejsce do szybkich testów, a edytor (góra) to miejsce na pisanie dłuższych programów!
 
@@ -267,12 +298,61 @@ print("Imię: [WPISZ SWOJE IMIĘ]")
 print("Wiek: [WPISZ SWÓJ WIEK]")
 print("Hobby: [WPISZ SWOJE HOBBY]")
 print("Chcę zostać: programistą!")
+print("🐍 Python jest super!")
 ```
 
 3. **Zapisz jako** `wizytowka.py`
 4. **Uruchom** i pokaż rodzicom swój pierwszy program!
 
+### 🌟 Dodatkowe wyzwanie - Kolorowa wizytówka!
+
+Jeśli chcesz zrobić swoją wizytówkę jeszcze bardziej kreatywną, spróbuj tego:
+
+```python
+print("🌟" * 20)
+print("✨  MOJA WIZYTÓWKA  ✨")
+print("🌟" * 20)
+print("👤 Imię: [TWOJE IMIĘ]")
+print("🎂 Wiek: [TWÓJ WIEK]")
+print("🎮 Hobby: [TWOJE HOBBY]")
+print("💻 Chcę zostać: programistą!")
+print("🐍 Język: Python")
+print("🌟" * 20)
+```
+
+**Co nowego się tutaj dzieje?**
+- `"🌟" * 20` - to oznacza "powtórz emoji gwiazdki 20 razy" 
+- Emoji robią program bardziej kolorowym i wesołym! 🎉
+
 **Pamiętaj:** Nie bój się eksperymentować! Komputer się nie zepsuje, a każdy błąd to nauka! 😄
+
+### 🧪 Szybkie eksperymenty do wypróbowania!
+
+Zanim przejdziemy dalej, spróbuj tych szybkich eksperymentów w Shell (dolna część Thonny):
+
+**1. Python jako kalkulator:** 🔢
+```python
+print(10 + 5)    # Dodawanie
+print(20 - 7)    # Odejmowanie  
+print(6 * 4)     # Mnożenie
+print(15 / 3)    # Dzielenie
+```
+
+**2. Powtarzanie tekstu:** 🔄
+```python
+print("Ha! " * 5)         # Wypisze "Ha!" 5 razy
+print("🎉 " * 10)         # Wypisze 10 emoji świętowania
+print("Python " * 3)      # Wypisze "Python" 3 razy
+```
+
+**3. Łączenie tekstów:** 🔗
+```python
+imie = "Ania"
+print("Cześć " + imie + "!")                    # Cześć Ania!
+print("Miło Cię poznać, " + imie + "! 😊")      # Miło Cię poznać, Ania! 😊
+```
+
+**Wyzwanie:** Czy potrafisz sprawić, żeby Python napisał Twoje imię 100 razy? 🤔
 
 ##  Fajne ciekawostki na koniec! 🤓
 
@@ -280,6 +360,22 @@ print("Chcę zostać: programistą!")
 - Nazwa "Python" nie ma nic wspólnego z wężami - pochodzi od Monty Python (śmiesznej grupy komików)!
 - Python używają giganci jak Google, Instagram, Spotify i nawet NASA do badania kosmosu! 🚀
 - Pierwszy program, który napisał twórca Pythona, też wypisywał "Hello World!"
+
+## 🚀 Co nas czeka w następnej lekcji?
+
+W **Lekcji 2** nauczymy się:
+- 💬 Jak rozmawiać z użytkownikiem (funkcja `input()`)
+- 🔢 Jak robić proste obliczenia
+- 🎮 Napiszemy naszą pierwszą mini-grę "Zgadnij liczbę"!
+- 🎯 Poznamy zmienne - małe pudełka na dane
+
+**Zapowiedź kodu z następnej lekcji:**
+```python
+imie = input("Jak masz na imię? ")
+print("Cześć " + imie + "! Miło Cię poznać! 😊")
+```
+
+**Nie możesz się doczekać?** To świetnie! Prawdziwi programiści to ciekawi ludzie! 🔥
 
 ---
 
