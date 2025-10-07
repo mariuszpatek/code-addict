@@ -3,10 +3,10 @@ title = 'Python Podstawowy - Lekcja 2: Rozmawiamy z Komputerem!'
 date = 2025-09-20T10:00:00+02:00
 draft = false
 url = '/python-course/lekcja-2/'
-description = 'Druga lekcja z serii Python Podstawowy. Uczymy się zmiennych, funkcji input() i tworzymy pierwszą grę!'
+description = 'Druga lekcja z serii Python Podstawowy. Uczymy się zmiennych, funkcji input() i tworzymy interaktywną wizytówkę!'
 author = 'Code Addict'
 categories = ['python-course']
-tags = ['python', 'podstawy', 'programowanie', 'nauka', 'zmienne', 'input', 'gra']
+tags = ['python', 'podstawy', 'programowanie', 'nauka', 'zmienne', 'input']
 series = ['Python Podstawowy']
 +++
 
@@ -24,7 +24,6 @@ W tej drugiej lekcji poznamy:
 - 📥 Jak pobierać informacje od użytkownika (`input()`)
 - 📦 Czym są zmienne - "pudełka" na nasze dane
 - 🔄 Jak łączyć tekst ze zmiennymi
-- 🎮 **Napiszemy naszą pierwszą grę: "Zgadnij liczbę"!**
 - 🎨 Stworzymy interaktywną wizytówkę
 
 ## 💬 Funkcja input() - ucho komputera! 👂
@@ -238,185 +237,6 @@ print("💫 Możesz ją pokazać rodzinie i znajomym!")
 - Co chcesz robić po szkole
 Dodaj także kolorowe ramki i emoji!
 
-## 🔢 Python jako super-kalkulator!
-
-Nim przejdziemy do gry, sprawdźmy, jak Python radzi sobie z matematyką!
-
-### Podstawowe operacje matematyczne:
-
-```python
-# Proste obliczenia
-print("Dodawanie: 5 + 3 =", 5 + 3)
-print("Odejmowanie: 10 - 4 =", 10 - 4)  
-print("Mnożenie: 6 * 7 =", 6 * 7)
-print("Dzielenie: 15 / 3 =", 15 / 3)
-
-# Bardziej skomplikowane
-print("Potęgowanie: 2 ** 3 =", 2 ** 3)  # 2 do potęgi 3
-print("Reszta z dzielenia: 17 % 5 =", 17 % 5)  # Reszta z 17÷5
-```
-
-### 🧮 Interaktywny kalkulator!
-
-```python
-# Nasz pierwszy kalkulator!
-print("🧮 KALKULATOR PYTHON 🧮")
-print("=" * 25)
-
-liczba1 = input("Podaj pierwszą liczbę: ")
-liczba2 = input("Podaj drugą liczbę: ")
-
-# UWAGA! input() zawsze daje tekst, musimy zmienić na liczby!
-liczba1 = int(liczba1)  # Zmienia tekst na liczbę całkowitą
-liczba2 = int(liczba2)
-
-suma = liczba1 + liczba2
-roznica = liczba1 - liczba2
-iloczyn = liczba1 * liczba2
-
-print("\n📊 WYNIKI:")
-print(f"➕ {liczba1} + {liczba2} = {suma}")
-print(f"➖ {liczba1} - {liczba2} = {roznica}")
-print(f"✖️ {liczba1} × {liczba2} = {iloczyn}")
-
-print("\n🎉 Dziękuję za korzystanie z kalkulatora!")
-```
-
-**Ważna nauka:** 🎓
-- `input()` zawsze zwraca tekst (string), nawet jeśli użytkownik wpisze cyfry!
-- `int()` zmienia tekst na liczbę całkowitą (integer).
-- `f"..."` to nowy, wygodny sposób łączenia tekstu ze zmiennymi (tzw. f-string).
-
-### 🎯 Mini zadanie 4: Prosty kalkulator
-**Wyzwanie matematyczne!** Napisz program, który:
-- Pyta o Twój wiek
-- Oblicza, ile lat będziesz miał za 5 lat i ile miałeś 3 lata temu
-- Wyświetla wyniki w ładnym formacie
-
-## 🎮 Nasza pierwsza gra: "Zgadnij liczbę!"
-
-A teraz najlepsza część - napiszemy prawdziwą grę! 🎊
-
-### Gra "Zgadnij liczbę" - wersja podstawowa:
-
-```python
-# Gra: Zgadnij liczbę!
-print("🎮" * 30)
-print("🎯  GRA: ZGADNIJ LICZBĘ!  🎯")
-print("🎮" * 30)
-
-print("Cześć! Pomyślałem sobie liczbę od 1 do 10.")
-print("Czy potrafisz ją zgadnąć? 🤔")
-
-# Nasza sekretna liczba
-sekretna_liczba = 7
-
-# Gracz zgaduje
-odpowiedz_gracza = input("\nPodaj swoją odpowiedź (1-10): ")
-odpowiedz_gracza = int(odpowiedz_gracza)  # Zmieniamy tekst na liczbę
-
-# Sprawdzamy odpowiedź
-print("\n🔍 Sprawdzam Twoją odpowiedź...")
-
-if odpowiedz_gracza == sekretna_liczba:
-    print("🎉 BRAWO! Zgadłeś! Sekretną liczbą było", sekretna_liczba)
-    print("🏆 Jesteś mistrzem zgadywania!")
-else:
-    print("😔 Niestety, nie tym razem!")
-    print("🔢 Sekretną liczbą było:", sekretna_liczba)
-    print("💪 Spróbuj jeszcze raz!")
-
-print("\n🎮 Dziękuję za grę!")
-```
-
-**Co nowego się nauczyliśmy?**
-- `if` - słowo kluczowe, które znaczy "jeżeli"
-- `==` - sprawdza, czy dwie rzeczy są równe
-- `else` - oznacza "w przeciwnym przypadku"
-
-### � Mini zadanie 5: Sprawdzanie hasła
-**Gra w detektywa!** Napisz program, który:
-- Ma ustalone "sekretne hasło" w zmiennej (np. "python123")
-- Pyta użytkownika o hasło
-- Jeśli hasło jest prawidłowe - wyświetla "Dostęp dozwolony! 🔓"
-- Jeśli nie - wyświetla "Dostęp zabroniony! 🔒"
-
-### �🌟 Gra "Zgadnij liczbę" - wersja MEGA!
-
-```python
-import random  # To pozwala nam losować liczby!
-
-# MEGA Gra: Zgadnij liczbę!
-print("🌟" * 40)
-print("🎯  MEGA GRA: ZGADNIJ LICZBĘ!  🎯")
-print("🌟" * 40)
-
-print("Witaj w najlepszej grze zgadywania liczb! 🚀")
-print("Komputer wylosuje liczbę od 1 do 20.")
-print("Masz 3 próby, żeby ją zgadnąć! 💪")
-
-# Komputer losuje liczbę
-sekretna_liczba = random.randint(1, 20)
-ilosc_prob = 3
-
-print(f"\n🎲 Wylosowałem liczbę od 1 do 20!")
-print(f"🔥 Masz {ilosc_prob} próby. Powodzenia! 🍀\n")
-
-# Pierwsza próba
-print("🥇 PRÓBA 1:")
-zgadniecie1 = int(input("Podaj swoją odpowiedź: "))
-
-if zgadniecie1 == sekretna_liczba:
-    print("🎉 NIESAMOWITE! Zgadłeś za pierwszym razem!")
-    print("🏆 Jesteś prawdziwym mistrzem! 👑")
-else:
-    if zgadniecie1 < sekretna_liczba:
-        print("📈 Za mało! Spróbuj podać większą liczbę!")
-    else:
-        print("📉 Za dużo! Spróbuj podać mniejszą liczbę!")
-    
-    # Druga próba
-    print("\n🥈 PRÓBA 2:")
-    zgadniecie2 = int(input("Podaj swoją odpowiedź: "))
-    
-    if zgadniecie2 == sekretna_liczba:
-        print("🎉 BRAWO! Zgadłeś za drugim razem!")
-        print("🏆 Świetna robota! 😎")
-    else:
-        if zgadniecie2 < sekretna_liczba:
-            print("📈 Nadal za mało!")
-        else:
-            print("📉 Nadal za dużo!")
-        
-        # Ostatnia próba!
-        print("\n🥉 OSTATNIA PRÓBA!")
-        print("⚡ To Twoja ostatnia szansa!")
-        zgadniecie3 = int(input("Podaj swoją odpowiedź: "))
-        
-        if zgadniecie3 == sekretna_liczba:
-            print("🎉 FANTASTYCZNIE! Zgadłeś w ostatniej chwili!")
-            print("🏆 Jesteś niesamowity! 🌟")
-        else:
-            print("😔 Koniec prób!")
-            print(f"🔢 Sekretną liczbą było: {sekretna_liczba}")
-            print("💪 Ale nie martw się - każdy może spróbować ponownie!")
-
-print("\n🎮 Dziękuję za świetną grę!")
-print("🚀 Uruchom program jeszcze raz, żeby zagrać ponownie!")
-```
-
-**Nowe rzeczy w mega-wersji:**
-- `import random` - importuje bibliotekę do losowania
-- `random.randint(1, 20)` - losuje liczbę całkowitą od 1 do 20
-- Więcej instrukcji `if/else` - komputer podpowiada czy za mało/za dużo!
-- Trzy próby dla gracza
-
-### 🎯 Mini zadanie 6: Gra z liczbami
-**Ulepszenia gry!** Spróbuj zmodyfikować podstawową grę tak, żeby:
-- Sekretna liczba była z przedziału 1-100
-- Po błędnej odpowiedzi pokazywała podpowiedź "wyższa" lub "niższa"
-- Liczyła ile prób potrzebował gracz
-
 ## 🎨 Zadania do wykonania!
 
 ### Zadanie 1: Ankieta o sobie 📝
@@ -426,92 +246,32 @@ Stwórz program, który:
 3. Pyta, czy lubisz matematykę (tak/nie)
 4. Na końcu wyświetla podsumowanie w ładnej ramce
 
-### Zadanie 2: Kalkulator wieku psa 🐕
+### Zadanie 2: Opowieść przygodowa 📖
 Napisz program, który:
-1. Pyta o wiek Twojego psa (lub wymyślonego)
-2. Oblicza wiek psa w latach ludzkich (wiek psa × 7)
-3. Wyświetla wynik w zabawny sposób
+1. Pyta o imię bohatera
+2. Pyta o ulubione zwierzę
+3. Pyta o ulubiony kolor
+4. Tworzy krótką opowieść używając tych informacji
 
 **Przykład:**
 ```
-Twój pies ma 3 lata.
-W latach ludzkich to 21 lat!
-Twój pies może już iść na studia! 🎓
+Dawno, dawno temu żył sobie [imię].
+Miał on wiernego towarzysza - [zwierzę] o kolorze [kolor].
+Razem przeżyli wiele przygód...
 ```
 
-### Zadanie 3: Gra "Zgadnij słowo" 📝
-Stwórz grę, gdzie:
-1. Komputer "pomyśli" sobie zwierzę (ustaw zmienną na np. "kot")
-2. Gracz ma zgadnąć to zwierzę
-3. Jeśli zgadnie - wygrywa!
-4. Jeśli nie - komputer mówi, jakie było zwierzę
+### Zadanie 3: Kreator nazw superbohaterów 🦸
+Stwórz program, który:
+1. Pyta o Twoje imię
+2. Pyta o ulubiony kolor
+3. Pyta o ulubione zwierzę
+4. Tworzy nazwę superbohatera łącząc te informacje
 
-## 🧪 Eksperymenty do wypróbowania!
-
-### Eksperyment 1: Zabawa ze zmiennymi 🔄
-```python
-# Zamiana miejscami!
-a = "czekolada"
-b = "wanilia"
-
-print("Przed zamianą:")
-print("a =", a)
-print("b =", b)
-
-# Magiczna zamiana!
-tymczasowa = a
-a = b  
-b = tymczasowa
-
-print("Po zamianie:")
-print("a =", a)
-print("b =", b)
-```
-
-### Eksperyment 2: ASCII Art Generator 🎨
-```python
-symbol = input("Podaj symbol do rysunku (np. *, #, @): ")
-rozmiar = int(input("Podaj rozmiar (np. 5): "))
-
-print("\n🎨 Twój rysunek:")
-for i in range(rozmiar):
-    print(symbol * (i + 1))
-```
-
-**Uwaga:** `for` i `range` to zaawansowane tematy - poznamy je w kolejnych lekcjach! Na razie po prostu ciesz się efektem! 😊
-
-### 🎯 Mini zadanie 7: ASCII Art
-**Kreatywne wyzwanie!** Napisz program, który:
-- Pyta o Twoje imię
-- Pyta o ulubiony symbol (*, #, @, itp.)
-- Narysuje Twoje imię używając tego symbolu (każda litera to jeden symbol)
+**Przykład:** Imię: Ania, Kolor: Niebieski, Zwierzę: Kot → "Niebieski Kot Ania"
 
 ## 🐛 Najczęstsze błędy w Lekcji 2 (i jak je naprawić!)
 
-### Błąd 1: Zapomnienie o int() ❌
-```python
-wiek = input("Ile masz lat? ")
-za_rok = wiek + 1  # BŁĄD! Nie można dodać liczby do tekstu
-```
-✅ **Poprawka:**
-```python
-wiek = input("Ile masz lat? ")
-wiek = int(wiek)  # Zmienia tekst na liczbę!
-za_rok = wiek + 1
-```
-
-### Błąd 2: Mylenie = z == ❌
-```python
-if imie = "Ania":  # BŁĄD! Jeden znak =
-    print("Cześć Ania!")
-```
-✅ **Poprawka:**
-```python
-if imie == "Ania":  # Dwa znaki == do porównania!
-    print("Cześć Ania!")
-```
-
-### Błąd 3: Zapomnienie o cudzysłowach ❌
+### Błąd 1: Zapomnienie cudzysłowów ❌
 ```python
 imie = input(Jak masz na imię?)  # BŁĄD! Brak cudzysłowów
 ```
@@ -520,22 +280,44 @@ imie = input(Jak masz na imię?)  # BŁĄD! Brak cudzysłowów
 imie = input("Jak masz na imię?")  # Tekst w cudzysłowach!
 ```
 
+### Błąd 2: Pomylenie nazwy zmiennej ❌
+```python
+imie = input("Jak masz na imię? ")
+print("Cześć " + nazwa)  # BŁĄD! Zmienna nazywa się "imie", nie "nazwa"
+```
+✅ **Poprawka:**
+```python
+imie = input("Jak masz na imię? ")
+print("Cześć " + imie)  # Używamy tej samej nazwy zmiennej!
+```
+
+### Błąd 3: Brak znaku + przy łączeniu tekstów ❌
+```python
+imie = "Ania"
+print("Cześć " imie)  # BŁĄD! Brak +
+```
+✅ **Poprawka:**
+```python
+imie = "Ania"
+print("Cześć " + imie)  # Dodajemy + między tekstami
+```
+
 ## 🎉 Fajne ciekawostki na koniec! 🤓
 
 - Pierwsza gra komputerowa została stworzona w 1958 roku - nazywała się "Tennis for Two"! 🎾
 - Zmienna to pomysł, który mają wszystkie języki programowania - nie tylko Python!
 - Funkcja `input()` w Pythonie może przyjąć nawet 1000 znaków naraz! 📝
-- Najdłuższa nazwa zmiennej w historii programowania miała 1019 znaków! (Ale nie rób tego!) 😅
+- W starszych wersjach Pythona (Python 2) funkcja nazywała się `raw_input()` zamiast `input()`! 
 
 ## 🤖 Twój pomocnik AI - nowe możliwości! 
 
 Teraz, gdy znasz zmienne i input(), możesz zadawać AI jeszcze lepsze pytania!
 
 **🌟 Przykładowe pytania dla AI:**
-- "Jak sprawić, żeby moja gra była trudniejsza?"
-- "Pokarz mi kod na prostą grę w kamień-papier-nożyce"
-- "Jak zrobić program, który sprawdza, czy liczba jest parzysta?"
-- "Wygeneruj kod na prostą ankietę z 10 pytaniami"
+- "Jak zrobić program, który pyta o 5 różnych rzeczy?"
+- "Pokaż mi kod na prostą ankietę"
+- "Jak stworzyć program, który tworzy historyjkę z podanych słów?"
+- "Wygeneruj kod na kreatywną wizytówkę z emoji"
 
 **Przykład rozmowy z AI:**
 **Ty:** "Jak zrobić program, który sprawdza czy podane imię jest długie?"
@@ -549,19 +331,27 @@ else:
     print("Masz krótkie imię!")
 ```
 
+### 🎓 Wskazówka: ChatGPT jako Twój Nauczyciel!
+
+Czy wiesz, że możesz używać ChatGPT do nauki? W **Lekcji 3** pokażę Ci **specjalną magiczną formułę**, dzięki której ChatGPT stanie się Twoim prywatnym nauczycielem programowania! 🧙‍♂️
+
+Będziesz mógł zadawać pytania i dostawać odpowiedzi krok po kroku, z przykładami i ćwiczeniami!
+
+**Nie mogę się doczekać?** Przeczytaj Lekcję 3 - tam znajdziesz pełny przewodnik! 🚀
+
 ## 🚀 Co nas czeka w Lekcji 3?
 
 W **Lekcji 3** nauczymy się:
-- 🔄 Pętle - jak powtarzać kawałki kodu
-- 📝 Listy - jak przechowywać wiele rzeczy naraz
-- 🎲 Więcej gier z losowaniem
-- 🎯 Napiszemy grę "Kamień, Papier, Nożyce"!
+- 🔢 Python jako super-kalkulator
+- 🧮 Działania matematyczne w programach
+- 🎮 **Napiszemy naszą pierwszą grę: "Zgadnij liczbę"!**
+- 💡 Poznamy instrukcje warunkowe `if` i `else`
 
 **Zapowiedź kodu z następnej lekcji:**
 ```python
-gry = ["Kamień", "Papier", "Nożyce"]
-for gra in gry:
-    print("Dostępna opcja:", gra)
+wiek = int(input("Ile masz lat? "))
+za_5_lat = wiek + 5
+print("Za 5 lat będziesz mieć", za_5_lat, "lat!")
 ```
 
 **Nie możesz się doczekać?** Przećwicz dzisiejsze zadania - w programowaniu praktyka czyni mistrza! 🎯
@@ -570,7 +360,8 @@ for gra in gry:
 
 **Pamiętaj:** Każda linia kodu, którą napiszesz, to krok bliżej zostania prawdziwym programistą! Nie poddawaj się, jeśli coś nie działa - każdy błąd to nauka! 🌟
 
-**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**
+**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**  
+**[→ Przejdź do Lekcji 3](/code-addict/python-course/lekcja-3/)**
 
 ---
 
