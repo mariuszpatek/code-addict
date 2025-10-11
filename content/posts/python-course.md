@@ -18,32 +18,37 @@ Python to jeden z najpopularniejszych języków programowania na świecie! Jest 
 ### 🌟 Poziom podstawowy
 
 **🚀 Lekcja 1**: [Witaj Świecie Programowania!](/code-addict/python-course/lekcja-1/)
+
 - Co to jest programowanie i dlaczego jest super?
 - Instalacja Python na Twoim komputerze
 - Pierwszy program: "Hello World!"
 - Podstawy pracy z kodem
 
+**🗣️ Lekcja 2**: [Rozmawiamy z Komputerem!](/code-addict/python-course/lekcja-2/)
+
+- Jak przechowywać informacje w programie - zmienne
+- Komunikacja z użytkownikiem - funkcja input()
+- Tworzenie interaktywnej wizytówki
+- Łączenie tekstów i zmiennych
+
+**🔢 Lekcja 3**: [Python Kalkulator i Pierwsza Gra!](/code-addict/python-course/lekcja-3/)
+
+- Podstawowe operacje matematyczne w Pythonie
+- Konwersja typów danych (tekst na liczby)
+- Instrukcje warunkowe (if/else) - podejmowanie decyzji
+- Tworzenie gry "Zgadnij liczbę"
+
 <!-- **⏳ Wkrótce dostępne:**
 
-**🎮 Lekcja 2**: Zmienne i ich magiczna moc
-- Jak przechowywać informacje w programie
-- Różne typy danych (tekst, liczby, prawda/fałsz)
-- Nazywanie zmiennych jak prawdziwy programista
+**🎮 Lekcja 4**: Pętle i powtarzanie
+- Jak powtarzać czynności - pętle for i while
+- Automatyzacja zadań
+- Tworzenie bardziej złożonych gier
 
-**🧮 Lekcja 3**: Matematyka z Pythonem
-- Podstawowe operacje matematyczne
-- Tworzenie prostego kalkulatora
-- Zabawy z liczbami
-
-**💬 Lekcja 4**: Komunikacja z użytkownikiem
-- Jak program może zadawać pytania
-- Otrzymywanie odpowiedzi od użytkownika
-- Tworzenie interaktywnych programów
-
-**🔀 Lekcja 5**: Podejmowanie decyzji (if/else)
-- Jak program może myśleć i wybierać
-- Instrukcje warunkowe
-- Pierwszy inteligentny program -->
+**📋 Lekcja 5**: Listy i kolekcje
+- Przechowywanie wielu wartości
+- Operacje na listach
+- Tworzenie quizów i bardziej zaawansowanych programów -->
 
 ## 🎯 Jak korzystać z kursu
 
@@ -56,6 +61,7 @@ Python to jeden z najpopularniejszych języków programowania na świecie! Jest 
 ## 🌟 Co Cię czeka?
 
 Po ukończeniu tego kursu będziesz potrafić:
+
 - ✅ Pisać podstawowe programy w Python
 - ✅ Rozumieć jak działa kod
 - ✅ Tworzyć proste gry i aplikacje
@@ -64,4 +70,4 @@ Po ukończeniu tego kursu będziesz potrafić:
 
 ---
 
-*Gotowy na przygodę? Kliknij w Lekcję 1 i zaczynajmy programować! 🚀*
+_Gotowy na przygodę? Kliknij w Lekcję 1 i zaczynajmy programować! 🚀_
