@@ -21,6 +21,7 @@ Witaj ponownie młody programisto! 👋 W pierwszej lekcji nauczyłeś się, jak
 ## 🎯 Czego się dzisiaj nauczymy?
 
 W tej drugiej lekcji poznamy:
+
 - 📥 Jak pobierać informacje od użytkownika (`input()`)
 - 📦 Czym są zmienne - "pudełka" na nasze dane
 - 🔄 Jak łączyć tekst ze zmiennymi
@@ -39,6 +40,7 @@ input("Jak masz na imię? ")
 ```
 
 **Co się stanie?**
+
 1. Komputer wypisze pytanie: "Jak masz na imię? "
 2. **Zatrzymuje się i czeka na Twoją odpowiedź!** ⏳
 3. Wpisz swoje imię i naciśnij Enter
@@ -48,7 +50,7 @@ input("Jak masz na imię? ")
 
 ### Ale czekaj... gdzie się podziała moja odpowiedź? 🤔
 
-**Zauważyłeś, że komputer pokazał Twoje imię i... od razu o nim zapomniał? To dlatego, że nigdzie nie zapisaliśmy tej informacji! 
+\*\*Zauważyłeś, że komputer pokazał Twoje imię i... od razu o nim zapomniał? To dlatego, że nigdzie nie zapisaliśmy tej informacji!
 
 Wyobraź sobie, że ktoś Ci coś powiedział, ale Ty nie masz pamiętnika, żeby to zapisać - zapomnisz!
 
@@ -60,14 +62,17 @@ print("Cześć " + imie + "! Miło Cię poznać! 😊")
 ```
 
 **WOW!** 🎉 Teraz komputer:
+
 1. Zapyta o Twoje imię
-2. **Zapisze je w pamięci** (w zmiennej `imie`)  
+2. **Zapisze je w pamięci** (w zmiennej `imie`)
 3. Użyje tej informacji w drugiej linii!
 
 To tak, jakby komputer napisał Twoje imię na karteczce i schował do kieszonki! 📝
 
 ### 🎯 Mini zadanie 1: Pierwsza rozmowa
+
 **Wypróbuj sam!** Napisz program, który:
+
 - Pyta o Twoją ulubioną grę.
 - Pyta o ulubiony kolor.
 - Wyświetla wiadomość: "Twoja ulubiona gra to [gra], a ulubiony kolor to [kolor]!"
@@ -79,8 +84,9 @@ To tak, jakby komputer napisał Twoje imię na karteczce i schował do kieszonki
 ### 🏷️ Jak działają zmienne?
 
 Wyobraź sobie, że masz pudełka w pokoju:
+
 - Pudełko z napisem "imie" - w środku jest Twoje imię
-- Pudełko z napisem "wiek" - w środku jest Twoja liczba lat  
+- Pudełko z napisem "wiek" - w środku jest Twoja liczba lat
 - Pudełko z napisem "hobby" - w środku jest to, co lubisz robić
 
 **W Pythonie to wygląda tak:**
@@ -103,6 +109,7 @@ print("Teraz mój ulubiony kolor to " + ulubiony_kolor)
 ```
 
 **Rezultat:**
+
 ```
 Mój ulubiony kolor to niebieski
 Teraz mój ulubiony kolor to czerwony
@@ -111,24 +118,29 @@ Teraz mój ulubiony kolor to czerwony
 ### 🎯 Zasady nazywania zmiennych (bardzo ważne!)
 
 **✅ DOBRE nazwy zmiennych:**
+
 - `imie`
 - `ulubiony_kolor`
 - `liczba_punktow`
 - `wiek_uzytkownika`
 
 **❌ ZŁE nazwy zmiennych:**
+
 - `x` - co to znaczy?
 - `dane1` - jakie dane?
 - `zmienna` - to nic nie mówi!
 - `a` - za krótkie!
 
 **🚨 Pamiętaj:**
+
 - Używaj angielskich lub polskich nazw, ale bez polskich znaków (ogonków), np. `imie` zamiast `imię`.
 - Zamiast spacji używaj podkreślników: `ulubiony_kolor`.
 - Python rozróżnia wielkie i małe litery: `imie` to nie to samo co `Imie`.
 
 ### 🎯 Mini zadanie 2: Eksperyment ze zmiennymi
-**Spróbuj tego!** 
+
+**Spróbuj tego!**
+
 - Stwórz 3 zmienne: `ulubione_zwierze`, `liczba_lat`, `miasto`
 - Nadaj im dowolne wartości
 - Wyświetl je wszystkie w jednej linii używając `print()`
@@ -172,6 +184,7 @@ print("\nGratulacje " + imie + "! Twoja wizytówka jest gotowa! 🎉")
 4. **Uruchom** (F5) i wypełnij wszystkie pola!
 
 **Co nowego w tym kodzie?**
+
 - `\n` - to znak "nowej linii" (działa jak Enter w edytorze tekstu).
 - `# To jest komentarz` - linie zaczynające się od `#` to notatki dla programistów, ignorowane przez komputer.
 - Używamy wielu zmiennych naraz!
@@ -212,7 +225,7 @@ print(f"   🎂 Wiek: {wiek} lat")
 print(f"   🏫 Klasa: {klasa}")
 print()
 print("🎯 ZAINTERESOWANIA:")
-print(f"   🎮 Hobby: {hobby}")  
+print(f"   🎮 Hobby: {hobby}")
 print(f"   📚 Ulubiony przedmiot: {ulubiony_przedmiot}")
 print(f"   🍕 Ulubiona pizza: {ulubiona_pizza}")
 print()
@@ -226,34 +239,42 @@ print("💫 Możesz ją pokazać rodzinie i znajomym!")
 ```
 
 **Co nowego tutaj mamy?**
+
 - `imie.upper()` - zamienia tekst w zmiennej `imie` na WIELKIE LITERY!
 - `f"..."` - to nowoczesny i wygodny sposób formatowania napisów, który pozwala wstawiać zmienne bezpośrednio do tekstu.
 - Bardziej profesjonalny wygląd dzięki lepszemu formatowaniu.
 
 ### 🎯 Mini zadanie 3: Własna wizytówka
+
 **Twój projekt!** Zmodyfikuj wizytówkę tak, żeby pytała o:
+
 - Twój ulubiony film
-- Liczbę rodzeństwa  
+- Liczbę rodzeństwa
 - Co chcesz robić po szkole
-Dodaj także kolorowe ramki i emoji!
+  Dodaj także kolorowe ramki i emoji!
 
 ## 🎨 Zadania do wykonania!
 
 ### Zadanie 1: Ankieta o sobie 📝
+
 Stwórz program, który:
+
 1. Pyta o Twoje imię, wiek, klasę i hobby
 2. Pyta o Twoją ulubioną grę komputerową
 3. Pyta, czy lubisz matematykę (tak/nie)
 4. Na końcu wyświetla podsumowanie w ładnej ramce
 
 ### Zadanie 2: Opowieść przygodowa 📖
+
 Napisz program, który:
+
 1. Pyta o imię bohatera
 2. Pyta o ulubione zwierzę
 3. Pyta o ulubiony kolor
 4. Tworzy krótką opowieść używając tych informacji
 
 **Przykład:**
+
 ```
 Dawno, dawno temu żył sobie [imię].
 Miał on wiernego towarzysza - [zwierzę] o kolorze [kolor].
@@ -261,7 +282,9 @@ Razem przeżyli wiele przygód...
 ```
 
 ### Zadanie 3: Kreator nazw superbohaterów 🦸
+
 Stwórz program, który:
+
 1. Pyta o Twoje imię
 2. Pyta o ulubiony kolor
 3. Pyta o ulubione zwierzę
@@ -272,31 +295,40 @@ Stwórz program, który:
 ## 🐛 Najczęstsze błędy w Lekcji 2 (i jak je naprawić!)
 
 ### Błąd 1: Zapomnienie cudzysłowów ❌
+
 ```python
 imie = input(Jak masz na imię?)  # BŁĄD! Brak cudzysłowów
 ```
+
 ✅ **Poprawka:**
+
 ```python
 imie = input("Jak masz na imię?")  # Tekst w cudzysłowach!
 ```
 
 ### Błąd 2: Pomylenie nazwy zmiennej ❌
+
 ```python
 imie = input("Jak masz na imię? ")
 print("Cześć " + nazwa)  # BŁĄD! Zmienna nazywa się "imie", nie "nazwa"
 ```
+
 ✅ **Poprawka:**
+
 ```python
 imie = input("Jak masz na imię? ")
 print("Cześć " + imie)  # Używamy tej samej nazwy zmiennej!
 ```
 
 ### Błąd 3: Brak znaku + przy łączeniu tekstów ❌
+
 ```python
 imie = "Ania"
 print("Cześć " imie)  # BŁĄD! Brak +
 ```
+
 ✅ **Poprawka:**
+
 ```python
 imie = "Ania"
 print("Cześć " + imie)  # Dodajemy + między tekstami
@@ -307,13 +339,14 @@ print("Cześć " + imie)  # Dodajemy + między tekstami
 - Pierwsza gra komputerowa została stworzona w 1958 roku - nazywała się "Tennis for Two"! 🎾
 - Zmienna to pomysł, który mają wszystkie języki programowania - nie tylko Python!
 - Funkcja `input()` w Pythonie może przyjąć nawet 1000 znaków naraz! 📝
-- W starszych wersjach Pythona (Python 2) funkcja nazywała się `raw_input()` zamiast `input()`! 
+- W starszych wersjach Pythona (Python 2) funkcja nazywała się `raw_input()` zamiast `input()`!
 
-## 🤖 Twój pomocnik AI - nowe możliwości! 
+## 🤖 Twój pomocnik AI - nowe możliwości!
 
 Teraz, gdy znasz zmienne i input(), możesz zadawać AI jeszcze lepsze pytania!
 
 **🌟 Przykładowe pytania dla AI:**
+
 - "Jak zrobić program, który pyta o 5 różnych rzeczy?"
 - "Pokaż mi kod na prostą ankietę"
 - "Jak stworzyć program, który tworzy historyjkę z podanych słów?"
@@ -323,6 +356,7 @@ Teraz, gdy znasz zmienne i input(), możesz zadawać AI jeszcze lepsze pytania!
 **Ty:** "Jak zrobić program, który sprawdza czy podane imię jest długie?"
 
 **AI:** Oto prosty kod:
+
 ```python
 imie = input("Podaj swoje imię: ")
 if len(imie) > 7:
@@ -342,12 +376,14 @@ Będziesz mógł zadawać pytania i dostawać odpowiedzi krok po kroku, z przyk�
 ## 🚀 Co nas czeka w Lekcji 3?
 
 W **Lekcji 3** nauczymy się:
+
 - 🔢 Python jako super-kalkulator
 - 🧮 Działania matematyczne w programach
 - 🎮 **Napiszemy naszą pierwszą grę: "Zgadnij liczbę"!**
 - 💡 Poznamy instrukcje warunkowe `if` i `else`
 
 **Zapowiedź kodu z następnej lekcji:**
+
 ```python
 wiek = int(input("Ile masz lat? "))
 za_5_lat = wiek + 5
@@ -360,9 +396,8 @@ print("Za 5 lat będziesz mieć", za_5_lat, "lat!")
 
 **Pamiętaj:** Każda linia kodu, którą napiszesz, to krok bliżej zostania prawdziwym programistą! Nie poddawaj się, jeśli coś nie działa - każdy błąd to nauka! 🌟
 
-**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**  
-**[→ Przejdź do Lekcji 3](/code-addict/python-course/lekcja-3/)**
+**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**
 
 ---
 
-*Napisałeś jakiś fajny program na podstawie tej lekcji? Pochwal się w komentarzach! Wszyscy chcemy zobaczyć Twoje dzieła! 😊*
+_Napisałeś jakiś fajny program na podstawie tej lekcji? Pochwal się w komentarzach! Wszyscy chcemy zobaczyć Twoje dzieła! 😊_

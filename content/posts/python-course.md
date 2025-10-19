@@ -38,7 +38,7 @@ Python to jeden z najpopularniejszych języków programowania na świecie! Jest 
 - Instrukcje warunkowe (if/else) - podejmowanie decyzji
 - Tworzenie gry "Zgadnij liczbę"
 
-**🚀 Lekcja 4**: [Powtórka, Pętle i Magia Notebooków!](/python-course/lekcja-4/)
+**🚀 Lekcja 4**: [Powtórka, Pętle i Magia Notebooków!](/code-addict/python-course/lekcja-4/)
 
 - Utrwalenie wiedzy i ćwiczenia
 - Pętle `for` i `while` do automatyzacji zadań

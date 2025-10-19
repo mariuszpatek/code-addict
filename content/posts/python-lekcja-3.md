@@ -21,6 +21,7 @@ Witaj ponownie młody programisto! 👋 W drugiej lekcji nauczyłeś się zmienn
 ## 🎯 Czego się dzisiaj nauczymy?
 
 W tej trzeciej lekcji poznamy:
+
 - 🔢 Python jako super-kalkulator
 - 🧮 Jak zamieniać tekst na liczby (`int()`)
 - ❓ Instrukcje warunkowe `if` i `else`
@@ -35,7 +36,7 @@ Python to nie tylko narzędzie do wypisywania tekstu - to także potężny kalku
 ```python
 # Proste obliczenia
 print("Dodawanie: 5 + 3 =", 5 + 3)
-print("Odejmowanie: 10 - 4 =", 10 - 4)  
+print("Odejmowanie: 10 - 4 =", 10 - 4)
 print("Mnożenie: 6 * 7 =", 6 * 7)
 print("Dzielenie: 15 / 3 =", 15 / 3)
 
@@ -45,6 +46,7 @@ print("Reszta z dzielenia: 17 % 5 =", 17 % 5)  # Reszta z 17÷5
 ```
 
 **Wypróbuj to w Thonny!** Zobaczysz wyniki:
+
 ```
 Dodawanie: 5 + 3 = 8
 Odejmowanie: 10 - 4 = 6
@@ -55,9 +57,11 @@ Reszta z dzielenia: 17 % 5 = 2
 ```
 
 ### 🎯 Mini zadanie 1: Testy matematyczne
+
 **Eksperyment!** Oblicz w Pythonie:
+
 - 100 + 234
-- 50 * 12
+- 50 \* 12
 - 2 do potęgi 10 (wskazówka: `2 ** 10`)
 - Resztę z dzielenia 23 przez 4
 
@@ -106,12 +110,15 @@ print("\n🎉 Dziękuję za korzystanie z kalkulatora!")
 ```
 
 **Ważna nauka:** 🎓
+
 - `input()` zawsze zwraca tekst (string), nawet jeśli użytkownik wpisze cyfry!
 - `int()` zmienia tekst na liczbę całkowitą (integer).
 - `f"..."` to nowy, wygodny sposób łączenia tekstu ze zmiennymi (tzw. f-string).
 
 ### 🎯 Mini zadanie 2: Kalkulator wieku
+
 **Wyzwanie matematyczne!** Napisz program, który:
+
 - Pyta o Twój wiek
 - Oblicza, ile lat będziesz miał za 5 lat
 - Oblicza, ile lat miałeś 3 lata temu
@@ -144,13 +151,16 @@ else:
 ```
 
 **Zwróć uwagę:**
+
 - `==` (dwa znaki równości) - sprawdza, czy dwie rzeczy są równe
 - `=` (jeden znak równości) - przypisuje wartość do zmiennej
 - Po `if` i `else` jest **dwukropek** `:`
 - Kod pod `if` i `else` jest **wcięty** (4 spacje lub Tab)
 
 ### 🎯 Mini zadanie 3: Quiz matematyczny
+
 **Sprawdź wiedzę!** Napisz program, który:
+
 - Pyta "Ile to 5 + 3?"
 - Jeśli odpowiedź to 8 - wyświetla "Brawo! Poprawna odpowiedź! 🎉"
 - Jeśli nie - wyświetla "Niestety, to nie jest 8. Spróbuj jeszcze raz!"
@@ -192,12 +202,15 @@ print("\n🎮 Dziękuję za grę!")
 ```
 
 **Co nowego się nauczyliśmy?**
+
 - `if` - słowo kluczowe, które znaczy "jeżeli"
 - `==` - sprawdza, czy dwie rzeczy są równe
 - `else` - oznacza "w przeciwnym przypadku"
 
 ### 🎯 Mini zadanie 4: Gra w zgadywanie słowa
+
 **Twoja gra!** Napisz program, który:
+
 - Ma ustalone "sekretne zwierzę" w zmiennej (np. "kot")
 - Pyta gracza: "Zgadnij, o jakim zwierzęciu myślę?"
 - Jeśli zgadnie - wyświetla "Brawo! To był kot! 🐱"
@@ -231,7 +244,7 @@ else:
         print("📈 Za mało! Moja liczba jest większa!")
     else:
         print("📉 Za dużo! Moja liczba jest mniejsza!")
-    
+
     print(f"🔢 Sekretną liczbą było: {sekretna_liczba}")
     print("💪 Następnym razem na pewno zgadniesz!")
 
@@ -239,12 +252,15 @@ print("\n🎮 Dziękuję za grę!")
 ```
 
 **Co nowego?**
+
 - `<` - mniejsze niż
 - `>` - większe niż
 - Możemy używać `if` wewnątrz `else` - to nazywa się **zagnieżdżone if**!
 
 ### 🎯 Mini zadanie 5: Gra z trzema próbami
+
 **Wyzwanie!** Rozszerz grę tak, żeby:
+
 - Gracz miał 3 próby
 - Po każdej błędnej odpowiedzi wyświetlała się podpowiedź
 - Po trzech próbach gra się kończy
@@ -282,7 +298,7 @@ else:
         print("📈 Za mało!")
     else:
         print("📉 Za dużo!")
-    
+
     print(f"🔢 Wylosowaną liczbą było: {sekretna_liczba}")
     print("💪 Spróbuj ponownie - uruchom program jeszcze raz!")
 
@@ -290,6 +306,7 @@ print("\n🎮 Dziękuję za grę!")
 ```
 
 **Nowe rzeczy:**
+
 - `import random` - importuje bibliotekę do losowania
 - `random.randint(1, 20)` - losuje liczbę całkowitą od 1 do 20
 - Teraz za każdym razem będzie inna liczba! 🎲
@@ -297,38 +314,48 @@ print("\n🎮 Dziękuję za grę!")
 ## 🎨 Zadania do wykonania!
 
 ### Zadanie 1: Kalkulator wieku psa 🐕
+
 Napisz program, który:
+
 1. Pyta o wiek Twojego psa (lub wymyślonego)
 2. Oblicza wiek psa w latach ludzkich (wiek psa × 7)
 3. Wyświetla wynik w zabawny sposób
 4. Jeśli pies ma więcej niż 10 lat w "ludzkich latach" - wyświetla "Twój pies może już iść na emeryturę! 👴"
 
 ### Zadanie 2: Quiz wiedzy ogólnej 📚
+
 Stwórz quiz z 3 pytaniami, np.:
+
 - "Ile to 10 + 5?"
 - "Jaka jest stolica Polski?"
 - "Ile nóg ma pająk?"
 
 Program powinien:
+
 - Zadawać każde pytanie
 - Sprawdzać odpowiedź
 - Wyświetlać "Dobrze!" lub "Źle!"
 
 ### Zadanie 3: Mega kalkulator 🧮
+
 Napisz super-kalkulator, który:
+
 1. Pyta o dwie liczby
-2. Pyta, jaką operację wykonać (+, -, *, /)
+2. Pyta, jaką operację wykonać (+, -, \*, /)
 3. Wykonuje odpowiednie działanie
 4. Wyświetla wynik w ładnym formacie
 
 ## 🐛 Najczęstsze błędy w Lekcji 3 (i jak je naprawić!)
 
 ### Błąd 1: Zapomnienie o int() ❌
+
 ```python
 wiek = input("Ile masz lat? ")
 za_rok = wiek + 1  # BŁĄD! Nie można dodać liczby do tekstu
 ```
+
 ✅ **Poprawka:**
+
 ```python
 wiek = input("Ile masz lat? ")
 wiek = int(wiek)  # Zmienia tekst na liczbę!
@@ -336,33 +363,42 @@ za_rok = wiek + 1
 ```
 
 ### Błąd 2: Mylenie = z == ❌
+
 ```python
 if imie = "Ania":  # BŁĄD! Jeden znak =
     print("Cześć Ania!")
 ```
+
 ✅ **Poprawka:**
+
 ```python
 if imie == "Ania":  # Dwa znaki == do porównania!
     print("Cześć Ania!")
 ```
 
 ### Błąd 3: Zapomnienie o dwukropku i wcięciach ❌
+
 ```python
 if wiek > 10  # BŁĄD! Brak dwukropka
 print("Masz więcej niż 10 lat")  # BŁĄD! Brak wcięcia
 ```
+
 ✅ **Poprawka:**
+
 ```python
 if wiek > 10:  # Dwukropek!
     print("Masz więcej niż 10 lat")  # Wcięcie (4 spacje lub Tab)
 ```
 
 ### Błąd 4: Próba użycia int() na tekście z literami ❌
+
 ```python
 odpowiedz = input("Podaj liczbę: ")  # Użytkownik wpisuje "pięć"
 liczba = int(odpowiedz)  # BŁĄD! "pięć" to nie cyfra!
 ```
+
 ✅ **Rozwiązanie:**
+
 - Użytkownik musi wpisać cyfrę (5), nie słowo ("pięć")
 - Python pokaże błąd, jeśli spróbujesz zamienić litery na liczbę
 
@@ -378,6 +414,7 @@ liczba = int(odpowiedz)  # BŁĄD! "pięć" to nie cyfra!
 Teraz znasz już sporo! Oto przykłady pytań dla AI:
 
 **🌟 Przykładowe pytania:**
+
 - "Jak sprawić, żeby moja gra miała 5 prób zamiast 3?"
 - "Pokaż mi kod na grę w kamień-papier-nożyce"
 - "Jak zrobić kalkulator, który działa w pętli?"
@@ -387,6 +424,7 @@ Teraz znasz już sporo! Oto przykłady pytań dla AI:
 **Ty:** "Jak sprawdzić, czy liczba jest parzysta?"
 
 **AI:** Użyj operatora modulo `%`:
+
 ```python
 liczba = int(input("Podaj liczbę: "))
 if liczba % 2 == 0:
@@ -406,26 +444,26 @@ ChatGPT ma specjalny **"Learning Mode"** (Tryb Nauki), który pomoże Ci zrozumi
 Skopiuj i wklej ten szablon do ChatGPT, **wypełniając tylko miejsca w {{nawiasach}}**:
 
 ```
-Jesteś moim nauczycielem programowania 🎓 - z Twoją pomocą chciałbym 
+Jesteś moim nauczycielem programowania 🎓 - z Twoją pomocą chciałbym
 zrozumieć nowe zagadnienie w Pythonie.
 
 Mój poziom wiedzy: {{początkujący/średniozaawansowany}} w Pythonie.
 Mam {{ile tygodni/miesięcy}} doświadczenia z programowaniem.
 Umiem już: {{np. print(), input(), zmienne, if/else}}.
 
-Cel nauki: Chcę zrozumieć {{np. pętle while, listy, funkcje}} aby 
+Cel nauki: Chcę zrozumieć {{np. pętle while, listy, funkcje}} aby
 {{np. stworzyć grę w kółko i krzyżyk}}.
 
-Napotykam następującą blokadę: {{np. nie rozumiem, dlaczego pętla 
+Napotykam następującą blokadę: {{np. nie rozumiem, dlaczego pętla
 się nie kończy / nie wiem, jak dodać element do listy}}.
 
-Proszę o wyjaśnienie tego zagadnienia krok po kroku, zaczynając od 
+Proszę o wyjaśnienie tego zagadnienia krok po kroku, zaczynając od
 {{podstaw}} i przechodząc do {{praktycznego zastosowania}}.
 
-Najlepiej uczę się poprzez {{przykłady z grami / proste ćwiczenia / 
+Najlepiej uczę się poprzez {{przykłady z grami / proste ćwiczenia /
 kod z komentarzami}}.
 
-Preferuję odpowiedź w formie {{krótkiego kodu z wyjaśnieniami / 
+Preferuję odpowiedź w formie {{krótkiego kodu z wyjaśnieniami /
 serii łatwych zadań / projektu do zrobienia}}.
 
 Czy możesz mi pomóc zrozumieć to zagadnienie krok po kroku? 🚀
@@ -436,25 +474,25 @@ Czy możesz mi pomóc zrozumieć to zagadnienie krok po kroku? 🚀
 **Oto jak mógłbyś użyć tego promptu po dzisiejszej lekcji:**
 
 ```
-Jesteś moim nauczycielem programowania 🎓 - z Twoją pomocą chciałbym 
+Jesteś moim nauczycielem programowania 🎓 - z Twoją pomocą chciałbym
 zrozumieć nowe zagadnienie w Pythonie.
 
 Mój poziom wiedzy: początkujący w Pythonie.
 Mam 3 tygodnie doświadczenia z programowaniem.
 Umiem już: print(), input(), zmienne, int(), if/else.
 
-Cel nauki: Chcę zrozumieć jak sprawdzić, czy liczba jest parzysta 
+Cel nauki: Chcę zrozumieć jak sprawdzić, czy liczba jest parzysta
 lub nieparzysta aby stworzyć grę, która zgaduje parzystość liczby.
 
-Napotykam następującą blokadę: nie rozumiem, jak działa operator % 
+Napotykam następującą blokadę: nie rozumiem, jak działa operator %
 (modulo) i dlaczego liczba % 2 == 0 oznacza, że liczba jest parzysta.
 
-Proszę o wyjaśnienie tego zagadnienia krok po kroku, zaczynając od 
+Proszę o wyjaśnienie tego zagadnienia krok po kroku, zaczynając od
 podstaw i przechodząc do praktycznego zastosowania.
 
 Najlepiej uczę się poprzez proste przykłady z komentarzami.
 
-Preferuję odpowiedź w formie krótkiego kodu z wyjaśnieniami i kilku 
+Preferuję odpowiedź w formie krótkiego kodu z wyjaśnieniami i kilku
 prostych zadań do przećwiczenia.
 
 Czy możesz mi pomóc zrozumieć to zagadnienie krok po kroku? 🚀
@@ -468,10 +506,12 @@ ChatGPT odpowie Ci na przykład tak:
 
 **Krok 1: Czym jest modulo?**
 Operator % (modulo) zwraca **resztę z dzielenia**. Na przykład:
+
 - 7 % 2 = 1 (bo 7 ÷ 2 = 3 reszty 1)
 - 8 % 2 = 0 (bo 8 ÷ 2 = 4 reszty 0)
 
 **Krok 2: Jak to działa z liczbami parzystymi?**
+
 ```python
 # Liczby parzyste dzielą się przez 2 bez reszty
 8 % 2 = 0  # Parzysta!
@@ -483,6 +523,7 @@ Operator % (modulo) zwraca **resztę z dzielenia**. Na przykład:
 ```
 
 **Krok 3: Kod z komentarzami:**
+
 ```python
 liczba = int(input('Podaj liczbę: '))
 
@@ -494,6 +535,7 @@ else:
 ```
 
 **Zadania do przećwiczenia:**
+
 1. Sprawdź, czy liczba dzieli się przez 3
 2. Sprawdź, czy liczba dzieli się przez 5
 3. Stwórz grę: komputer losuje liczbę, gracz zgaduje czy parzysta czy nieparzysta"
@@ -501,16 +543,19 @@ else:
 ### 💡 Wskazówki, jak najlepiej używać ChatGPT:
 
 **✅ DOBRE pytania:**
+
 - "Wyjaśnij mi krok po kroku, jak działa if/else"
 - "Pokaż mi 3 proste przykłady użycia zmiennych"
 - "Jak mogę ulepszyć tę grę?" [wklejasz swój kod]
 - "Dlaczego ten kod nie działa?" [opisujesz błąd]
 
 **❌ ZŁE pytania:**
+
 - "Zrób za mnie zadanie domowe"
 - "Napisz całą grę bez wyjaśnień"
 
 **🌟 SUPER pytania:**
+
 - "Napisz kod z komentarzami wyjaśniającymi każdą linię"
 - "Podaj mi 5 zadań o rosnącej trudności na temat [...]"
 - "Wytłumacz mi ten błąd prostymi słowami: [błąd]"
@@ -518,6 +563,7 @@ else:
 ### 🎮 Przykłady Promptów dla Różnych Sytuacji:
 
 **🔧 Gdy coś nie działa:**
+
 ```
 Mój kod nie działa i dostaję błąd. Oto mój kod:
 [wklej kod]
@@ -529,22 +575,24 @@ Wyjaśnij mi prostymi słowami, co jest nie tak i jak to naprawić?
 ```
 
 **🚀 Gdy chcesz się rozwijać:**
+
 ```
-Właśnie skończyłem Lekcję 3 o if/else. Podaj mi 5 kreatywnych 
-projektów (od łatwego do trudnego), które pomogą mi przećwiczyć 
+Właśnie skończyłem Lekcję 3 o if/else. Podaj mi 5 kreatywnych
+projektów (od łatwego do trudnego), które pomogą mi przećwiczyć
 instrukcje warunkowe. Każdy projekt opisz w 2-3 zdaniach.
 ```
 
 **💪 Gdy chcesz wyzwania:**
+
 ```
-Napisałem ten kod [wklej kod]. Działa, ale chcę go ulepszyć. 
-Podaj mi 3 pomysły, jak mogę go zrobić lepszym/ciekawszym/bardziej 
+Napisałem ten kod [wklej kod]. Działa, ale chcę go ulepszyć.
+Podaj mi 3 pomysły, jak mogę go zrobić lepszym/ciekawszym/bardziej
 zaawansowanym. Wyjaśnij każdy pomysł i pokaż przykład kodu.
 ```
 
 ### 🎯 Twoje Zadanie!
 
-**Wypróbuj to teraz!** 
+**Wypróbuj to teraz!**
 
 1. Otwórz ChatGPT (chat.openai.com)
 2. Skopiuj "Magiczną Formułę" z góry
@@ -557,12 +605,14 @@ zaawansowanym. Wyjaśnij każdy pomysł i pokaż przykład kodu.
 ## 🚀 Co nas czeka w Lekcji 4?
 
 W **Lekcji 4** nauczymy się:
+
 - 🔄 Pętle - jak powtarzać kod wiele razy
 - 📝 Listy - jak przechowywać wiele wartości
 - 🎮 Stworzymy grę "Kamień, Papier, Nożyce"!
 - ⚡ Poznamy pętlę `while` i `for`
 
 **Zapowiedź kodu z następnej lekcji:**
+
 ```python
 # Gra, która działa w pętli!
 while True:
@@ -578,10 +628,8 @@ while True:
 
 **Pamiętaj:** Każdy błąd to okazja do nauki! Nie martw się, jeśli coś nie działa za pierwszym razem. Wszyscy programiści popełniają błędy - ważne jest, żeby się z nich uczyć! 🌟
 
-**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**  
-**[← Wróć do Lekcji 2](/code-addict/python-course/lekcja-2/)**  
-**[→ Przejdź do Lekcji 4](/code-addict/python-course/lekcja-4/)**
+**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**
 
 ---
 
-*Udało Ci się zgadnąć liczbę za pierwszym razem? A może masz pomysł na ulepszenie gry? Napisz w komentarzach! 😊*
+_Udało Ci się zgadnąć liczbę za pierwszym razem? A może masz pomysł na ulepszenie gry? Napisz w komentarzach! 😊_
