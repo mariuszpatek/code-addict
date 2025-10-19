@@ -281,7 +281,5 @@ W następnej lekcji zajmiemy się listami - nauczymy się przechowywać wiele in
 
 ---
 
-**[← Powrót do kursu Python Podstawowy](/python-course/)**
-**[← Wróć do Lekcji 3](/python-course/lekcja-3/)**
-**[→ Przejdź do Lekcji 5](/python-course/lekcja-5/)**
+**[← Powrót do kursu Python Podstawowy](/code-addict/python-course/)**
 ````
