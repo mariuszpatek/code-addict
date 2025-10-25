@@ -115,9 +115,10 @@ Teraz zastosujmy to w naszej grze. Wprowadzimy też dwie nowe zmienne: `zycie` i
 ```python
 zycie = 3
 skarby = 0
+skarby_do_wygranej = 10  # Ile skarbów trzeba zebrać, aby wygrać
 
-# Ta pętla będzie działać, dopóki życie > 0
-while zycie > 0:
+# Ta pętla będzie działać, dopóki życie > 0 i nie zebrano wystarczająco skarbów
+while zycie > 0 and skarby < skarby_do_wygranej:
     print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby} 💎]")
     print("\nCo robisz?")
     print("1. Idź dalej")
@@ -131,8 +132,13 @@ while zycie > 0:
         print("\nIdziesz przed siebie. Nic ciekawego się nie dzieje.")
     elif akcja == "2":
         print("\nRozglądasz się uważnie...")
-        skarby += 1
-        print("Znalazłeś skarb! Masz już ich", skarby)
+        # Szukanie skarbów jest ryzykowne!
+        if random.randint(1, 3) == 1:
+            print("Ups! To była pułapka! Tracisz życie!")
+            zycie -= 1
+        else:
+            skarby += 1
+            print("Znalazłeś skarb! Masz już ich", skarby)
     elif akcja == "3":
         print("\nOdpoczywasz i odzyskujesz siły.")
         zycie += 1
@@ -143,15 +149,32 @@ while zycie > 0:
     else:
         print("\nNieznana komenda. Spróbuj jeszcze raz.")
 
-print("\nKONIEC GRY!")
-print(f"Zdobyłeś {skarby} skarbów.")
+# Sprawdzenie, czy gracz wygrał czy przegrał
+print("\n" + "=" * 40)
+print("KONIEC GRY!")
+print("=" * 40)
+
+if skarby >= skarby_do_wygranej:
+    print(f"🎉 GRATULACJE, {imie}! 🎉")
+    print(f"Udało Ci się zebrać {skarby} skarbów i wygrać przygodę!")
+    print("Jesteś prawdziwym poszukiwaczem skarbów!")
+elif zycie <= 0:
+    print(f"😢 Niestety {imie}, straciłeś całe życie...")
+    print(f"Udało Ci się zebrać {skarby} z {skarby_do_wygranej} potrzebnych skarbów.")
+    print("Spróbuj jeszcze raz!")
+else:
+    print(f"Opuściłeś labirynt z {skarby} skarbami.")
+    print(f"Brakowało Ci {skarby_do_wygranej - skarby} skarbów do pełnego zwycięstwa!")
+    print("Ale najważniejsze, że wyszedłeś z życiem!")
 ```
 
 **Nowe pojęcia:**
 
-- `while zycie > 0`: Pętla `while` powtarza kod wewnątrz tak długo, jak warunek `zycie > 0` jest prawdziwy.
+- `while zycie > 0 and skarby < skarby_do_wygranej`: Pętla `while` z **dwoma warunkami** połączonymi słowem `and`. Pętla działa dopóki OBA warunki są prawdziwe (gracz ma życie ORAZ nie zebrał jeszcze wystarczającej liczby skarbów).
 - `break`: Specjalna komenda, która natychmiast **przerywa działanie pętli**, w której się znajduje. Gracz wychodzi z labiryntu.
 - `skarby += 1`: To skrócony zapis `skarby = skarby + 1`. Bardzo przydatne!
+- `skarby_do_wygranej = 10`: Określa cel gry - ile skarbów trzeba zebrać, aby wygrać.
+- `while zycie > 0 and skarby < skarby_do_wygranej`: Pętla z **dwoma warunkami** połączonymi słowem `and`. Działa dopóki gracz ma życie ORAZ nie zebrał jeszcze wystarczającej liczby skarbów do zwycięstwa.
 
 ## Krok 4: Dodajemy Losowość - `import random`
 
@@ -183,8 +206,8 @@ import random
 A następnie zmodyfikujmy fragment pętli `while` dla akcji "1" (zastąp prostą wersję bardziej zaawansowaną):
 
 ```python
-while zycie > 0:
-    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby} 💎]")
+while zycie > 0 and skarby < skarby_do_wygranej:
+    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby}/{skarby_do_wygranej} 💎]")
     print("\nCo robisz?")
     print("1. Idź dalej")
     print("2. Szukaj skarbów")
@@ -219,7 +242,8 @@ while zycie > 0:
 **Wyjaśnienie:**
 
 - `import random`: Mówi Pythonowi, że chcemy używać dodatkowych narzędzi z "pudełka" o nazwie `random`.
-- `random.randint(1, 2)`: Funkcja, która losuje jedną liczbę całkowitą z podanego zakresu (w tym przypadku 1 lub 2). To jak rzut monetą - wynik będzie albo 1, albo 2. Dzięki temu nasza gra za każdym razem będzie inna!
+- `random.randint(1, 2)`: Funkcja, która losuje jedną liczbę całkowitą z podanego zakresu (w tym przypadku 1 lub 2). To jak rzut monetą - wynik będzie albo 1, albo 2.
+- `random.randint(1, 3)`: Losuje liczbę od 1 do 3. Szansa na pułapkę podczas szukania skarbów to 1/3 (33%), co sprawia, że gra jest bardziej wyważona. Dzięki losowości każda rozgrywka będzie inna!
 
 ## Pełny kod gry
 
@@ -250,9 +274,10 @@ else:
 
 zycie = 3
 skarby = 0
+skarby_do_wygranej = 10  # Ile skarbów trzeba zebrać, aby wygrać
 
-while zycie > 0:
-    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby} 💎]")
+while zycie > 0 and skarby < skarby_do_wygranej:
+    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby}/{skarby_do_wygranej} 💎]")
     print("\nCo robisz?")
     print("1. Idź dalej")
     print("2. Szukaj skarbów")
@@ -270,8 +295,13 @@ while zycie > 0:
             print("Bezpiecznie przechodzisz do następnej komnaty.")
     elif akcja == "2":
         print("\nRozglądasz się uważnie...")
-        skarby += 1
-        print("Znalazłeś skarb! Masz już ich", skarby)
+        # Szukanie skarbów jest ryzykowne!
+        if random.randint(1, 3) == 1:
+            print("Ups! To była pułapka! Tracisz życie!")
+            zycie -= 1
+        else:
+            skarby += 1
+            print("Znalazłeś skarb! Masz już ich", skarby)
     elif akcja == "3":
         print("\nOdpoczywasz i odzyskujesz siły.")
         zycie += 1
@@ -282,8 +312,23 @@ while zycie > 0:
     else:
         print("\nNieznana komenda. Spróbuj jeszcze raz.")
 
-print("\nKONIEC GRY!")
-print(f"Zdobyłeś {skarby} skarbów.")
+# Sprawdzenie, czy gracz wygrał czy przegrał
+print("\n" + "=" * 40)
+print("KONIEC GRY!")
+print("=" * 40)
+
+if skarby >= skarby_do_wygranej:
+    print(f"🎉 GRATULACJE, {imie}! 🎉")
+    print(f"Udało Ci się zebrać {skarby} skarbów i wygrać przygodę!")
+    print("Jesteś prawdziwym poszukiwaczem skarbów!")
+elif zycie <= 0:
+    print(f"😢 Niestety {imie}, straciłeś całe życie...")
+    print(f"Udało Ci się zebrać {skarby} z {skarby_do_wygranej} potrzebnych skarbów.")
+    print("Spróbuj jeszcze raz!")
+else:
+    print(f"Opuściłeś labirynt z {skarby} skarbami.")
+    print(f"Brakowało Ci {skarby_do_wygranej - skarby} skarbów do pełnego zwycięstwa!")
+    print("Ale najważniejsze, że wyszedłeś z życiem!")
 ```
 
 Skopiuj ten kod do pliku `.py` i uruchom, aby zagrać w swoją pierwszą grę!
