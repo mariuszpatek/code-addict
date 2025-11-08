@@ -1,391 +1,890 @@
-+++
-title = 'Python Podstawowy - Lekcja 5: Tworzymy Własną Grę Tekstową - Przygoda w Labiryncie!'
-description = "Naucz się tworzyć własną grę tekstową w Pythonie! Utrwal wiedzę o pętlach i instrukcjach warunkowych, budując ekscytującą przygodę w labiryncie."
-date = "2025-10-24T12:00:00+02:00"
-draft = false
-url = "/python-course/lekcja-5/"
-author = 'Code Addict'
-categories = ['python-course']
-tags = ["python", "podstawy", "programowanie", "gra", "if-else", "while", "for", "random"]
-series = ['Python Podstawowy']
-+++
+---
+title: "Python Podstawowy - Lekcja 5: Listy, Logika i Funkcje!"
+date: 2025-11-08T10:00:00+01:00
+draft: false
+tags:
+  [
+    "python",
+    "programowanie",
+    "nauka",
+    "podstawy",
+    "listy",
+    "if-else",
+    "funkcje",
+    "logika",
+  ]
+categories: ["Python Course"]
+url: "/python-course/lekcja-5/"
+author: "Code Addict"
+series: ["Python Podstawowy"]
+---
+
+# Lekcja 5: Listy, Logika i Funkcje! 🎒🔍✨
 
 **[← Powrót do kursu Python Podstawowy](/python-course/)**
 
-## Wstęp - Zostań Twórcą Gier! 🎮
+Cześć młodzi programiści! Witam was w piątej lekcji naszego kursu Pythona. Ostatnio nauczyliśmy się, jak za pomocą pętli kazać komputerowi powtarzać zadania. Dzisiaj zrobimy kolejny wielki krok: zanurzymy się w świat list, poznamy sekrety komputerowej logiki i napiszemy naszą pierwszą prawdziwą funkcję! To będzie super przygoda!
 
-Witaj w piątej lekcji naszego kursu Pythona! Dzisiaj zrobimy coś wyjątkowo ekscytującego – stworzymy własną grę przygodową. Wykorzystamy wszystko, czego nauczyliśmy się do tej pory: zmienne, `input()`, instrukcje `if/else` oraz pętle `while` i `for`.
+<!--more-->
 
-Programowanie to nie tylko liczby i napisy. To potężne narzędzie do tworzenia interaktywnych historii i światów. Gotowy, by zostać projektantem gier?
+## 📚 Co dzisiaj w planie?
 
-## Plan naszej gry: "Przygoda w Labiryncie" 🗺️
+1.  **Listy** - Twoja cyfrowa kolekcja skarbów.
+2.  **Logika Komputera** - `True` czy `False`? Operatory `and`, `or` i `not`.
+3.  **Funkcje** - Twoje własne magiczne zaklęcia w kodzie.
+4.  **Bonus: Pygame Zero** - Wprowadzenie do tworzenia gier! 🎮
+5.  **Ćwiczenia** do utrwalenia nowej wiedzy.
 
-Nasza gra będzie prostą przygodówką tekstową, w której gracz:
+---
 
-1.  Podaje swoje imię.
-2.  Podejmuje decyzje, która ścieżka go poprowadzi.
-3.  Porusza się po labiryncie w pętli, dopóki ma punkty życia.
-4.  Zbiera skarby i unika pułapek.
-5.  Na końcu otrzymuje podsumowanie swojej przygody.
+## 1. Listy - Twoja kolekcja skarbów! 🎒
 
-Zaczynajmy!
+Wyobraź sobie, że masz pudełko na swoje ulubione zabawki, plecak na szkolne przybory albo listę zakupów. W Pythonie takim uniwersalnym "pojemnikiem" jest **lista**. Możesz w niej przechowywać różne rzeczy: napisy, liczby, a nawet inne listy!
 
-## Krok 1: Powitanie Gracza
-
-Każda dobra przygoda zaczyna się od przedstawienia bohatera. Napiszmy kod, który przywita gracza i zapyta go o imię.
+Listę tworzymy używając nawiasów kwadratowych `[]`, a jej elementy oddzielamy przecinkami.
 
 ```python
-print("=" * 40)
-print("TAJEMNICZY LABIRYNT")
-print("=" * 40)
+# Lista z ulubionymi grami
+ulubione_gry = ["Minecraft", "Roblox", "Among Us"]
+print(ulubione_gry)
 
-imie = input("Jak się nazywasz, śmiałku? ")
-print(f"\nWitaj {imie}! Stoisz przed wejściem do tajemniczego labiryntu...")
+# Lista z punktami zdobytymi w grze
+punkty = [10, 25, 15, 30, 5]
+print(punkty)
+
+# Lista może zawierać różne typy danych!
+mix = ["napis", 100, True]
+print(mix)
 ```
 
-**Wyjaśnienie:**
+### Dostęp do elementów listy (Indeksowanie)
 
-- `print("=" * 40)`: Ten sprytny trik tworzy ładny nagłówek, powtarzając znak `=` 40 razy.
-- `input()`: Czeka na wpisanie imienia przez gracza i zapisuje je w zmiennej `imie`.
-- `f-string`: Używamy go, aby wpleść imię gracza bezpośrednio w tekst powitalny.
+Każdy element w liście ma swój numer porządkowy, czyli **indeks**. To trochę jak numer mieszkania w bloku.
 
-## Krok 2: Pierwszy Wybór - Utrwalamy `if/else`
-
-Nasz bohater stoi przed pierwszym wyborem. Od tej decyzji zależą jego dalsze losy. To idealne miejsce na przećwiczenie `if/elif/else`.
+> **Bardzo ważne!** W programowaniu liczenie prawie zawsze zaczyna się od zera! Pierwszy element ma indeks `0`, drugi `1`, trzeci `2` i tak dalej.
 
 ```python
-print("\nPrzed tobą dwie drogi:")
-print("1. Ciemny korytarz na lewo.")
-print("2. Oświetlona ścieżka na prawo.")
+ulubione_gry = ["Minecraft", "Roblox", "Among Us"]
 
-wybor = input("Którą drogę wybierasz? (1 lub 2): ")
+# Wyświetlamy pierwszą grę (indeks 0)
+pierwsza_gra = ulubione_gry[0]
+print("Moja ulubiona gra to:", pierwsza_gra) # Wyświetli: Minecraft
 
-if wybor == "1":
-    print("\nWchodzisz w ciemność... Słyszysz dziwne dźwięki!")
-elif wybor == "2":
-    print("\nIdziesz bezpieczną drogą. Znajdujesz złotą monetę!")
+# Wyświetlamy trzecią grę (indeks 2)
+trzecia_gra = ulubione_gry[2]
+print("Ostatnio gram w:", trzecia_gra) # Wyświetli: Among Us
+```
+
+### Dodawanie do listy
+
+Chcesz dodać nową grę do swojej kolekcji? Nic prostszego! Użyj metody `.append()`, która dodaje element na sam koniec listy.
+
+```python
+ulubione_gry = ["Minecraft", "Roblox", "Among Us"]
+print("Moje gry:", ulubione_gry)
+
+ulubione_gry.append("Fortnite")
+print("Moje gry po dodaniu nowej:", ulubione_gry)
+# Wynik: ['Minecraft', 'Roblox', 'Among Us', 'Fortnite']
+```
+
+### ✏️ Ćwiczenie 1: Lista zakupów
+
+Stwórz program, który:
+
+1. Tworzy pustą listę o nazwie `lista_zakupow`.
+2. Za pomocą `input()` pyta użytkownika o 3 produkty, które chce dodać do listy.
+3. Po każdym zapytaniu dodaje produkt do listy za pomocą `.append()`.
+4. Na koniec wypisuje całą listę zakupów.
+
+<details>
+  <summary>Kliknij, aby zobaczyć rozwiązanie</summary>
+  
+  ```python
+  lista_zakupow = []
+  print("Twoja lista zakupów jest pusta:", lista_zakupow)
+
+produkt1 = input("Co chcesz dodać do listy? ")
+lista_zakupow.append(produkt1)
+
+produkt2 = input("Co jeszcze chcesz dodać? ")
+lista_zakupow.append(produkt2)
+
+produkt3 = input("I ostatnia rzecz: ")
+lista_zakupow.append(produkt3)
+
+print("Oto Twoja lista zakupów:", lista_zakupow)
+
+````
+</details>
+
+---
+
+## 2. Logika Komputera - `True` czy `False`? 🔍
+
+Wasz komputer, tak jak detektyw, cały czas sprawdza, czy coś jest prawdą (`True`) czy fałszem (`False`). To są **wartości logiczne** (ang. *boolean values*). Używaliśmy ich już w instrukcjach `if`, nawet o tym nie wiedząc!
+
+Wyrażenie `wiek >= 12` zwraca `True`, jeśli wiek jest większy lub równy 12, albo `False` w przeciwnym wypadku.
+
+```python
+gracz_ma_klucz = True
+drzwi_zamkniete = True
+
+if gracz_ma_klucz == True:
+  print("Masz klucz! Możesz otworzyć drzwi.")
 else:
-    print("\nWahasz się i tracisz czas. Coś cię goni! Uciekasz w głąb labiryntu.")
-```
+  print("Nie masz klucza. Poszukaj go!")
+````
 
-**Przypomnienie:**
+> **Ciekawostka:** Zapis `if gracz_ma_klucz == True:` można skrócić do `if gracz_ma_klucz:`, ponieważ `if` domyślnie sprawdza, czy warunek jest prawdziwy.
 
-- `if`: Sprawdza, czy warunek jest prawdziwy (tutaj: czy gracz wpisał "1").
-- `elif`: Jeśli pierwszy warunek był fałszywy, sprawdza kolejny (czy gracz wpisał "2").
-- `else`: Wykonuje się, gdy żaden z powyższych warunków nie jest spełniony.
+### Operatory logiczne: `and`, `or` i `not`
 
-> **Jak myśli komputer?**
-> Pomyśl o `if/else` jak o rozgałęzieniu dróg.
->
-> - `if`: "Jeśli na znaku jest napis 'w lewo', skręć w lewo."
-> - `elif`: "W przeciwnym razie, jeśli na znaku jest 'w prawo', skręć w prawo."
-> - `else`: "W przeciwnym razie (jeśli nie ma żadnego z tych znaków), idź prosto."
->   Komputer sprawdza warunki po kolei i wykonuje tylko _pierwszą_ pasującą akcję.
+Czasami musimy sprawdzić więcej niż jeden warunek naraz. Z pomocą przychodzą operatory logiczne! Poznajmy ich działanie:
 
-## Krok 3: Główna Pętla Gry - Utrwalamy `while`
+#### Operator `and` (i) - Wszystkie warunki muszą być prawdziwe
 
-Labirynt to miejsce, po którym można krążyć. Główna część naszej gry będzie działać w pętli `while`. Pętla będzie się wykonywać tak długo, jak długo gracz ma więcej niż 0 punktów życia.
-
-> **Ważne!** Cały kod piszemy w jednym pliku, jeden fragment pod drugim. Każdy kolejny krok rozbudowuje nasz program.
-
-### Co to jest pętla `while`?
-
-Wyobraź sobie, że masz talerz z ciastkami. Pętla `while` działa na zasadzie: "**dopóki** na talerzu są ciastka, **bierz** kolejne ciastko".
-
-- **Warunek**: `dopóki na talerzu są ciastka`
-- **Czynność**: `bierz kolejne ciastko`
-
-Pętla `while` będzie powtarzać kod w swoim wnętrzu tak długo, jak jej warunek jest prawdziwy.
-
-**Przykład - odliczanie:**
+Operator `and` zwraca `True` tylko wtedy, gdy **wszystkie** warunki są prawdziwe. To jak lista wymagań - musisz spełnić je wszystkie!
 
 ```python
-# Proste odliczanie od 3 do 1
-licznik = 3
-while licznik > 0:
-    print(f"Start za... {licznik}")
-    licznik -= 1 # Zmniejszamy licznik, by pętla się kiedyś skończyła!
-print("START!")
-```
+# Przykład 1: Dostęp do gry
+wiek = 14
+ma_konto = True
 
-> **Uwaga!** Gdybyśmy zapomnieli o `licznik -= 1`, licznik zawsze byłby większy od 0, a pętla działałaby w nieskończoność!
-
-Teraz zastosujmy to w naszej grze. Wprowadzimy też dwie nowe zmienne: `zycie` i `skarby`.
-
-```python
-zycie = 3
-skarby = 0
-skarby_do_wygranej = 10  # Ile skarbów trzeba zebrać, aby wygrać
-
-# Ta pętla będzie działać, dopóki życie > 0 i nie zebrano wystarczająco skarbów
-while zycie > 0 and skarby < skarby_do_wygranej:
-    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby} 💎]")
-    print("\nCo robisz?")
-    print("1. Idź dalej")
-    print("2. Szukaj skarbów")
-    print("3. Odpoczywaj")
-    print("4. Wyjdź z labiryntu")
-
-    akcja = input("Twój wybór: ")
-
-    if akcja == "1":
-        print("\nIdziesz przed siebie. Nic ciekawego się nie dzieje.")
-    elif akcja == "2":
-        print("\nRozglądasz się uważnie...")
-        # Szukanie skarbów jest ryzykowne!
-        if random.randint(1, 3) == 1:
-            print("Ups! To była pułapka! Tracisz życie!")
-            zycie -= 1
-        else:
-            skarby += 1
-            print("Znalazłeś skarb! Masz już ich", skarby)
-    elif akcja == "3":
-        print("\nOdpoczywasz i odzyskujesz siły.")
-        zycie += 1
-        print("Twoje życie wzrosło do", zycie)
-    elif akcja == "4":
-        print("\nPostanawiasz opuścić labirynt.")
-        break # To słowo kluczowe przerywa pętlę!
-    else:
-        print("\nNieznana komenda. Spróbuj jeszcze raz.")
-
-# Sprawdzenie, czy gracz wygrał czy przegrał
-print("\n" + "=" * 40)
-print("KONIEC GRY!")
-print("=" * 40)
-
-if skarby >= skarby_do_wygranej:
-    print(f"🎉 GRATULACJE, {imie}! 🎉")
-    print(f"Udało Ci się zebrać {skarby} skarbów i wygrać przygodę!")
-    print("Jesteś prawdziwym poszukiwaczem skarbów!")
-elif zycie <= 0:
-    print(f"😢 Niestety {imie}, straciłeś całe życie...")
-    print(f"Udało Ci się zebrać {skarby} z {skarby_do_wygranej} potrzebnych skarbów.")
-    print("Spróbuj jeszcze raz!")
+if wiek >= 13 and ma_konto:
+    print("Możesz zagrać! Masz odpowiedni wiek i posiadasz konto.")
 else:
-    print(f"Opuściłeś labirynt z {skarby} skarbami.")
-    print(f"Brakowało Ci {skarby_do_wygranej - skarby} skarbów do pełnego zwycięstwa!")
-    print("Ale najważniejsze, że wyszedłeś z życiem!")
+    print("Nie możesz zagrać. Sprawdź wymagania.")
 ```
 
-**Nowe pojęcia:**
-
-- `while zycie > 0 and skarby < skarby_do_wygranej`: Pętla `while` z **dwoma warunkami** połączonymi słowem `and`. Pętla działa dopóki OBA warunki są prawdziwe (gracz ma życie ORAZ nie zebrał jeszcze wystarczającej liczby skarbów).
-- `break`: Specjalna komenda, która natychmiast **przerywa działanie pętli**, w której się znajduje. Gracz wychodzi z labiryntu.
-- `skarby += 1`: To skrócony zapis `skarby = skarby + 1`. Bardzo przydatne!
-- `skarby_do_wygranej = 10`: Określa cel gry - ile skarbów trzeba zebrać, aby wygrać.
-- `while zycie > 0 and skarby < skarby_do_wygranej`: Pętla z **dwoma warunkami** połączonymi słowem `and`. Działa dopóki gracz ma życie ORAZ nie zebrał jeszcze wystarczającej liczby skarbów do zwycięstwa.
-
-## Krok 4: Dodajemy Losowość - `import random`
-
-Żeby gra była ciekawsza, dodajmy element zaskoczenia. Niech pójście naprzód nie zawsze będzie bezpieczne. Użyjemy do tego modułu `random`.
-
-### Co to jest moduł `random`?
-
-Wyobraź sobie, że Python ma magiczne pudełko z narzędziami, których nie używa na co dzień. Jednym z nich jest `random` - narzędzie do losowania.
-
-- **`import random`**: Ta komenda mówi: "Hej, Python! Potrzebuję narzędzi z pudełka `random`." Musimy to zrobić tylko raz, na początku programu.
-- **`random.randint(a, b)`**: To jak rzut kostką. Mówimy: "Losuj mi jedną liczbę całkowitą z przedziału od `a` do `b` (włącznie z `a` i `b`)".
-
-**Przykład - rzut kostką:**
+**Wyobraź sobie:** Aby wejść do tajnego klubu, musisz mieć kartę członkowską **I** znać hasło. Bez jednego z nich - nie wejdziesz!
 
 ```python
-import random
+# Przykład 2: Sekretny klub
+ma_karte = True
+zna_haslo = False
 
-# Symulacja rzutu standardową kostką do gry
-wynik_rzutu = random.randint(1, 6)
-print(f"Wyrzuciłeś {wynik_rzutu} oczek!")
-```
-
-Teraz dodajmy losowość do naszej gry. Na samym **początku całego programu** (przed `print("=" * 40)`) dodaj linię:
-
-```python
-import random
-```
-
-A następnie zmodyfikujmy fragment pętli `while` dla akcji "1" (zastąp prostą wersję bardziej zaawansowaną):
-
-```python
-while zycie > 0 and skarby < skarby_do_wygranej:
-    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby}/{skarby_do_wygranej} 💎]")
-    print("\nCo robisz?")
-    print("1. Idź dalej")
-    print("2. Szukaj skarbów")
-    print("3. Odpoczywaj")
-    print("4. Wyjdź z labiryntu")
-
-    akcja = input("Twój wybór: ")
-
-    if akcja == "1":
-        print("\nIdziesz przed siebie...")
-        # Losujemy liczbę 1 lub 2
-        if random.randint(1, 2) == 1:
-            print("Niestety, wpadasz w pułapkę! Tracisz życie!")
-            zycie -= 1 # To skrót od zycie = zycie - 1
-        else:
-            print("Bezpiecznie przechodzisz do następnej komnaty.")
-    elif akcja == "2":
-        print("\nRozglądasz się uważnie...")
-        skarby += 1
-        print("Znalazłeś skarb! Masz już ich", skarby)
-    elif akcja == "3":
-        print("\nOdpoczywasz i odzyskujesz siły.")
-        zycie += 1
-        print("Twoje życie wzrosło do", zycie)
-    elif akcja == "4":
-        print("\nPostanawiasz opuścić labirynt.")
-        break
-    else:
-        print("\nNieznana komenda. Spróbuj jeszcze raz.")
-```
-
-**Wyjaśnienie:**
-
-- `import random`: Mówi Pythonowi, że chcemy używać dodatkowych narzędzi z "pudełka" o nazwie `random`.
-- `random.randint(1, 2)`: Funkcja, która losuje jedną liczbę całkowitą z podanego zakresu (w tym przypadku 1 lub 2). To jak rzut monetą - wynik będzie albo 1, albo 2.
-- `random.randint(1, 3)`: Losuje liczbę od 1 do 3. Szansa na pułapkę podczas szukania skarbów to 1/3 (33%), co sprawia, że gra jest bardziej wyważona. Dzięki losowości każda rozgrywka będzie inna!
-
-## Pełny kod gry
-
-Oto jak powinien wyglądać cały program po złożeniu wszystkich fragmentów:
-
-```python
-import random
-
-print("=" * 40)
-print("TAJEMNICZY LABIRYNT")
-print("=" * 40)
-
-imie = input("Jak się nazywasz, śmiałku? ")
-print(f"\nWitaj {imie}! Stoisz przed wejściem do tajemniczego labiryntu...")
-
-print("\nPrzed tobą dwie drogi:")
-print("1. Ciemny korytarz na lewo.")
-print("2. Oświetlona ścieżka na prawo.")
-
-wybor = input("Którą drogę wybierasz? (1 lub 2): ")
-
-if wybor == "1":
-    print("\nWchodzisz w ciemność... Słyszysz dziwne dźwięki!")
-elif wybor == "2":
-    print("\nIdziesz bezpieczną drogą. Znajdujesz złotą monetę!")
+if ma_karte and zna_haslo:
+    print("Witaj w tajnym klubie!")
 else:
-    print("\nWahasz się i tracisz czas. Coś cię goni! Uciekasz w głąb labiryntu.")
+    print("Brak dostępu! Potrzebujesz karty I hasła.")
+    # Wyświetli się ten komunikat, bo hasła nie znamy (False)
+```
 
-zycie = 3
-skarby = 0
-skarby_do_wygranej = 10  # Ile skarbów trzeba zebrać, aby wygrać
+#### Operator `or` (lub) - Wystarczy jeden prawdziwy warunek
 
-while zycie > 0 and skarby < skarby_do_wygranej:
-    print(f"\n[Życie: {zycie} ❤️  | Skarby: {skarby}/{skarby_do_wygranej} 💎]")
-    print("\nCo robisz?")
-    print("1. Idź dalej")
-    print("2. Szukaj skarbów")
-    print("3. Odpoczywaj")
-    print("4. Wyjdź z labiryntu")
+Operator `or` zwraca `True`, gdy **przynajmniej jeden** z warunków jest prawdziwy. Wystarczy spełnić jedną opcję!
 
-    akcja = input("Twój wybór: ")
+```python
+# Przykład 1: Wejście na film
+wiek = 11
+ma_zgode_rodzica = True
 
-    if akcja == "1":
-        print("\nIdziesz przed siebie...")
-        if random.randint(1, 2) == 1:
-            print("Niestety, wpadasz w pułapkę! Tracisz życie!")
-            zycie -= 1
-        else:
-            print("Bezpiecznie przechodzisz do następnej komnaty.")
-    elif akcja == "2":
-        print("\nRozglądasz się uważnie...")
-        # Szukanie skarbów jest ryzykowne!
-        if random.randint(1, 3) == 1:
-            print("Ups! To była pułapka! Tracisz życie!")
-            zycie -= 1
-        else:
-            skarby += 1
-            print("Znalazłeś skarb! Masz już ich", skarby)
-    elif akcja == "3":
-        print("\nOdpoczywasz i odzyskujesz siły.")
-        zycie += 1
-        print("Twoje życie wzrosło do", zycie)
-    elif akcja == "4":
-        print("\nPostanawiasz opuścić labirynt.")
-        break
-    else:
-        print("\nNieznana komenda. Spróbuj jeszcze raz.")
-
-# Sprawdzenie, czy gracz wygrał czy przegrał
-print("\n" + "=" * 40)
-print("KONIEC GRY!")
-print("=" * 40)
-
-if skarby >= skarby_do_wygranej:
-    print(f"🎉 GRATULACJE, {imie}! 🎉")
-    print(f"Udało Ci się zebrać {skarby} skarbów i wygrać przygodę!")
-    print("Jesteś prawdziwym poszukiwaczem skarbów!")
-elif zycie <= 0:
-    print(f"😢 Niestety {imie}, straciłeś całe życie...")
-    print(f"Udało Ci się zebrać {skarby} z {skarby_do_wygranej} potrzebnych skarbów.")
-    print("Spróbuj jeszcze raz!")
+if wiek >= 12 or ma_zgode_rodzica:
+    print("Zapraszamy na seans!")
+    # Dostaniesz się, bo masz zgodę rodzica!
 else:
-    print(f"Opuściłeś labirynt z {skarby} skarbami.")
-    print(f"Brakowało Ci {skarby_do_wygranej - skarby} skarbów do pełnego zwycięstwa!")
-    print("Ale najważniejsze, że wyszedłeś z życiem!")
+    print("Przykro nam, nie możesz wejść.")
 ```
 
-Skopiuj ten kod do pliku `.py` i uruchom, aby zagrać w swoją pierwszą grę!
-
-## Ćwiczenia praktyczne
-
-Spróbuj samodzielnie rozbudować grę! Oto kilka pomysłów:
-
-**Ćwiczenie 1: "Strażnik Bramy"**
-Dodaj do pętli `while` nową opcję, np. "5. Spróbuj otworzyć tajemnicze drzwi". Aby je otworzyć, gracz musi rozwiązać zagadkę matematyczną. Jeśli odpowie źle, traci życie.
+**Wyobraź sobie:** Aby zagrać w grę online, możesz mieć własne konto **LUB** użyć konta rodzica. Wystarczy jedno z nich!
 
 ```python
-# Podpowiedź:
-# elif akcja == "5":
-#     odpowiedz = input("Strażnik pyta: Ile to 7 * 6? ")
-#     if int(odpowiedz) == 42:
-#         print("Brama się otwiera! Znajdujesz legendarny skarb!")
-#         skarby += 10
-#     else:
-#         print("Zła odpowiedź! Strażnik cię atakuje!")
-#         zycie -= 1
+# Przykład 2: Gra wieloosobowa
+ma_wlasne_konto = False
+moze_uzyc_konta_rodzica = True
+
+if ma_wlasne_konto or moze_uzyc_konta_rodzica:
+    print("Możesz zagrać!")
+    # Zagrasz, bo możesz użyć konta rodzica!
+else:
+    print("Potrzebujesz konta, aby zagrać.")
 ```
 
-**Pamiętaj o `int()`**, aby zamienić odpowiedź gracza (która jest tekstem) na liczbę!
+#### Operator `not` (nie) - Odwrócenie wartości
 
-**Ćwiczenie 2: "Magiczny Przedmiot"**
-Dodaj do gry przedmiot, który trzeba "naładować". Użyj pętli `for`, aby pokazać proces ładowania.
+Operator `not` odwraca wartość logiczną: `True` zamienia na `False`, a `False` na `True`. To jak zaprzeczenie!
 
 ```python
-# Podpowiedź:
-# elif akcja == "6": # Nowa akcja: Użyj magicznego kamienia
-#     print("Znalazłeś magiczny kamień! Ładuje się...")
-#     for i in range(1, 6):
-#         print(f"Ładowanie... {i * 20}%")
-#     print("Kamień naładowany! Otrzymujesz +2 do życia!")
-#     zycie += 2
+# Przykład 1: Sprawdzanie pogody
+pada_deszcz = False
+
+if not pada_deszcz:
+    print("Świetnie! Możemy iść na boisko!")
+    # Wyświetli się, bo NIE pada deszcz
+else:
+    print("Pada deszcz, zostańmy w domu.")
 ```
 
-## Praca domowa
+```python
+# Przykład 2: System bezpieczeństwa
+alarm_wlaczony = True
 
-Twoim zadaniem jest rozbudowanie gry "Przygoda w Labiryncie". Skopiuj cały kod, który stworzyliśmy na lekcji, i dodaj do niego:
-
-1.  **Co najmniej dwie nowe lokacje/wybory** w pętli `while` (np. spotkanie z potworem, znalezienie mapy).
-2.  **System punktów**: na początku gry przyznaj graczowi punkty, a za każdą akcję dodawaj lub odejmuj punkty. Wyświetl wynik na końcu.
-3.  **(Dla chętnych)** Dodaj ASCII art, czyli proste obrazki ze znaków, aby urozmaicić opisy, np. skarbu lub potwora.
-
-```
-    💎
-   /|\
-  / | \
- SKARB!
+if not alarm_wlaczony:
+    print("UWAGA! Alarm jest wyłączony - włącz go!")
+else:
+    print("System bezpieczeństwa działa prawidłowo.")
+    # To się wyświetli, bo alarm JEST włączony
 ```
 
-## Podsumowanie
+#### Łączenie operatorów - Bardziej skomplikowane warunki
 
-Gratulacje! Właśnie stworzyłeś swoją pierwszą grę tekstową w Pythonie! To ogromny krok naprzód. Na tej lekcji utrwaliliśmy działanie instrukcji warunkowych `if/else` i pętli `while`, a także nauczyliśmy się korzystać z modułu `random` do wprowadzania losowości.
+Możemy łączyć operatory, aby tworzyć bardziej złożone warunki!
 
-Pamiętaj, że programowanie to przede wszystkim kreatywność. Możesz teraz dowolnie modyfikować swoją grę, dodawać nowe zagadki, postacie i przygody. Miłej zabawy!
+```python
+# Przykład: System logowania do gry
+uzytkownik_zalogowany = True
+ma_internet = True
+serwer_dziala = True
+
+if uzytkownik_zalogowany and ma_internet and serwer_dziala:
+    print("Łączę z serwerem gry... Gotowe!")
+    print("Miłej gry!")
+else:
+    print("Nie mogę połączyć. Sprawdź:")
+    if not uzytkownik_zalogowany:
+        print("- Nie jesteś zalogowany")
+    if not ma_internet:
+        print("- Brak połączenia z internetem")
+    if not serwer_dziala:
+        print("- Serwer gry jest wyłączony")
+```
+
+#### Tabela prawdy - Jak to wszystko działa?
+
+Oto przydatna tabelka, która pokazuje, jak działają operatory:
+
+**Operator `and`:**
+| Warunek 1 | Operator | Warunek 2 | Wynik |
+|-----------|----------|-----------|---------|
+| True | and | True | **True** ✓ |
+| True | and | False | False |
+| False | and | True | False |
+| False | and | False | False |
+
+**Operator `or`:**
+| Warunek 1 | Operator | Warunek 2 | Wynik |
+|-----------|----------|-----------|---------|
+| True | or | True | **True** ✓ |
+| True | or | False | **True** ✓ |
+| False | or | True | **True** ✓ |
+| False | or | False | False |
+
+**Operator `not`:**
+| Operator | Warunek | Wynik |
+|----------|---------|---------|
+| not | True | False |
+| not | False | **True** ✓ |
+
+```python
+# Sprawdźmy to w praktyce!
+print("=== Testujemy operator AND ===")
+print(True and True)    # True
+print(True and False)   # False
+print(False and False)  # False
+
+print("\n=== Testujemy operator OR ===")
+print(True or False)    # True
+print(False or True)    # True
+print(False or False)   # False
+
+print("\n=== Testujemy operator NOT ===")
+print(not True)         # False
+print(not False)        # True
+```
+
+#### Praktyczny przykład: Gra przygodowa
+
+```python
+# Gra: Czy możesz otworzyć skrzynię ze skarbem?
+ma_klucz_zloty = True
+ma_klucz_srebrny = False
+zna_zaklecie = True
+ma_miecz = True
+
+# Aby otworzyć skrzynię, potrzebujesz:
+# (złotego ALBO srebrnego klucza) I (zaklęcia LUB miecza)
+
+ma_klucz = ma_klucz_zloty or ma_klucz_srebrny
+ma_sposob_na_otwarcie = zna_zaklecie or ma_miecz
+
+if ma_klucz and ma_sposob_na_otwarcie:
+    print("🎉 GRATULACJE! Otwierasz skrzynię ze skarbem!")
+    print("Znajdziesz w niej 1000 złotych monet!")
+else:
+    print("⚠️ Nie możesz otworzyć skrzyni.")
+    if not ma_klucz:
+        print("   - Potrzebujesz klucza (złotego lub srebrnego)")
+    if not ma_sposob_na_otwarcie:
+        print("   - Potrzebujesz zaklęcia lub miecza")
+```
+
+### ✏️ Ćwiczenie 2: Dostęp do tajnego pliku
+
+Napisz program, który sprawdza, czy użytkownik może otworzyć "tajny plik".
+
+1. Stwórz dwie zmienne: `uzytkownik_zalogowany = True` i `uzytkownik_jest_adminem = False`.
+2. Napisz warunek `if`, który pozwoli na dostęp tylko wtedy, gdy użytkownik jest zalogowany **I** jest adminem. Wypisz odpowiedni komunikat.
+3. Jeśli warunek nie jest spełniony, wypisz "Odmowa dostępu!".
+
+<details>
+<summary>Kliknij, aby zobaczyć rozwiązanie</summary>
+
+```python
+uzytkownik_zalogowany = True
+uzytkownik_jest_adminem = False
+
+if uzytkownik_zalogowany and uzytkownik_jest_adminem:
+    print("Dostęp przyznany. Otwieram tajny plik...")
+else:
+    print("Odmowa dostępu! Potrzebujesz uprawnień administratora.")
+```
+
+</details>
+
+### ✏️ Ćwiczenie 2b: System wejścia na imprezę
+
+Stwórz program sprawdzający, czy osoba może wejść na imprezę. Użyj operatorów logicznych!
+
+1. Utwórz zmienne:
+   - `wiek = 15`
+   - `ma_bilet = True`
+   - `jest_na_liscie_vip = False`
+2. Osoba może wejść, jeśli:
+   - Ma przynajmniej 13 lat **I** (ma bilet **LUB** jest na liście VIP)
+3. Napisz odpowiedni warunek `if` i wyświetl komunikat.
+
+<details>
+<summary>Kliknij, aby zobaczyć rozwiązanie</summary>
+
+```python
+wiek = 15
+ma_bilet = True
+jest_na_liscie_vip = False
+
+# Sprawdzamy warunek: wiek >= 13 I (bilet LUB vip)
+if wiek >= 13 and (ma_bilet or jest_na_liscie_vip):
+    print("✓ Witamy na imprezie! Miłej zabawy!")
+else:
+    print("✗ Niestety, nie spełniasz wymogów wejścia.")
+    if wiek < 13:
+        print("  Powód: Za młody/a (musisz mieć min. 13 lat)")
+    if not ma_bilet and not jest_na_liscie_vip:
+        print("  Powód: Brak biletu i nie jesteś na liście VIP")
+```
+
+**Wyjaśnienie:** Nawiasy `()` w warunku są ważne! Pokazują, że najpierw sprawdzamy `ma_bilet or jest_na_liscie_vip`, a dopiero potem łączymy to z wiekiem używając `and`.
+
+</details>
+
+### ✏️ Ćwiczenie 2c: Quiz logiczny
+
+Przepisz ten kod i sprawdź, co się wyświetli. Potem zmień wartości zmiennych i testuj różne kombinacje!
+
+```python
+# Zmienne do zabawy
+pada_snieg = True
+jest_weekend = False
+mam_czas_wolny = True
+
+# Test 1: Czy idziemy na sanki?
+print("=== Test 1: Sanki ===")
+if pada_snieg and (jest_weekend or mam_czas_wolny):
+    print("Jedziemy na sanki! ⛷️")
+else:
+    print("Dzisiaj nie pójdziemy na sanki.")
+
+# Test 2: Czy zostajemy w domu?
+print("\n=== Test 2: Zostajemy w domu? ===")
+if not pada_snieg or not mam_czas_wolny:
+    print("Lepiej zostać w domu.")
+else:
+    print("Możemy wyjść!")
+
+# Test 3: Idealne warunki
+print("\n=== Test 3: Idealne warunki ===")
+if pada_snieg and jest_weekend and mam_czas_wolny:
+    print("Wszystko idealne! 🎉")
+else:
+    print("Nie wszystkie warunki są spełnione.")
+```
+
+**Wyzwanie:** Zmień wartości zmiennych tak, aby wszystkie trzy testy wyświetliły pozytywne komunikaty!
+
+</details>
+
+---
+
+## 3. Funkcje - Twoje własne mini-programy! ✨
+
+Wyobraź sobie, że masz magiczne zaklęcie, które wykonuje kilka czynności naraz. W Pythonie takim zaklęciem jest **funkcja**! To nazwany fragment kodu, który możemy wywoływać (używać) wielokrotnie, kiedy tylko chcemy.
+
+Funkcję tworzymy za pomocą słowa kluczowego `def`, potem podajemy jej nazwę i nawiasy `()`. Kod wewnątrz funkcji musi być wcięty.
+
+```python
+# Definiujemy (tworzymy) naszą pierwszą funkcję
+def przywitaj_gracza():
+    print("Cześć! Witaj w naszej grze!")
+    print("Życzymy Ci świetnej zabawy!")
+    print("-------------------------")
+
+# Teraz możemy "wywołać" (użyć) naszą funkcję, ile razy chcemy
+print("Start gry...")
+przywitaj_gracza()
+
+print("Nowy gracz dołączył...")
+przywitaj_gracza()
+```
+
+Dzięki funkcji nie musimy pisać tego samego kodu wiele razy! Jeśli zechcemy zmienić powitanie, wystarczy, że zrobimy to w jednym miejscu - wewnątrz definicji funkcji.
+
+### Funkcje z parametrami
+
+A co, jeśli chcemy, żeby nasza funkcja witała konkretnego gracza po imieniu? Możemy przekazać jej informację z zewnątrz, czyli **parametr** (nazywany też argumentem).
+
+```python
+# 'imie' jest tutaj parametrem
+def przywitaj_gracza_imiennie(imie):
+    print(f"Cześć, {imie}! Witaj w naszej grze!")
+    print("Życzymy Ci świetnej zabawy!")
+    print("-------------------------")
+
+# Wywołujemy funkcję, podając imię jako argument w nawiasach
+przywitaj_gracza_imiennie("Ania")
+przywitaj_gracza_imiennie("Tomek")
+```
+
+Teraz nasza funkcja jest o wiele mądrzejsza i bardziej elastyczna!
+
+### ✏️ Ćwiczenie 3: Funkcja licząca pole prostokąta
+
+Napisz funkcję o nazwie `oblicz_pole_prostokata`, która:
+
+1. Przyjmuje dwa parametry: `dlugosc` i `szerokosc`.
+2. Oblicza pole, mnożąc te dwie wartości.
+3. Wypisuje wynik w formacie: `f"Pole prostokąta o bokach {dlugosc} i {szerokosc} wynosi {pole}."`
+4. Wywołaj funkcję dla prostokąta o bokach 5 i 10.
+
+<details>
+<summary>Kliknij, aby zobaczyć rozwiązanie</summary>
+
+```python
+def oblicz_pole_prostokata(dlugosc, szerokosc):
+    pole = dlugosc * szerokosc
+    print(f"Pole prostokąta o bokach {dlugosc} i {szerokosc} wynosi {pole}.")
+
+# Testujemy naszą funkcję
+oblicz_pole_prostokata(5, 10)
+oblicz_pole_prostokata(3, 7)
+```
+
+</details>
+
+---
+
+## 4. Bonus: Wprowadzenie do Pygame Zero 🎮
+
+Teraz, gdy znasz już listy, logikę i funkcje, możesz zacząć tworzyć swoje własne gry! **Pygame Zero** to specjalna biblioteka Pythona, która sprawia, że tworzenie gier jest proste i przyjemne.
+
+### Czym jest Pygame Zero?
+
+Pygame Zero (w skrócie `pgzero`) to narzędzie dla początkujących, które pozwala tworzyć gry bez konieczności pisania skomplikowanego kodu. Idealne dla młodych programistów!
+
+### Instalacja Pygame Zero
+
+Aby zacząć, musimy zainstalować bibliotekę:
+
+**W Thonny:**
+
+1. Otwórz Thonny
+2. Z górnego menu wybierz: **Narzędzia** → **Zarządzaj pakietami** (lub **Tools** → **Manage packages**)
+3. W okienku wyszukiwania wpisz: `pgzero`
+4. Kliknij **Znajdź pakiet z PyPI** i zainstaluj
+
+**Lub w terminalu:**
+
+```bash
+pip install pgzero
+```
+
+### Twoja pierwsza gra - poruszający się kwadrat!
+
+Stwórz nowy plik o nazwie `moja_gra.py` i wpisz ten kod:
+
+```python
+import pgzrun  # Ta linia musi być na początku!
+
+# Jak duże będzie okno gry?
+WIDTH = 800
+HEIGHT = 600
+
+# Gdzie jest nasz gracz na początku?
+x = 400
+y = 300
+
+def draw():
+    # Ta funkcja rysuje wszystko na ekranie
+    screen.fill('blue')  # Niebieskie tło
+    screen.draw.filled_circle((x, y), 30, 'yellow')  # Żółte kółko
+
+def update():
+    # Ta funkcja sprawdza, co nacisnąłeś na klawiaturze
+    global x, y  # Mówimy, że chcemy zmieniać x i y
+
+    if keyboard.left:
+        x = x - 5  # Idź w lewo
+    if keyboard.right:
+        x = x + 5  # Idź w prawo
+    if keyboard.up:
+        y = y - 5  # Idź w górę
+    if keyboard.down:
+        y = y + 5  # Idź w dół
+
+pgzrun.go()  # Ta linia musi być na końcu!
+```
+
+**Jak to uruchomić?**
+
+1. W Thonny naciśnij zielony przycisk **▶ Run** (lub klawisz F5)
+2. Pojawi się okienko z grą!
+3. Użyj **strzałek** na klawiaturze, aby poruszać żółtym kółkiem
+4. Aby zamknąć grę, kliknij **X** w oknie gry
+
+---
+
+### 🤔 Jak rozumieć współrzędne X i Y?
+
+Okno gry to jak wielka kartka w kratkę! Każde miejsce ma swój adres składający się z dwóch liczb:
+
+**X** - to jak daleko w prawo (w lewo)
+
+- `x = 0` to lewa krawędź ekranu
+- `x = 400` to mniej więcej środek (jeśli WIDTH = 800)
+- `x = 800` to prawa krawędź
+
+**Y** - to jak daleko w dół (w górę)
+
+- `y = 0` to **GÓRA** ekranu (tak, w komputerze liczenie zaczyna się od góry!)
+- `y = 300` to mniej więcej środek (jeśli HEIGHT = 600)
+- `y = 600` to dół ekranu
+
+```
+     0            400           800
+     ├─────────────┼─────────────┤
+  0──┌─────────────────────────┐ ← Góra ekranu
+     │                         │
+     │         ● (400, 300)    │ ← Nasz gracz w środku!
+     │                         │
+600──└─────────────────────────┘ ← Dół ekranu
+```
+
+**Przykłady:**
+
+- `(0, 0)` - lewy górny róg
+- `(800, 0)` - prawy górny róg
+- `(400, 300)` - środek ekranu (nasz gracz startuje tutaj!)
+- `(0, 600)` - lewy dolny róg
+- `(800, 600)` - prawy dolny róg
+
+**Poruszanie się:**
+
+- Gdy robisz `x = x - 5`, cofasz się w **lewo** (mniejsze x)
+- Gdy robisz `x = x + 5`, idziesz w **prawo** (większe x)
+- Gdy robisz `y = y - 5`, idziesz w **górę** (mniejsze y)
+- Gdy robisz `y = y + 5`, idziesz w **dół** (większe y)
+
+> 💡 **Pamiętaj!** W grach na komputerze Y działa "do góry nogami" - `y = 0` to góra, nie dół!
+
+---
+
+### Jak to działa?
+
+To jest proste! W Pygame Zero są dwie ważne funkcje:
+
+1. **`draw()`** - tutaj rysujesz rzeczy na ekranie (jak malowanie obrazka!)
+2. **`update()`** - tutaj sprawdzasz klawiaturę i poruszasz rzeczami
+
+Python **automatycznie** wywołuje te funkcje wiele razy na sekundę, więc twoja gra żyje!
+
+#### 🎨 Funkcja `draw()` - Twój pędzel do malowania
+
+Funkcja `draw()` jest jak artysta, który **cały czas** maluje nowy obrazek. Co kilka milisekund Python woła: "Hej, narysuj mi nowy obrazek!" i wtedy uruchamia się `draw()`.
+
+```python
+def draw():
+    screen.fill('blue')  # Najpierw zamaluj całe tło na niebiesko
+    screen.draw.filled_circle((x, y), 30, 'yellow')  # Potem narysuj kółko
+```
+
+**Co to znaczy?**
+
+- `screen.fill('blue')` - zamaluj całe okno na niebiesko (jak malowanie ściany!)
+- `screen.draw.filled_circle((x, y), 30, 'yellow')` - narysuj wypełnione kółko:
+  - `(x, y)` - gdzie narysować? (w pozycji x, y)
+  - `30` - jak duże? (promień 30 pikseli - jak moneta 5 złotych!)
+  - `'yellow'` - jaki kolor? (żółty)
+
+#### 🎮 Funkcja `update()` - Sprawdza, co się dzieje
+
+Funkcja `update()` to jak strażnik, który **cały czas** patrzy, czy naciskasz jakiś klawisz. Python woła ją wiele razy na sekundę i pyta: "Coś się zmieniło?"
+
+```python
+def update():
+    global x, y  # Chcemy zmieniać zmienne x i y z góry
+
+    if keyboard.left:
+        x = x - 5  # Odejmij 5 od x (idź w lewo)
+```
+
+**Co to znaczy?**
+
+- `if keyboard.left:` - sprawdź, czy gracz naciska strzałkę w lewo
+- `x = x - 5` - to samo co `x -= 5`, zmniejsz x o 5 (przesuń w lewo!)
+  - Było: `x = 400`
+  - Teraz: `x = 395`
+  - Za chwilę: `x = 390`
+  - I tak dalej... kółko jedzie w lewo!
+
+> **Co to jest `global x, y`?**  
+> To mówi Pythonowi: "Hej, chcę zmieniać zmienne x i y, które stworzyłem na górze!"  
+> Bez tego Python by pomyślał, że tworzysz nowe zmienne tylko w funkcji `update()`, które zaraz znikną!
+
+---
+
+### 🔢 Liczby w grze - co oznaczają?
+
+Zobaczmy, co możesz zmieniać w kodzie:
+
+```python
+WIDTH = 800   # Szerokość okna w pikselach (punktach na ekranie)
+HEIGHT = 600  # Wysokość okna w pikselach
+```
+
+💡 1 piksel = 1 malutki punktek na ekranie. 800 pikseli to szerokość mniej więcej jak kartka A4!
+
+```python
+x = 400  # Pozycja pozioma gracza (w prawo/lewo)
+y = 300  # Pozycja pionowa gracza (góra/dół)
+```
+
+💡 Start w środku ekranu (400 to połowa z 800, 300 to połowa z 600)
+
+```python
+screen.draw.filled_circle((x, y), 30, 'yellow')
+#                                  ↑ promień kółka
+```
+
+💡 Promień 30 = kółko ma średnicę 60 pikseli (wielkość małej monety)
+
+```python
+x = x - 5  # Zmiana pozycji o 5 pikseli
+```
+
+💡 Im większa liczba, tym szybszy ruch! Spróbuj dać 10 lub 2!
+
+### Możesz zmieniać swoją grę! 🎨
+
+Teraz super część - możesz eksperymentować! Zmień te rzeczy w kodzie i zobacz, co się stanie:
+
+#### Kolory w grze 🌈
+
+W Pygame Zero możesz używać nazw kolorów po angielsku. Oto najpopularniejsze:
+
+```python
+# Podstawowe kolory:
+'red'      # czerwony
+'blue'     # niebieski
+'green'    # zielony
+'yellow'   # żółty
+'orange'   # pomarańczowy
+'purple'   # fioletowy
+'pink'     # różowy
+'white'    # biały
+'black'    # czarny
+'gray'     # szary
+'brown'    # brązowy
+
+# Możesz też mieszać nazwy:
+'darkblue'    # ciemnoniebieski
+'lightgreen'  # jasnozielony
+'darkred'     # ciemnoczerwony
+```
+
+**Zmień kolor tła:**
+
+```python
+screen.fill('purple')  # fioletowy
+screen.fill('black')   # czarny - jak w kosmosie!
+```
+
+**Zmień kolor gracza:**
+
+```python
+screen.draw.filled_circle((x, y), 30, 'red')    # czerwone kółko
+screen.draw.filled_circle((x, y), 30, 'green')  # zielone kółko
+```
+
+#### Wielkość kółka 📏
+
+Ostatnia liczba w `filled_circle` to **promień** (połowa szerokości kółka):
+
+```python
+screen.draw.filled_circle((x, y), 10, 'yellow')   # maleńkie (jak groszek)
+screen.draw.filled_circle((x, y), 30, 'yellow')   # normalne (jak moneta)
+screen.draw.filled_circle((x, y), 50, 'yellow')   # duże (jak piłka ping-pongowa)
+screen.draw.filled_circle((x, y), 100, 'yellow')  # ogromne (jak piłka!)
+```
+
+#### Szybkość poruszania 🏃
+
+Im większa liczba przy `x = x - 5`, tym szybciej się poruszasz:
+
+```python
+# W funkcji update():
+if keyboard.left:
+    x = x - 2   # wolno (żółw 🐢)
+    x = x - 5   # normalnie (człowiek 🚶)
+    x = x - 10  # szybko (samochód 🚗)
+    x = x - 20  # bardzo szybko (rakieta 🚀)
+```
+
+### Dodajmy tekst do gry! ✍️
+
+Możesz dodać napisy na ekranie. Dodaj tę linię w funkcji `draw()`:
+
+```python
+def draw():
+    screen.fill('blue')
+    screen.draw.filled_circle((x, y), 30, 'yellow')
+
+    # Dodaj tytuł gry:
+    screen.draw.text("Moja pierwsza gra!", (250, 50), color='white', fontsize=40)
+
+    # Możesz też dodać instrukcje:
+    screen.draw.text("Użyj strzałek", (300, 550), color='yellow', fontsize=25)
+```
+
+**Co to znaczy?**
+
+- `"Moja pierwsza gra!"` - tekst do wyświetlenia
+- `(250, 50)` - pozycja tekstu (x=250, y=50, czyli blisko góry)
+- `color='white'` - kolor tekstu (biały)
+- `fontsize=40` - wielkość czcionki (im więcej, tym większe litery!)
+
+### 🎯 Inne kształty, które możesz rysować
+
+Nie musisz rysować tylko kółek! Spróbuj tych:
+
+```python
+# Kwadrat/prostokąt:
+screen.draw.filled_rect(Rect(x, y, 40, 40), 'red')
+#                            x, y, szerokość, wysokość
+
+# Tylko obwódka kółka (nie wypełnione):
+screen.draw.circle((x, y), 30, 'green')
+
+# Linia:
+screen.draw.line((100, 100), (200, 200), 'white')
+#                początek       koniec      kolor
+```
+
+### ✏️ Zadanie Pygame Zero - Zrób coś swojego!
+
+Teraz Twoja kolej! Spróbuj dodać te rzeczy do swojej gry:
+
+**Łatwe zadania:**
+
+1. Zmień kolor tła na swój ulubiony
+2. Zmień kolor kółka gracza
+3. Dodaj tytuł gry na górze ekranu
+
+**Trudniejsze zadania:** 4. Narysuj drugiego kółko w innym miejscu (może być przeciwnik?) 5. Spraw, aby gracz poruszał się szybciej lub wolniej
+
+**Super wyzwanie:** 6. Spróbuj narysować kwadrat zamiast kółka! Podpowiedź:
+
+```python
+screen.draw.filled_rect(Rect(x, y, 40, 40), 'yellow')
+```
+
+<details>
+<summary>Kliknij, aby zobaczyć przykład rozwiązania</summary>
+
+```python
+import pgzrun
+
+WIDTH = 800
+HEIGHT = 600
+
+x = 400
+y = 300
+
+def draw():
+    screen.fill('purple')  # Fioletowe tło!
+    screen.draw.filled_circle((x, y), 30, 'red')  # Czerwony gracz
+    screen.draw.filled_circle((100, 100), 25, 'green')  # Zielony przeciwnik
+    screen.draw.text("Moja super gra!", (250, 30), color='white', fontsize=50)
+
+def update():
+    global x, y
+
+    if keyboard.left:
+        x = x - 8  # Szybciej!
+    if keyboard.right:
+        x = x + 8
+    if keyboard.up:
+        y = y - 8
+    if keyboard.down:
+        y = y + 8
+
+pgzrun.go()
+```
+
+</details>
+
+### Co dalej z Pygame Zero?
+
+Gdy opanujesz ten prosty program, w kolejnych lekcjach nauczysz się:
+
+- 🖼️ Jak dodawać obrazki zamiast kółek (np. rakietę, postać)
+- 💥 Jak sprawdzać, czy dwie rzeczy się zderzają
+- 🎵 Jak dodać dźwięki i muzykę
+- 🎯 Jak zrobić licznik punktów
+- 🎮 Jak stworzyć prostą grę "złap gwiazdki"!
+
+**Pygame Zero jest super, bo:**
+
+- Nie musisz pisać dużo kodu
+- Gry działają od razu
+- Możesz pokazać swoje gry kolegom!
+
+---
+
+- Jak dodać dźwięki i muzykę
+- Jak stworzyć licznik punktów
+- Jak zrobić grę typu "złap przedmiot" lub prostą platformówkę!
+
+---
+
+## Podsumowanie i zadanie domowe
+
+Wow! Dzisiaj nauczyliśmy się naprawdę dużo!
+
+- **Listy** `[]` do przechowywania kolekcji danych.
+- **Wartości logiczne** `True` i `False` oraz operatory `and`, `or` i `not`.
+- **Funkcje** `def`, które są jak nasze własne zaklęcia w kodzie.
+- **Pygame Zero** - podstawy tworzenia gier w Pythonie!
+
+**Zadanie domowe:**
+Stwórz program, który:
+
+1.  Stworzy listę Twoich 3 ulubionych przedmiotów szkolnych, np. `ulubione_przedmioty = ["informatyka", "wf", "matematyka"]`.
+2.  Napisze funkcję o nazwie `czy_lubie_przedmiot`, która przyjmuje jeden parametr (nazwę przedmiotu).
+3.  Wewnątrz funkcji, użyj instrukcji `if`, aby sprawdzić, czy przedmiot podany jako parametr znajduje się na Twojej liście ulubionych. (Podpowiedź: `if przedmiot in twoja_lista:`).
+4.  Jeśli tak, funkcja powinna wydrukować "Tak, to jeden z moich ulubionych przedmiotów!". Jeśli nie, "Uczę się go, ale nie jest moim ulubionym.".
+5.  Wywołaj swoją funkcję kilka razy z różnymi nazwami przedmiotów (zarówno tymi z listy, jak i spoza niej).
+
+Powodzenia! Widzimy się na kolejnej lekcji, gdzie będziemy dalej odkrywać magiczny świat Pythona!
+
+---
 
 **[← Powrót do kursu Python Podstawowy](/python-course/)**
