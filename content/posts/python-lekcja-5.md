@@ -792,22 +792,31 @@ screen.draw.line((100, 100), (200, 200), 'white')
 
 Teraz Twoja kolej! Spróbuj dodać te rzeczy do swojej gry:
 
-**Łatwe zadania:**
+**🟢 Łatwe zadania (dla początkujących):**
 
-1. Zmień kolor tła na swój ulubiony
-2. Zmień kolor kółka gracza
-3. Dodaj tytuł gry na górze ekranu
+1. Zmień kolor tła na swój ulubiony (np. `'purple'`, `'black'`, `'green'`)
+2. Zmień kolor kółka gracza na inny (np. `'red'`, `'pink'`, `'orange'`)
+3. Spraw, aby kółko było większe - zmień 30 na 50
+4. Dodaj tytuł gry na górze ekranu
 
-**Trudniejsze zadania:** 4. Narysuj drugiego kółko w innym miejscu (może być przeciwnik?) 5. Spraw, aby gracz poruszał się szybciej lub wolniej
+**🟡 Średnie zadania (trochę trudniejsze):**
 
-**Super wyzwanie:** 6. Spróbuj narysować kwadrat zamiast kółka! Podpowiedź:
+5. Zmień szybkość poruszania - zamiast 5 daj 10 (będzie szybciej!)
+6. Narysuj drugiego kółko w stałym miejscu (np. na pozycji 100, 100)
+7. Spraw, aby gracz startował w innym miejscu (zmień x i y na początku)
+8. Dodaj instrukcję na dole ekranu: "Użyj strzałek"
 
-```python
-screen.draw.filled_rect(Rect(x, y, 40, 40), 'yellow')
-```
+**🔴 Trudne wyzwania (dla odważnych!):**
+
+9. Spróbuj narysować kwadrat zamiast kółka:
+   ```python
+   screen.draw.filled_rect(Rect(x, y, 40, 40), 'yellow')
+   ```
+10. Dodaj drugiego gracza, który porusza się klawiszami **WSAD** (W=góra, S=dół, A=lewo, D=prawo)
+    Podpowiedź: Potrzebujesz nowych zmiennych `x2` i `y2` oraz `keyboard.w`, `keyboard.s`, itd.
 
 <details>
-<summary>Kliknij, aby zobaczyć przykład rozwiązania</summary>
+<summary>Kliknij, aby zobaczyć przykład rozwiązania zadań 1-8</summary>
 
 ```python
 import pgzrun
@@ -815,11 +824,96 @@ import pgzrun
 WIDTH = 800
 HEIGHT = 600
 
-x = 400
-y = 300
+# Gracz startuje w lewym górnym rogu
+x = 100
+y = 100
 
 def draw():
     screen.fill('purple')  # Fioletowe tło!
+    screen.draw.filled_circle((x, y), 50, 'red')  # Duże czerwone kółko
+    
+    # Drugi obiekt w stałym miejscu
+    screen.draw.filled_circle((700, 500), 30, 'green')
+    
+    # Napisy
+    screen.draw.text("Moja super gra!", (250, 30), color='white', fontsize=50)
+    screen.draw.text("Użyj strzałek", (300, 560), color='yellow', fontsize=25)
+
+def update():
+    global x, y
+    
+    # Szybsze poruszanie (o 10 zamiast 5)
+    if keyboard.left:
+        x = x - 10
+    if keyboard.right:
+        x = x + 10
+    if keyboard.up:
+        y = y - 10
+    if keyboard.down:
+        y = y + 10
+
+pgzrun.go()
+```
+
+</details>
+
+<details>
+<summary>Kliknij, aby zobaczyć rozwiązanie zadania 10 (dwóch graczy)</summary>
+
+```python
+import pgzrun
+
+WIDTH = 800
+HEIGHT = 600
+
+# Gracz 1 (strzałki)
+x1 = 200
+y1 = 300
+
+# Gracz 2 (WSAD)
+x2 = 600
+y2 = 300
+
+def draw():
+    screen.fill('darkblue')
+    
+    # Rysuj obu graczy
+    screen.draw.filled_circle((x1, y1), 30, 'yellow')  # Gracz 1
+    screen.draw.filled_circle((x2, y2), 30, 'red')     # Gracz 2
+    
+    # Napisy
+    screen.draw.text("Gracz 1: Strzałki", (50, 30), color='yellow', fontsize=30)
+    screen.draw.text("Gracz 2: WSAD", (500, 30), color='red', fontsize=30)
+
+def update():
+    global x1, y1, x2, y2
+    
+    # Gracz 1 - strzałki
+    if keyboard.left:
+        x1 = x1 - 5
+    if keyboard.right:
+        x1 = x1 + 5
+    if keyboard.up:
+        y1 = y1 - 5
+    if keyboard.down:
+        y1 = y1 + 5
+    
+    # Gracz 2 - WSAD
+    if keyboard.a:  # A = lewo
+        x2 = x2 - 5
+    if keyboard.d:  # D = prawo
+        x2 = x2 + 5
+    if keyboard.w:  # W = góra
+        y2 = y2 - 5
+    if keyboard.s:  # S = dół
+        y2 = y2 + 5
+
+pgzrun.go()
+```
+
+**Gratulacje!** Masz teraz grę dla dwóch graczy! 🎮🎮
+
+</details>
     screen.draw.filled_circle((x, y), 30, 'red')  # Czerwony gracz
     screen.draw.filled_circle((100, 100), 25, 'green')  # Zielony przeciwnik
     screen.draw.text("Moja super gra!", (250, 30), color='white', fontsize=50)
