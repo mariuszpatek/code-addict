@@ -831,17 +831,17 @@ y = 100
 def draw():
     screen.fill('purple')  # Fioletowe tło!
     screen.draw.filled_circle((x, y), 50, 'red')  # Duże czerwone kółko
-    
+
     # Drugi obiekt w stałym miejscu
     screen.draw.filled_circle((700, 500), 30, 'green')
-    
+
     # Napisy
     screen.draw.text("Moja super gra!", (250, 30), color='white', fontsize=50)
     screen.draw.text("Użyj strzałek", (300, 560), color='yellow', fontsize=25)
 
 def update():
     global x, y
-    
+
     # Szybsze poruszanie (o 10 zamiast 5)
     if keyboard.left:
         x = x - 10
@@ -876,18 +876,18 @@ y2 = 300
 
 def draw():
     screen.fill('darkblue')
-    
+
     # Rysuj obu graczy
     screen.draw.filled_circle((x1, y1), 30, 'yellow')  # Gracz 1
     screen.draw.filled_circle((x2, y2), 30, 'red')     # Gracz 2
-    
+
     # Napisy
     screen.draw.text("Gracz 1: Strzałki", (50, 30), color='yellow', fontsize=30)
     screen.draw.text("Gracz 2: WSAD", (500, 30), color='red', fontsize=30)
 
 def update():
     global x1, y1, x2, y2
-    
+
     # Gracz 1 - strzałki
     if keyboard.left:
         x1 = x1 - 5
@@ -897,7 +897,7 @@ def update():
         y1 = y1 - 5
     if keyboard.down:
         y1 = y1 + 5
-    
+
     # Gracz 2 - WSAD
     if keyboard.a:  # A = lewo
         x2 = x2 - 5
@@ -919,7 +919,7 @@ pgzrun.go()
     screen.draw.text("Moja super gra!", (250, 30), color='white', fontsize=50)
 
 def update():
-    global x, y
+global x, y
 
     if keyboard.left:
         x = x - 8  # Szybciej!
@@ -931,6 +931,7 @@ def update():
         y = y + 8
 
 pgzrun.go()
+
 ```
 
 </details>
@@ -982,3 +983,4 @@ Powodzenia! Widzimy się na kolejnej lekcji, gdzie będziemy dalej odkrywać mag
 ---
 
 **[← Powrót do kursu Python Podstawowy](/python-course/)**
+```
