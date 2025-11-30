@@ -1,7 +1,7 @@
 +++
 title = 'Python Podstawowy - Lekcja 7: Praca z Plikami - Zapisywanie Danych! 💾📁'
 date = 2025-11-29T14:00:00+01:00
-draft = true
+draft = false
 url = '/python-course/lekcja-7/'
 description = 'Siódma lekcja z serii Python Podstawowy. Nauczymy się zapisywać i odczytywać dane z plików - highscore, notatki i więcej!'
 author = 'Code Addict'
