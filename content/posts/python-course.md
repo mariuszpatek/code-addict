@@ -44,12 +44,33 @@ Python to jeden z najpopularniejszych języków programowania na świecie! Jest 
 - Pętle `for` i `while` do automatyzacji zadań
 - Wprowadzenie do interaktywnych notebooków
 
-<!-- **⏳ Wkrótce dostępne:**
+**📋 Lekcja 5**: [Listy, Logika i Funkcje!](/code-addict/python-course/lekcja-5/)
 
-**📋 Lekcja 5**: Listy i kolekcje
-- Przechowywanie wielu wartości
-- Operacje na listach
-- Tworzenie quizów i bardziej zaawansowanych programów -->
+- Przechowywanie wielu rzeczy w jednym miejscu (Listy)
+- Tworzenie własnych komend (Funkcje)
+- Logika `and`, `or`, `not`
+- Budowanie gry tekstowej "Lochy i Smoki"
+
+**🎮 Lekcja 6**: [Tworzymy Grę Arkanoid!](/code-addict/python-course/lekcja-6/)
+
+- Wstęp do biblioteki Pygame Zero
+- Rysowanie grafiki i animacje
+- Fizyka odbić piłki
+- Sterowanie paletką i zbijanie klocków
+
+**💾 Lekcja 7**: [Praca z Plikami - Zapisywanie Danych!](/code-addict/python-course/lekcja-7/)
+
+- Zapisywanie wyników do pliku tekstowego
+- Odczytywanie danych z pliku
+- Tworzenie systemu Highscore
+- Budowa własnego notatnika
+
+**📚 Lekcja 8**: [Słowniki i JSON - Twoja Baza Danych!](/code-addict/python-course/lekcja-8/)
+
+- Czym są Słowniki i jak różnią się od List
+- Format JSON - profesjonalny zapis danych
+- Tworzenie Kreatora Postaci RPG z zapisem stanu gry
+- Zarządzanie ekwipunkiem i statystykami
 
 ## 🎯 Jak korzystać z kursu
 
