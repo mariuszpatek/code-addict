@@ -72,6 +72,13 @@ Python to jeden z najpopularniejszych języków programowania na świecie! Jest 
 - Tworzenie Kreatora Postaci RPG z zapisem stanu gry
 - Zarządzanie ekwipunkiem i statystykami
 
+**🎄 Lekcja 8+**: [Świąteczne Programowanie!](/code-addict/python-course/lekcja-8-swieta/) *(BONUS)*
+
+- Choinka ASCII Art z pętlami
+- Animacja padającego śniegu
+- Generator życzeń świątecznych
+- Zapis kartek do pliku
+
 **🦸 Lekcja 9**: [Klasy i Obiekty - Twój Własny Świat!](/code-addict/python-course/lekcja-9/)
 
 - Czym są Klasy i Obiekty (OOP)
