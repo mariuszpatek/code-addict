@@ -5,7 +5,7 @@ draft = false
 noComment = true
 +++
 
-*Aplikacja „Co zabrać?" — Ostatnia aktualizacja: 18.03.2026*
+_Aplikacja „Co zabrać?" — Ostatnia aktualizacja: 18.03.2026_
 
 [Polityka prywatności](/co-zabrac/polityka-prywatnosci/) | [Regulamin](/co-zabrac/regulamin/) | [Klauzula RODO](/co-zabrac/klauzula-rodo/)
 
