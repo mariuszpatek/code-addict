@@ -131,9 +131,93 @@
 
     <script>
         (function () {
-            var params = new URLSearchParams(window.location.search);
-            var id = params.get('id');
-            var token = params.get('token');
+            function pickFirstTruthy(values) {
+                for (var i = 0; i < values.length; i++) {
+                    if (values[i]) {
+                        return values[i];
+                    }
+                }
+                return null;
+            }
+
+            function normalizeHash(hashValue) {
+                if (!hashValue) {
+                    return '';
+                }
+
+                return hashValue.charAt(0) === '#' ? hashValue.slice(1) : hashValue;
+            }
+
+            function parseShareData() {
+                var query = new URLSearchParams(window.location.search);
+                var hash = new URLSearchParams(normalizeHash(window.location.hash));
+
+                var id = pickFirstTruthy([
+                    query.get('id'),
+                    query.get('templateId'),
+                    query.get('template_id'),
+                    query.get('shareId'),
+                    query.get('share_id'),
+                    hash.get('id'),
+                    hash.get('templateId'),
+                    hash.get('template_id'),
+                    hash.get('shareId'),
+                    hash.get('share_id')
+                ]);
+
+                var token = pickFirstTruthy([
+                    query.get('token'),
+                    query.get('shareToken'),
+                    query.get('share_token'),
+                    query.get('accessToken'),
+                    query.get('access_token'),
+                    hash.get('token'),
+                    hash.get('shareToken'),
+                    hash.get('share_token'),
+                    hash.get('accessToken'),
+                    hash.get('access_token')
+                ]);
+
+                // Fallback for URLs like /co-zabrac/szablon/<id>/<token>
+                if (!id || !token) {
+                    var segments = window.location.pathname.split('/').filter(Boolean);
+                    if (segments.length >= 2) {
+                        var last = segments[segments.length - 1];
+                        var beforeLast = segments[segments.length - 2];
+                        if (!id) {
+                            id = beforeLast;
+                        }
+                        if (!token) {
+                            token = last;
+                        }
+                    }
+                }
+
+                return {
+                    id: id,
+                    token: token
+                };
+            }
+
+            function buildDeepLinkCandidates(id, token) {
+                var encodedId = encodeURIComponent(id);
+                var encodedToken = encodeURIComponent(token);
+
+                return [
+                    // Najczęstszy wariant oparty o query params
+                    'pl.cozabrac://template?id=' + encodedId + '&token=' + encodedToken,
+                    // Alternatywny wariant oparty o segment ścieżki
+                    'pl.cozabrac://template/' + encodedId + '?token=' + encodedToken,
+                    // Dodatkowy wariant zgodny z częścią implementacji opartych o /templates
+                    'pl.cozabrac://templates/' + encodedId + '?token=' + encodedToken,
+                    // Fallback: przekazanie pełnego linku webowego do parsowania po stronie aplikacji
+                    'pl.cozabrac://open?url=' + encodeURIComponent(window.location.href)
+                ];
+            }
+
+            var shareData = parseShareData();
+            var id = shareData.id;
+            var token = shareData.token;
 
             var btn = document.getElementById('openAppBtn');
             var errorBox = document.getElementById('errorBox');
@@ -144,9 +228,26 @@
                 return;
             }
 
-            // Custom URL scheme deep link
-            var deepLink = 'pl.cozabrac://template/' + encodeURIComponent(id) + '?token=' + encodeURIComponent(token);
-            btn.href = deepLink;
+            var candidates = buildDeepLinkCandidates(id, token);
+            btn.href = candidates[0];
+
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+                window.location.href = candidates[0];
+
+                // Jeśli pierwszy wariant nie zadziała, przeglądarka spróbuje kolejne.
+                setTimeout(function () {
+                    window.location.href = candidates[1];
+                }, 350);
+
+                setTimeout(function () {
+                    window.location.href = candidates[2];
+                }, 750);
+
+                setTimeout(function () {
+                    window.location.href = candidates[3];
+                }, 1150);
+            });
         })();
     </script>
 </body>

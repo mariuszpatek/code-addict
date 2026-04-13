@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka prywatności — Moral Compass</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card: #ffffff;
+            --text: #212121;
+            --muted: #616161;
+            --accent: #5c6bc0;
+            --border: #e0e0e0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --card: #1e1e1e;
+                --text: #e0e0e0;
+                --muted: #9e9e9e;
+                --accent: #7986cb;
+                --border: #333333;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 12px;
+            padding: 32px 28px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover,
+        .lang-switch button.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
+
+        .updated {
+            color: var(--muted);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+            font-size: 1em;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        p, ul {
+            margin-bottom: 14px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-email {
+            font-weight: 600;
+        }
+
+        .section {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        @media (max-width: 480px) {
+            .container { padding: 20px 16px; }
+            h1 { font-size: 1.35em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button id="btn-pl" class="active" onclick="switchLang('pl')">Polski</button>
+            <button id="btn-en" onclick="switchLang('en')">English</button>
+        </div>
+
+        <!-- ============ POLISH ============ -->
+        <div id="lang-pl" class="lang-content active">
+            <h1>Polityka prywatności — Moral Compass</h1>
+            <p class="updated">Ostatnia aktualizacja: kwiecień 2026</p>
+            <p class="intro">Niniejsza polityka prywatności opisuje, w jaki sposób aplikacja „Moral Compass" (dalej „Aplikacja") gromadzi, wykorzystuje i chroni dane dotyczące użytkowników.</p>
+
+            <div class="section">
+                <h2>1. Dane gromadzone lokalnie</h2>
+                <p>Aplikacja przechowuje wyłącznie na urządzeniu użytkownika:</p>
+                <ul>
+                    <li>odpowiedzi na pytania quizu etycznego,</li>
+                    <li>obliczony profil moralny,</li>
+                    <li>preferencje wyświetlania (ustawienia aplikacji).</li>
+                </ul>
+                <p>Żadne dane osobowe z quizu nie są przesyłane na zewnętrzne serwery.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Dane przesyłane na serwer</h2>
+                <p>Aplikacja anonimowo przesyła na serwer następujące dane:</p>
+                <ul>
+                    <li>wybraną opcję odpowiedzi (A lub B) w każdym dylemacie,</li>
+                    <li>czas spędzony na każdym pytaniu (w milisekundach),</li>
+                    <li>losowy identyfikator sesji (UUID) — generowany na nowo przy każdym quizie, nie pozwala powiązać sesji ze sobą.</li>
+                </ul>
+                <p>Dane te służą wyłącznie do wyświetlania zagregowanych statystyk (np. „55% osób wybrało opcję A"). Pojedyncze odpowiedzi nie są publicznie dostępne i nie można ich powiązać z konkretnym użytkownikiem.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Funkcje społecznościowe</h2>
+                <p>Użytkownik może opcjonalnie zgłosić własny dylemat etyczny. Przy zgłoszeniu:</p>
+                <ul>
+                    <li>treść dylematu jest przesyłana na serwer i podlega moderacji,</li>
+                    <li>użytkownik może opcjonalnie podać pseudonim autora (do 30 znaków),</li>
+                    <li>anonimowy identyfikator urządzenia (UUID) jest używany wyłącznie do ograniczenia liczby zgłoszeń (maks. 3 dziennie).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Reklamy (Google AdMob)</h2>
+                <p>Aplikacja wyświetla reklamy za pośrednictwem usługi Google AdMob. Google może gromadzić i przetwarzać dane w celu wyświetlania spersonalizowanych reklam, w tym:</p>
+                <ul>
+                    <li>identyfikator urządzenia (Advertising ID),</li>
+                    <li>dane o aktywności w aplikacji,</li>
+                    <li>dane lokalizacyjne (jeśli udostępnione w ustawieniach systemowych).</li>
+                </ul>
+                <p>Przed wyświetleniem reklam spersonalizowanych użytkownik zostaje poproszony o wyrażenie zgody zgodnie z wymaganiami RODO/UE. W przypadku braku zgody wyświetlane są reklamy niespersonalizowane.</p>
+                <p>Szczegóły: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności Google</a></p>
+            </div>
+
+            <div class="section">
+                <h2>5. Raportowanie błędów (Sentry)</h2>
+                <p>Aplikacja korzysta z usługi Sentry do anonimowego zbierania raportów o błędach. Raporty mogą zawierać:</p>
+                <ul>
+                    <li>informacje o urządzeniu (model, system operacyjny, wersja),</li>
+                    <li>ślady stosu (stack traces) bez danych osobowych,</li>
+                    <li>identyfikator sesji (losowy, nie powiązany z osobą).</li>
+                </ul>
+                <p>Dane osobowe nie są świadomie zbierane ani przesyłane do Sentry. Dane te służą wyłącznie do poprawy stabilności aplikacji.</p>
+                <p>Więcej informacji: <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Polityka prywatności Sentry</a></p>
+            </div>
+
+            <div class="section">
+                <h2>6. Uprawnienia aplikacji</h2>
+                <p>Aplikacja żąda następujących uprawnień:</p>
+                <ul>
+                    <li><strong>Dostęp do Internetu</strong> — wymagany do wyświetlania reklam, wysyłania raportów o błędach oraz pobierania treści quizu.</li>
+                    <li><strong>Dostęp do pamięci</strong> — wymagany do zapisania i udostępnienia obrazu wyników quizu.</li>
+                </ul>
+                <p>Aplikacja nie żąda uprawnień do lokalizacji, kamery, mikrofonu, kontaktów ani kalendarza.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Prawa użytkownika (RODO)</h2>
+                <p>Użytkownicy z Europejskiego Obszaru Gospodarczego mają prawo do:</p>
+                <ul>
+                    <li>wglądu w dane ich dotyczące,</li>
+                    <li>żądania usunięcia danych,</li>
+                    <li>cofnięcia zgody na przetwarzanie danych w celach reklamowych.</li>
+                </ul>
+                <p>Dane lokalne można usunąć, odinstalowując aplikację lub czyszcząc jej dane w ustawieniach urządzenia. Zgodę na reklamy spersonalizowane można zmienić w ustawieniach systemowych (Ustawienia → Prywatność → Reklamy).</p>
+                <p>W celu usunięcia danych zgromadzonych na serwerze (anonimowe odpowiedzi, zgłoszone dylematy) prosimy o kontakt e-mailowy.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Bezpieczeństwo danych</h2>
+                <p>Lokalne dane quizu nie są szyfrowane, ponieważ nie zawierają danych osobowych. Komunikacja sieciowa (serwer, AdMob, Sentry) odbywa się wyłącznie przez HTTPS.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Dzieci</h2>
+                <p>Aplikacja nie jest przeznaczona dla dzieci poniżej 13. roku życia i nie gromadzi świadomie danych od dzieci. Jeśli stwierdzimy, że dane zostały zebrane od dziecka poniżej 13. roku życia, zostaną one niezwłocznie usunięte.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Usługi zewnętrzne</h2>
+                <p>Aplikacja korzysta z następujących usług zewnętrznych, które mogą gromadzić dane zgodnie z własnymi politykami prywatności:</p>
+                <ul>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob</a> — reklamy</li>
+                    <li><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry</a> — raportowanie błędów</li>
+                    <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase</a> — przechowywanie anonimowych danych na serwerze</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>11. Zmiany polityki prywatności</h2>
+                <p>W przypadku istotnych zmian polityki prywatności użytkownicy zostaną powiadomieni przez aktualizację aplikacji. Aktualna wersja jest zawsze dostępna na tej stronie oraz w sekcji „Polityka prywatności" w aplikacji.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Kontakt</h2>
+                <p>Pytania dotyczące prywatności prosimy kierować na adres: <a href="mailto:patek.android@gmail.com" class="contact-email">patek.android@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- ============ ENGLISH ============ -->
+        <div id="lang-en" class="lang-content">
+            <h1>Privacy Policy — Moral Compass</h1>
+            <p class="updated">Last updated: April 2026</p>
+            <p class="intro">This privacy policy describes how the Moral Compass application (hereinafter "Application") collects, uses, and protects user data.</p>
+
+            <div class="section">
+                <h2>1. Locally Collected Data</h2>
+                <p>The application stores exclusively on the user's device:</p>
+                <ul>
+                    <li>answers to ethics quiz questions,</li>
+                    <li>calculated moral profile,</li>
+                    <li>display preferences (app settings).</li>
+                </ul>
+                <p>No personal quiz data is transmitted to external servers.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Data Sent to Server</h2>
+                <p>The application anonymously sends the following data to a server:</p>
+                <ul>
+                    <li>the selected answer option (A or B) for each dilemma,</li>
+                    <li>time spent on each question (in milliseconds),</li>
+                    <li>a random session identifier (UUID) — generated fresh for each quiz, making it impossible to link sessions together.</li>
+                </ul>
+                <p>This data is used exclusively to display aggregated statistics (e.g., "55% of people chose option A"). Individual responses are not publicly accessible and cannot be linked to a specific user.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Community Features</h2>
+                <p>Users may optionally submit their own ethical dilemmas. When submitting:</p>
+                <ul>
+                    <li>the dilemma content is sent to the server and subject to moderation,</li>
+                    <li>the user may optionally provide an author nickname (up to 30 characters),</li>
+                    <li>an anonymous device identifier (UUID) is used solely to limit the number of submissions (max 3 per day).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Ads (Google AdMob)</h2>
+                <p>The application displays ads through the Google AdMob service. Google may collect and process data to display personalized ads, including:</p>
+                <ul>
+                    <li>device identifier (Advertising ID),</li>
+                    <li>activity data in the app,</li>
+                    <li>location data (if shared in system settings).</li>
+                </ul>
+                <p>Before displaying personalized ads, the user is asked for consent in compliance with GDPR/EU requirements. If consent is not given, non-personalized ads are shown instead.</p>
+                <p>Details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></p>
+            </div>
+
+            <div class="section">
+                <h2>5. Error Reporting (Sentry)</h2>
+                <p>The application uses the Sentry service to anonymously collect error reports. Reports may include:</p>
+                <ul>
+                    <li>device information (model, OS, version),</li>
+                    <li>stack traces without personal data,</li>
+                    <li>session identifier (random, not linked to any person).</li>
+                </ul>
+                <p>Personal data is not knowingly collected or transmitted to Sentry. This data is used solely to improve application stability.</p>
+                <p>More info: <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry Privacy Policy</a></p>
+            </div>
+
+            <div class="section">
+                <h2>6. Application Permissions</h2>
+                <p>The application requests the following permissions:</p>
+                <ul>
+                    <li><strong>Internet access</strong> — required to display ads, send error reports, and fetch quiz content.</li>
+                    <li><strong>Storage access</strong> — required to save and share quiz results image.</li>
+                </ul>
+                <p>The application does not request permissions for location, camera, microphone, contacts, or calendar.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. User Rights (GDPR)</h2>
+                <p>Users from the European Economic Area have the right to:</p>
+                <ul>
+                    <li>access data concerning them,</li>
+                    <li>request data deletion,</li>
+                    <li>withdraw consent for data processing for advertising purposes.</li>
+                </ul>
+                <p>Local data can be deleted by uninstalling the app or clearing its data in device settings. Consent for personalized ads can be changed in system settings (Settings → Privacy → Ads).</p>
+                <p>To delete data collected on the server (anonymous responses, submitted dilemmas), please contact us by email.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Data Security</h2>
+                <p>Local quiz data is not encrypted because it contains no personal data. Network communication (server, AdMob, Sentry) is exclusively through HTTPS.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Children</h2>
+                <p>The application is not intended for children under 13 years of age and does not knowingly collect data from children. If we determine that data has been collected from a child under 13, it will be promptly deleted.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Third-Party Services</h2>
+                <p>The application uses the following third-party services, which may collect data according to their own privacy policies:</p>
+                <ul>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob</a> — advertising</li>
+                    <li><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry</a> — error reporting</li>
+                    <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase</a> — anonymous server-side data storage</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>11. Changes to Privacy Policy</h2>
+                <p>In case of significant changes to the privacy policy, users will be notified through an app update. The current version is always available on this page and in the "Privacy Policy" section within the app.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Contact</h2>
+                <p>For privacy-related questions, please contact: <a href="mailto:patek.android@gmail.com" class="contact-email">patek.android@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.getElementById('lang-pl').classList.toggle('active', lang === 'pl');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-pl').classList.toggle('active', lang === 'pl');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
