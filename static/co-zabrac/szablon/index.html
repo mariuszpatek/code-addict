@@ -131,7 +131,7 @@
 
     <script>
         (function () {
-            function pickFirstTruthy(values) {
+            function pickFirstTruthy (values) {
                 for (var i = 0; i < values.length; i++) {
                     if (values[i]) {
                         return values[i];
@@ -140,7 +140,7 @@
                 return null;
             }
 
-            function normalizeHash(hashValue) {
+            function normalizeHash (hashValue) {
                 if (!hashValue) {
                     return '';
                 }
@@ -148,7 +148,7 @@
                 return hashValue.charAt(0) === '#' ? hashValue.slice(1) : hashValue;
             }
 
-            function parseShareData() {
+            function parseShareData () {
                 var query = new URLSearchParams(window.location.search);
                 var hash = new URLSearchParams(normalizeHash(window.location.hash));
 
@@ -199,7 +199,7 @@
                 };
             }
 
-            function buildDeepLinkCandidates(id, token) {
+            function buildDeepLinkCandidates (id, token) {
                 var encodedId = encodeURIComponent(id);
                 var encodedToken = encodeURIComponent(token);
 
