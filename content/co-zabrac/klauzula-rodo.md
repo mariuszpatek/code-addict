@@ -1,11 +1,11 @@
 +++
 title = 'Klauzula RODO — Co zabrać?'
-date = '2026-03-18'
+date = '2026-04-14'
 draft = false
 noComment = true
 +++
 
-_Aplikacja „Co zabrać?" — Ostatnia aktualizacja: 18.03.2026_
+_Aplikacja „Co zabrać?" — Ostatnia aktualizacja: 14.04.2026_
 
 [Polityka prywatności](/co-zabrac/polityka-prywatnosci/) | [Regulamin](/co-zabrac/regulamin/) | [Klauzula RODO](/co-zabrac/klauzula-rodo/) | [Usuń konto](/co-zabrac/usun-konto/)
 
@@ -30,6 +30,8 @@ Pani/Pana dane osobowe przetwarzane są w następujących celach:
 
 **c)** Prawnie uzasadniony interes administratora — rozpatrywanie reklamacji i odpowiadanie na zapytania (art. 6 ust. 1 lit. f RODO).
 
+**d)** Wyświetlanie reklam — wyświetlanie reklam Google AdMob na podstawie zgody użytkownika wyrażonej w formularzu consent (art. 6 ust. 1 lit. a RODO). Dotyczy wyłącznie użytkowników konta standard (darmowego).
+
 ## 3. Kategorie danych osobowych
 
 Administrator przetwarza następujące kategorie danych:
@@ -43,6 +45,7 @@ Administrator przetwarza następujące kategorie danych:
 Odbiorcami Pani/Pana danych osobowych mogą być:
 
 - **Google LLC** (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) — w zakresie uwierzytelniania za pomocą usługi Google Sign-In. Transfer danych do USA odbywa się na podstawie standardowych klauzul umownych.
+- **Google LLC (Google AdMob)** — w zakresie wyświetlania reklam w Aplikacji (dotyczy użytkowników konta standard). AdMob może przetwarzać identyfikatory reklamowe urządzenia na podstawie wyrażonej zgody. Polityka prywatności Google: <https://policies.google.com/privacy>
 - **Supabase Inc.** — jako dostawca infrastruktury (bazy danych PostgreSQL, uwierzytelnianie). Dane przechowywane na serwerach w Unii Europejskiej. Supabase działa jako podmiot przetwarzający na podstawie umowy powierzenia przetwarzania danych.
 - **Inni użytkownicy Aplikacji** — wyłącznie w zakresie funkcji udostępniania list (adres e-mail widoczny dla osób, z którymi Użytkownik udostępnia lub otrzymuje listę).
 
