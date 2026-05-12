@@ -63,30 +63,30 @@ If you use the dictation feature, audio is processed **exclusively on-device** u
 
 ## 3. Purposes and Legal Bases for Processing
 
-| Purpose | Legal basis (GDPR) |
-|---|---|
+| Purpose                                                                  | Legal basis (GDPR)                       |
+| ------------------------------------------------------------------------ | ---------------------------------------- |
 | Providing the Service (registration, authentication, rewriting, history) | Art. 6(1)(b) — performance of a contract |
-| Managing Pro subscriptions (payments, activation, renewal) | Art. 6(1)(b) — performance of a contract |
-| Security, abuse prevention, content moderation, rate-limiting | Art. 6(1)(f) — legitimate interests |
-| Product analytics (improving UX, feature metrics) | Art. 6(1)(f) — legitimate interests |
-| Error diagnostics (Sentry) | Art. 6(1)(f) — legitimate interests |
-| Compliance with legal obligations (e.g. tax, consumer complaints) | Art. 6(1)(c) — legal obligation |
+| Managing Pro subscriptions (payments, activation, renewal)               | Art. 6(1)(b) — performance of a contract |
+| Security, abuse prevention, content moderation, rate-limiting            | Art. 6(1)(f) — legitimate interests      |
+| Product analytics (improving UX, feature metrics)                        | Art. 6(1)(f) — legitimate interests      |
+| Error diagnostics (Sentry)                                               | Art. 6(1)(f) — legitimate interests      |
+| Compliance with legal obligations (e.g. tax, consumer complaints)        | Art. 6(1)(c) — legal obligation          |
 
 ## 4. Recipients — Sub-processors
 
 Your data may be processed by the following sub-processors:
 
-| Entity | Role | Server location | Privacy policy |
-|---|---|---|---|
-| **Supabase Inc.** | Database, authentication, Edge Functions | AWS eu-west-1 (Ireland) | [supabase.com/privacy](https://supabase.com/privacy) |
-| **OpenRouter Inc.** | LLM API gateway | USA | [openrouter.ai/privacy](https://openrouter.ai/privacy) |
-| **Anthropic PBC** | Claude language model (rewriting) | USA | [anthropic.com/privacy](https://www.anthropic.com/privacy) |
-| **Google LLC** | Gemini model, Google Sign-In, Google Play Billing | USA / EU | [policies.google.com/privacy](https://policies.google.com/privacy) |
-| **OpenAI LLC** | GPT language model (rewriting, fallback) | USA | [openai.com/privacy](https://openai.com/privacy) |
-| **Functional Software, Inc. (Sentry)** | Error monitoring | USA | [sentry.io/privacy](https://sentry.io/privacy) |
-| **PostHog, Inc.** | Product analytics | USA / EU | [posthog.com/privacy](https://posthog.com/privacy) |
-| **RevenueCat, Inc.** | In-app subscription management | USA | [revenuecat.com/privacy](https://www.revenuecat.com/privacy) |
-| **Apple Inc.** | App Store payments (iOS) | USA | [apple.com/privacy](https://www.apple.com/privacy) |
+| Entity                                 | Role                                              | Server location         | Privacy policy                                                     |
+| -------------------------------------- | ------------------------------------------------- | ----------------------- | ------------------------------------------------------------------ |
+| **Supabase Inc.**                      | Database, authentication, Edge Functions          | AWS eu-west-1 (Ireland) | [supabase.com/privacy](https://supabase.com/privacy)               |
+| **OpenRouter Inc.**                    | LLM API gateway                                   | USA                     | [openrouter.ai/privacy](https://openrouter.ai/privacy)             |
+| **Anthropic PBC**                      | Claude language model (rewriting)                 | USA                     | [anthropic.com/privacy](https://www.anthropic.com/privacy)         |
+| **Google LLC**                         | Gemini model, Google Sign-In, Google Play Billing | USA / EU                | [policies.google.com/privacy](https://policies.google.com/privacy) |
+| **OpenAI LLC**                         | GPT language model (rewriting, fallback)          | USA                     | [openai.com/privacy](https://openai.com/privacy)                   |
+| **Functional Software, Inc. (Sentry)** | Error monitoring                                  | USA                     | [sentry.io/privacy](https://sentry.io/privacy)                     |
+| **PostHog, Inc.**                      | Product analytics                                 | USA / EU                | [posthog.com/privacy](https://posthog.com/privacy)                 |
+| **RevenueCat, Inc.**                   | In-app subscription management                    | USA                     | [revenuecat.com/privacy](https://www.revenuecat.com/privacy)       |
+| **Apple Inc.**                         | App Store payments (iOS)                          | USA                     | [apple.com/privacy](https://www.apple.com/privacy)                 |
 
 ### Content Processed by LLMs
 
@@ -98,14 +98,14 @@ Some sub-processors (OpenRouter, Anthropic, OpenAI, Sentry, RevenueCat, PostHog,
 
 ## 6. Data Retention
 
-| Category | Retention period |
-|---|---|
-| Account data and session history | Until account deletion + 30 days (backups) |
-| Style profile (Persona) | Until deleted by the user or upon account deletion |
-| Error logs (Sentry) | 90 days |
-| Analytics data (PostHog) | Up to 24 months (anonymised after 12 months) |
-| Subscription data | Up to 7 years from the transaction (tax/accounting requirements) |
-| Audio data | Not stored — processed locally and discarded immediately |
+| Category                         | Retention period                                                 |
+| -------------------------------- | ---------------------------------------------------------------- |
+| Account data and session history | Until account deletion + 30 days (backups)                       |
+| Style profile (Persona)          | Until deleted by the user or upon account deletion               |
+| Error logs (Sentry)              | 90 days                                                          |
+| Analytics data (PostHog)         | Up to 24 months (anonymised after 12 months)                     |
+| Subscription data                | Up to 7 years from the transaction (tax/accounting requirements) |
+| Audio data                       | Not stored — processed locally and discarded immediately         |
 
 ## 7. Your Rights
 
