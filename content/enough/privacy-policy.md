@@ -1,4 +1,4 @@
-++ 
++++
 title = 'Privacy Policy — Enough'
 date = '2026-06-05'
 draft = false
