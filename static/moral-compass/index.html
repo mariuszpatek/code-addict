@@ -175,25 +175,33 @@
                     <li>obliczony profil moralny,</li>
                     <li>preferencje wyświetlania (ustawienia aplikacji).</li>
                 </ul>
-                <p>Żadne dane osobowe z quizu nie są przesyłane na zewnętrzne serwery.</p>
+                <p>Na serwer trafiają tylko dane opisane w punkcie 2.</p>
             </div>
 
             <div class="section">
                 <h2>2. Dane przesyłane na serwer</h2>
-                <p>Aplikacja anonimowo przesyła na serwer następujące dane:</p>
+                <p>Aplikacja przesyła na serwer:</p>
                 <ul>
-                    <li>wybraną odpowiedź (A, B lub C) w każdym dylemacie,</li>
-                    <li>czas spędzony na każdym pytaniu (w milisekundach),</li>
+                    <li>wybraną odpowiedź w każdym dylemacie i pytaniu quizu, a w quizach z poprawnymi odpowiedziami
+                        także to, czy była trafna,</li>
+                    <li>czas spędzony na każdym pytaniu,</li>
                     <li>przebieg quizu: rozpoczęcie, pokazane pytania i omówienia, ukończenie oraz rozwinięcie listy
                         linków i otwarcie linku,</li>
-                    <li>wersję i język aplikacji,</li>
-                    <li>losowy identyfikator sesji (UUID) — generowany na nowo przy każdym quizie, nie pozwala powiązać
-                        sesji ze sobą.</li>
+                    <li>skąd otwarto quiz (np. z ekranu głównego albo z karty „Co dalej?”) i ile quizów ukończono
+                        wcześniej na tym urządzeniu,</li>
+                    <li>wersję i język aplikacji, godzinę na urządzeniu i jego strefę czasową,</li>
+                    <li>losowy identyfikator sesji (UUID), generowany na nowo przy każdym quizie,</li>
+                    <li>losowy numer instalacji (UUID), który aplikacja losuje raz i przechowuje na urządzeniu.</li>
                 </ul>
-                <p>Dane te służą do wyświetlania zagregowanych statystyk (np. „55% osób wybrało opcję A") i do
-                    ulepszania quizów, np. do sprawdzenia, po których pytaniach gracze rezygnują. Pojedyncze odpowiedzi nie są publicznie dostępne i nie można ich powiązać z konkretnym
-                    użytkownikiem.</p>
-                <p>Anonimowe dane statystyczne są przechowywane na serwerze bezterminowo. Zgłoszone dylematy
+                <p>Numer instalacji łączy odpowiedzi z różnych quizów. Dzięki niemu można sprawdzić na przykład, czy
+                    osoby, które w jednym dylemacie wybierają A, częściej wpadają w daną pułapkę myślenia. Numer nie
+                    zawiera imienia, adresu e-mail ani identyfikatora reklamowego i nie jest łączony z danymi Google
+                    AdMob ani Sentry. Jego wysyłanie wyłączysz w „O aplikacji” przełącznikiem „Łącz moje odpowiedzi”;
+                    kolejne odpowiedzi trafią wtedy na serwer bez numeru.</p>
+                <p>Dane służą do wyświetlania zbiorczych statystyk (np. „55% osób wybrało opcję A”) i do ulepszania
+                    quizów, np. do sprawdzenia, po których pytaniach gracze rezygnują. Pojedyncze odpowiedzi nie są
+                    publicznie dostępne.</p>
+                <p>Dane są przechowywane na serwerze bezterminowo, chyba że je usuniesz (punkt 8). Zgłoszone dylematy
                     odrzucone w procesie moderacji są usuwane niezwłocznie.</p>
             </div>
 
@@ -259,9 +267,10 @@
                 <h2>7. Podstawa prawna przetwarzania</h2>
                 <p>Dane przetwarzane są na następujących podstawach prawnych (art. 6 RODO):</p>
                 <ul>
-                    <li><strong>Zgoda</strong> (art. 6 ust. 1 lit. a) — wyświetlanie reklam spersonalizowanych,</li>
-                    <li><strong>Uzasadniony interes administratora</strong> (art. 6 ust. 1 lit. f) — zbieranie
-                        anonimowych statystyk, raportowanie błędów, zapewnienie stabilności aplikacji.</li>
+                    <li><strong>Zgoda</strong> (art. 6 ust. 1 lit. a): wyświetlanie reklam spersonalizowanych,</li>
+                    <li><strong>Uzasadniony interes administratora</strong> (art. 6 ust. 1 lit. f): statystyki
+                        i analiza odpowiedzi, także łączonych numerem instalacji, raportowanie błędów, zapewnienie
+                        stabilności aplikacji.</li>
                 </ul>
             </div>
 
@@ -271,6 +280,7 @@
                 <ul>
                     <li>wglądu w dane ich dotyczące,</li>
                     <li>żądania usunięcia danych,</li>
+                    <li>sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie,</li>
                     <li>cofnięcia zgody na przetwarzanie danych w celach reklamowych,</li>
                     <li>złożenia skargi do organu nadzorczego — w Polsce jest to <a href="https://uodo.gov.pl/"
                             target="_blank" rel="noopener">Urząd Ochrony Danych
@@ -280,8 +290,10 @@
                     Zgodę na reklamy spersonalizowane można zmienić, czyszcząc dane aplikacji
                     (Ustawienia → Aplikacje → Moral Compass → Wyczyść dane), co spowoduje ponowne
                     wyświetlenie okna zgody przy następnym uruchomieniu.</p>
-                <p>W celu usunięcia danych zgromadzonych na serwerze (anonimowe odpowiedzi, zgłoszone dylematy) prosimy
-                    o kontakt e-mailowy.</p>
+                <p>Odpowiedzi wysłane z numerem instalacji możesz usunąć w „O aplikacji” przyciskiem „Usuń moje
+                    odpowiedzi z serwera”. Aplikacja wylosuje potem nowy numer. Odpowiedzi wysłane bez numeru (sprzed
+                    tej funkcji albo przy wyłączonym łączeniu) nie są powiązane z żadną osobą, więc nie da się ich
+                    wskazać ani usunąć. W sprawie zgłoszonych dylematów prosimy o kontakt e-mailowy.</p>
             </div>
 
             <div class="section">
@@ -345,25 +357,34 @@
                     <li>calculated moral profile,</li>
                     <li>display preferences (app settings).</li>
                 </ul>
-                <p>No personal quiz data is transmitted to external servers.</p>
+                <p>Only the data described in section 2 is sent to the server.</p>
             </div>
 
             <div class="section">
                 <h2>2. Data Sent to Server</h2>
-                <p>The application anonymously sends the following data to a server:</p>
+                <p>The application sends the following to the server:</p>
                 <ul>
-                    <li>the selected answer (A, B or C) for each dilemma,</li>
-                    <li>time spent on each question (in milliseconds),</li>
+                    <li>the answer you choose in each dilemma and quiz question, and in quizzes with correct answers,
+                        whether it was right,</li>
+                    <li>time spent on each question,</li>
                     <li>the course of a quiz: when it starts, which questions and explanations are shown, when it is
                         finished, and when the list of links or a link is opened,</li>
-                    <li>the app version and language,</li>
-                    <li>a random session identifier (UUID) — generated fresh for each quiz, making it impossible to link
-                        sessions together.</li>
+                    <li>where the quiz was opened from (e.g., the home screen or the "What's next?" card) and how many
+                        quizzes were finished before on this device,</li>
+                    <li>the app version and language, the device time and its time zone,</li>
+                    <li>a random session identifier (UUID), generated fresh for each quiz,</li>
+                    <li>a random install number (UUID), which the app draws once and keeps on the device.</li>
                 </ul>
+                <p>The install number links answers from different quizzes. With it we can check, for example, whether
+                    people who choose A in one dilemma fall for a given thinking trap more often. It holds no name,
+                    email address or advertising ID and is not combined with Google AdMob or Sentry data. You can stop
+                    sending it in "About" with the "Link my answers" switch; later answers then reach the server
+                    without the number.</p>
                 <p>This data is used to display aggregated statistics (e.g., "55% of people chose option A") and to
-                    improve the quizzes, for example to see after which questions players give up. Individual responses are not publicly accessible and cannot be linked to a specific user.</p>
-                <p>Anonymous statistical data is stored on the server indefinitely. Submitted dilemmas rejected
-                    during moderation are deleted immediately.</p>
+                    improve the quizzes, for example to see after which questions players give up. Individual
+                    responses are not publicly accessible.</p>
+                <p>The data is stored on the server indefinitely unless you delete it (section 8). Submitted dilemmas
+                    rejected during moderation are deleted immediately.</p>
             </div>
 
             <div class="section">
@@ -427,9 +448,10 @@
                 <h2>7. Legal Basis for Processing</h2>
                 <p>Data is processed on the following legal bases (Art. 6 GDPR):</p>
                 <ul>
-                    <li><strong>Consent</strong> (Art. 6(1)(a)) — displaying personalized ads,</li>
-                    <li><strong>Legitimate interest of the controller</strong> (Art. 6(1)(f)) — collecting
-                        anonymous statistics, error reporting, ensuring application stability.</li>
+                    <li><strong>Consent</strong> (Art. 6(1)(a)): displaying personalized ads,</li>
+                    <li><strong>Legitimate interest of the controller</strong> (Art. 6(1)(f)): answer statistics
+                        and analysis, including answers linked by the install number, error reporting, ensuring
+                        application stability.</li>
                 </ul>
             </div>
 
@@ -439,6 +461,7 @@
                 <ul>
                     <li>access data concerning them,</li>
                     <li>request data deletion,</li>
+                    <li>object to processing based on legitimate interest,</li>
                     <li>withdraw consent for data processing for advertising purposes,</li>
                     <li>lodge a complaint with a supervisory authority — in Poland this is the <a
                             href="https://uodo.gov.pl/" target="_blank" rel="noopener">Personal Data Protection
@@ -448,8 +471,10 @@
                     Advertising consent can be changed by clearing the application data
                     (Settings → Apps → Moral Compass → Clear Data), which will trigger the
                     consent dialog again on the next launch.</p>
-                <p>To delete data collected on the server (anonymous responses, submitted dilemmas), please contact us
-                    by email.</p>
+                <p>You can delete answers sent with the install number in "About" with the "Delete my answers from
+                    the server" button. The app then draws a new number. Answers sent without the number (from before
+                    this feature or with linking switched off) are not linked to any person, so they cannot be found
+                    or deleted. To delete submitted dilemmas, please contact us by email.</p>
             </div>
 
             <div class="section">
