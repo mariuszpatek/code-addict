@@ -12,7 +12,7 @@ _Aplikacja „Mikołaj w domu” - Ostatnia aktualizacja: 25.11.2026_
 ---
 
 ## Administrator
-Administratorem danych osobowych jest Mariusz Patek, prowadzący działalność jako niezależny deweloper aplikacji mobilnych. Kontakt: patek.android@gmail.com
+Administratorem danych osobowych jest Patek (Mariusz Patek), wydawca aplikacji w Google Play. Kontakt: patek.android@gmail.com
 
 ## W skrócie
 - Aplikacja działa w całości w Twoim telefonie. Zdjęcia i filmy nie opuszczają telefonu.

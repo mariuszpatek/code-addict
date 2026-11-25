@@ -12,7 +12,7 @@ _The "Santa at Home" app (Polish name: "Mikołaj w domu") - Last updated: 25.11.
 ---
 
 ## Controller
-The controller of your personal data is Mariusz Patek, an independent mobile app developer. Contact: patek.android@gmail.com
+The controller of your personal data is Patek (Mariusz Patek), the developer that publishes the app on Google Play. Contact: patek.android@gmail.com
 
 ## In short
 - The app works entirely on your phone. Photos and videos never leave your phone.
